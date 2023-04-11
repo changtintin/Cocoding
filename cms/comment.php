@@ -13,7 +13,7 @@
                 ?>
                 
                 <div class="well">
-
+                    <script>alert("haha");</script>
                     <form method="post">
                         <div class="col">
                             <h4>What do you think?</h4>

@@ -584,11 +584,14 @@
                             $condition = " SET post_dislike = post_dislike + 1, post_like = post_like - 1";
                         }
                         $sql6 = "UPDATE " . POSTS_TABLE . $condition . " WHERE post_id = " . $p_id;
-                        echo $sql6;
+                        
                         $q6 = mysqli_query($connect, $sql6);
                         if(!$q6){
                             die("Error").mysqli_error($connect, $q6);
                         }
+                        else{
+                            echo "<script> alert('You don't like the post... ')</script>" ;
+                         }
                     }
 
                 }
@@ -614,6 +617,9 @@
                     $q5 = mysqli_query($connect, $sql5);
                     if(!$q5){
                         die("Error").mysqli_error($connect, $q3);
+                    }
+                    else{
+                       echo "<script> alert('You liked the post ')</script>" ;
                     }
 
                 }
