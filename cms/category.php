@@ -70,7 +70,9 @@
 
 
                 <div style='padding-bottom: 50px; padding-top: 40px;'>
-                    <img class = "img-responsive" src = "image/<?php echo $post_image;?>" alt="<?php echo $post_image;?>">
+                    <a href="post.php?p_id=<?php echo $post_id; ?>">
+                        <img class = "img-responsive" src = "image/<?php echo $post_image;?>" alt="<?php echo $post_image;?>">
+                    </a>
                 </div>
 
                 <p>

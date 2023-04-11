@@ -565,7 +565,7 @@
             if($q2){
                 if(mysqli_num_rows($q2) > 0){
 
-                    // EXIST
+                    
                     $row = mysqli_fetch_assoc($q2);
 
                     // If the like_dis is not the same, means change the like
