@@ -79,14 +79,12 @@
                             </div>
                         </div>
 
-                        <!-- <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">Author</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Comment</th>
-                                    <th scope="col">Post Title</th>
+                                    <th scope="col">ID</th>                                    
+                                    <th scope="col">Comment</th>  
+                                    <th scope="col">Post title</th>          
                                     <th scope="col">Status</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">Select</th>
@@ -95,7 +93,7 @@
                                 <tbody>
                                     <?php
                                         $ary_index = 0;
-                                        $sql = "SELECT * FROM ".COMMENTS;
+                                        $sql = "SELECT * FROM ".COMMENTS." WHERE comment_role = 'Member' && comment_author = '{$_SESSION['username']}'";
                                         $query = mysqli_query($connect, $sql);
                                         if(mysqli_num_rows($query) > 0){
                                             while($row = mysqli_fetch_assoc($query)){
@@ -110,9 +108,25 @@
                                     ?>
                                             <tr>
                                                 <th scope="row"><?php echo $id;?></th>                
-                                                <td><?php echo $author;?></td>                    
-                                                <td><?php echo $email;?></td>                
-                                                <td><?php echo $content;?></td>
+                                                             
+                                                <td>
+                                                    <?php 
+                                                        
+                                                        $delimiter = ' ';
+                                                        $words = explode($delimiter, $content);
+                                                        $i = 10;
+                                                        foreach ($words as $word){
+                                                            echo $word." ";
+                                                            
+                                                            if($i == 0){
+                                                                echo "<br>";
+                                                                $i = 10;
+                                                            }
+                                                            $i--;
+                                                        }
+                                                    ?>
+                                                </td>
+
                                                 <td>
                                                     <a href="../post.php?p_id=<?php echo $p_id; ?>"> 
                                                         <?php echo fetch_commented_post($p_id);?>
@@ -140,7 +154,7 @@
                                     ?>
                                     
                                 </tbody>
-                        </table> -->
+                        </table>
                     </form>
                     
                 </div>

@@ -392,28 +392,36 @@
         }
     }
 
-    function add_comment($p_id){
+    function add_comment($p_id, $role){
         global $connect;
         if(isset($_POST['create_comment'])){
-            $author = $_POST['author'];
+            
             $email = $_POST['email'];
             $comment_content = $_POST['comment_content'];
-            if(!empty($author)&&!empty($email)&&!empty($comment_content)){
-                $sql = "INSERT INTO ".COMMENTS."(comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date) ";
-                $sql .= "VALUE('{$p_id}', '{$author}', '{$email}', '{$comment_content}', 'Unapproved', now())";
+
+            if(isset($_SESSION['username'])){
+                $author = $_SESSION['username'];
+            }
+            else{
+                $author = $_POST['author'];
+            }
+
+            if(!empty($author) && !empty($email) && !empty($comment_content)){
+                $sql = "INSERT INTO ".COMMENTS."(comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date, comment_role) ";
+                $sql .= "VALUE('{$p_id}', '{$author}', '{$email}', '{$comment_content}', 'Unapproved', now(), '{$role}')";
                 $q = mysqli_query($connect, $sql);
                 $msg = query_confirm($q);
                 increase_comment_count($p_id);
                 header("Location: http://localhost:8888/cms/post.php?p_id={$p_id}&confirm_msg={$msg}", TRUE, 301);
                 exit();   
             }
-            else{
+            else
                 $msg = "ERROR, This field should not be empty";     
                 header("Location: http://localhost:8888/cms/post.php?p_id={$p_id}&confirm_msg={$msg}", TRUE, 301);
                 exit(); 
             }
         }
-    }
+    
 
     function select_all(){
         if(isset($_POST['select_all'])){
@@ -578,13 +586,10 @@
     function user_feel($connect, $p_id, $like){
         
         if(isset($_SESSION['user_role'])){
-            $sql2 = "SELECT * FROM ".LIKES." WHERE user_id = ".$_SESSION['user_id']." AND post_id = ".$p_id;
-            
+            $sql2 = "SELECT * FROM ".LIKES." WHERE user_id = ".$_SESSION['user_id']." AND post_id = ".$p_id;            
             $q2 = mysqli_query($connect, $sql2);
             if($q2){
                 if(mysqli_num_rows($q2) > 0){
-
-                    
                     $row = mysqli_fetch_assoc($q2);
 
                     // If the user_feel is not the same, means change the like
@@ -608,16 +613,14 @@
                         if(!$q6){
                             die("Error").mysqli_error($connect, $q6);
                         }
-                        else{
-                            echo "<script> alert('You don't like the post... ')</script>" ;
-                         }
+                        
                     }
 
                 }
                 else{
+                    echo "OK";
                     // NOT EXIST
                     $sql3 = "INSERT INTO ". LIKES ."(user_id, post_id, user_feel) VALUES('{$_SESSION['user_id']}', '{$p_id}', '{$like}');";
-                    echo $sql3;
                     $q3 = mysqli_query($connect, $sql3);
                     if(!$q3){
                         die("Error").mysqli_error($connect, $q3);
@@ -637,13 +640,8 @@
                     if(!$q5){
                         die("Error").mysqli_error($connect, $q3);
                     }
-                    else{
-                       echo "<script> alert('You liked the post ')</script>" ;
-                    }
-
                 }
-            }
-            
+            }            
         }
         else{
             echo "Plz login !!!!!";
@@ -651,18 +649,19 @@
     }
 
     function fetch_like_posts($connect, $id){
-        $sql = "SELECT * FROM ".LIKES." WHERE user_id = {$id} AND user_feel = 'like';";
+        $sql = "SELECT * FROM ".LIKES." WHERE user_id = '{$id}' AND user_feel = 'like';";
         $q = mysqli_query($connect ,$sql);
         if($q){
             if(mysqli_num_rows($q) > 0 ){
-                while($result = mysqli_fetch_assoc($q)){                    
-                    $sql = "SELECT post_title FROM ".POSTS. " WHERE post_id = '{$result['post_id']}'; ";
-                    $q = mysqli_query($connect ,$sql);
-                    if($q){
-                        if(mysqli_num_rows($q) > 0){
-                            $result = mysqli_fetch_row($q);
+                while($result = mysqli_fetch_assoc($q)){                      
+                    $sql2 = "SELECT * FROM ".POSTS. " WHERE post_id = '{$result['post_id']}'; ";
+                    $q2 = mysqli_query($connect ,$sql2);
+                    if($q2){
+                        if(mysqli_num_rows($q2) > 0){
+                            $t = mysqli_fetch_assoc($q2);
+                            $title = $t['post_title'];
                             echo '
-                                <a href="#" class="list-group-item">'.$result[0].'</a>
+                                <a href="#" class="list-group-item">'.$title.'</a>
                             ';
                         }
                     }
@@ -674,4 +673,6 @@
         }
         
     }
+
+    
 ?>

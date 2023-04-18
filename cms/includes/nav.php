@@ -2,14 +2,23 @@
     include "db.php"; 
     include "function.php";
 
-    if(isset($_GET['p_id'])){
-        add_comment($_GET['p_id']);
-    }
+    
 
     session_start();
 
     
     register();
+
+    if(isset($_GET['p_id'])){
+        if(isset($_SESSION['user_id'])){
+            $role = "Member";
+        }
+        else{
+            $role = "Visitor";
+        }
+        
+        add_comment($_GET['p_id'], $role);
+    }
 
     
 ?>
@@ -52,7 +61,7 @@
                                         <a href='./admin/index.php' style = 'font-weight:bold; font-size: small; color:#f2ca8f;'><span class='glyphicon glyphicon glyphicon-wrench'></span> Admin </a>
                                     </li>";
                             }
-                            if($_SESSION['user_id']){
+                            if(isset($_SESSION['user_id'])){
                                 echo "
                                     <li>
                                         <a href='./user/index.php' style = 'font-weight:bold; font-size: small; color:#cdb39f;'><span class='glyphicon glyphicon-user'></span> User </a>

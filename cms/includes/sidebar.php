@@ -68,12 +68,7 @@
             <h4>Like Posts</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             <ol class="list-group" style='font-size: 10px; font-family: Helvetica, Arial, sans-serif; font-weight:300; '>
-                <?php fetch_like_posts($connect, $_SESSION['user_id']); ?>
-                <a href="#" class="list-group-item">These Boots Are Made For Walking</a>
-                <a href="#" class="list-group-item ">Eleanor, Put Your Boots On</a>
-                <a href="#" class="list-group-item">Puss 'n' Boots</a>
-                <a href="#" class="list-group-item">Die With Your Boots On</a>
-                <a href="#" class="list-group-item">Fairies Wear Boots</a>
+                <?php fetch_like_posts($connect, $_SESSION['user_id']); ?>                
             </ol>
         </div>
         <?php

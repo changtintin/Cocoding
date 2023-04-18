@@ -6,13 +6,7 @@
     session_start();
     
     if(isset($_SESSION['user_role'])){
-        if($_SESSION['user_role'] !== "Admin"){
-            $msg = "You can't access the admin";
-            header("Location: http://localhost:8888/cms/index.php?confirm_msg={$msg}");
-        }
-    }
-    else{
-        header("Location:../index.php");
+        header("index.php");
     }
 
 ?>
