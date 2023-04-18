@@ -55,7 +55,7 @@
                 }
             </script>
             <?php
-                $sql = "SELECT * FROM ".USERS_TABLE;
+                $sql = "SELECT * FROM ".USERS;
                 $query = mysqli_query($connect, $sql);
                 if(mysqli_num_rows($query) > 0){
                     while($row = mysqli_fetch_assoc($query)){

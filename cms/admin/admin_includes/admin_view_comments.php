@@ -52,7 +52,7 @@
                 <tbody>
                     <?php
                         $ary_index = 0;
-                        $sql = "SELECT * FROM ".COMMENTS_TABLE;
+                        $sql = "SELECT * FROM ".COMMENTS;
                         $query = mysqli_query($connect, $sql);
                         if(mysqli_num_rows($query) > 0){
                             while($row = mysqli_fetch_assoc($query)){
@@ -113,7 +113,7 @@
             if($_POST['comment_setting']=='Delete'){
                 foreach($_POST['select_ary'] as $checkbox){
                     decrease_comment_count($checkbox);
-                    $sql = "DELETE FROM ".COMMENTS_TABLE." WHERE comment_id = {$checkbox}";
+                    $sql = "DELETE FROM ".COMMENTS." WHERE comment_id = {$checkbox}";
                     $q = mysqli_query($connect, $sql);
                 }
                 $msg = query_confirm($q);     

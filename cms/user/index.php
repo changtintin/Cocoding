@@ -1,6 +1,6 @@
 
 <?php
-    include "admin_includes/admin_header.php";
+    include "user_header.php";
 ?>
 <body >
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -11,10 +11,12 @@
 
         <!-- Navigation -->
         <?php 
-            include "admin_includes/admin_nav.php"; 
+            
+            include "user_nav.php"; 
         ?>
 
         <div id="page-wrapper">
+
             <script>
                 function close_alert_edit(){
                     document.getElementById("alert_edit").innerHTML=" ";
@@ -22,7 +24,7 @@
             </script>
 
             <?php 
-                query_msg_alert(); 
+                query_msg_alert();
 
                 $user_count = fetch_row_count(USERS,'');
                 $post_count = fetch_row_count(POSTS,'');
@@ -47,7 +49,7 @@
                     
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Welcome to <?php echo $_SESSION['username']."'s";?> Admin <small>
+                            Welcome to <?php echo $_SESSION['username']."'s";?> Admin  <small>
                                 <?php 
                                     echo $_SESSION['user_firstname']." ";
                                     echo $_SESSION['user_lastname'];
@@ -60,7 +62,7 @@
                        
                 <!-- /.row -->
                 <div class="row">
-
+                
                     <!-- Post -->
                     <div class="col-lg-3 col-md-6">
                         <div class="panel panel-secondary">
@@ -221,5 +223,5 @@
 
 
     <?php 
-        include "admin_includes/admin_footer.php";
+        include "./user_includes/user_footer.php";
     ?>

@@ -28,7 +28,7 @@
 
                             increase_view_count($connect, $p_id);
 
-                            $query = "SELECT * FROM ".POSTS_TABLE." WHERE post_id = {$p_id} AND post_status = 'Published';";
+                            $query = "SELECT * FROM ".POSTS." WHERE post_id = {$p_id} AND post_status = 'Published';";
                             $result = mysqli_query($connect, $query);
                             if($result){
                                 if(mysqli_num_rows($result) > 0){

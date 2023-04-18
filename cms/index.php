@@ -28,7 +28,7 @@ include "includes/header.php";
             <!-- Blog Entries Column -->
             <div class="col-md-8">
                 <?php
-                $query = "SELECT * FROM " . POSTS_TABLE . " WHERE post_status = 'Published' LIMIT 5";
+                $query = "SELECT * FROM " . POSTS . " WHERE post_status = 'Published' LIMIT 5";
                 $result = mysqli_query($connect, $query);
 
                 while ($row = mysqli_fetch_assoc($result)) {

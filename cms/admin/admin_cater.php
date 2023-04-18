@@ -82,7 +82,7 @@
 
                             <tbody>
                                 <?php
-                                    $q = "SELECT * FROM ". CATER_TABLE;
+                                    $q = "SELECT * FROM ". CATER;
                                     $select_cater_sidebar = mysqli_query($connect, $q);
                                     if($select_cater_sidebar){
                                         

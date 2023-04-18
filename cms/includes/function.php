@@ -7,7 +7,7 @@
         if(isset($_POST['new_cater_submit'])){
             $new_cater_add = $_POST['new_cater_add'];
             if($new_cater_add != null){
-                $sql = "INSERT INTO ". CATER_TABLE ." (cat_title) VALUES ('{$new_cater_add}');";
+                $sql = "INSERT INTO ". CATER ." (cat_title) VALUES ('{$new_cater_add}');";
                 $query = mysqli_query($connect, $sql);
 
                 $msg = query_confirm($query);
@@ -35,7 +35,7 @@
             $edit_cater_submit = $_GET['edit_cater_submit'];
 
             if($edit_cater_name != null){
-                $sql = "UPDATE ". CATER_TABLE ." SET cat_title = '{$edit_cater_name}' WHERE cat_title = '{$edit_cater_submit}';";
+                $sql = "UPDATE ". CATER ." SET cat_title = '{$edit_cater_name}' WHERE cat_title = '{$edit_cater_submit}';";
                 $query = mysqli_query($connect, $sql);
                 if(!$query){
                     die("Error".mysqli_error($connect));
@@ -62,7 +62,7 @@
         if(isset($_GET['delete_id'])){
             echo "OK";
             $del_id = $_GET['delete_id'];
-            $sql = "DELETE FROM ". CATER_TABLE . " WHERE cat_id = '{$del_id}';";
+            $sql = "DELETE FROM ". CATER . " WHERE cat_id = '{$del_id}';";
             echo $sql;
             $delete_cater = mysqli_query($connect, $sql);
             if($delete_cater){
@@ -81,7 +81,7 @@
     function fetch_all_cater(){
         global $connect;
 
-        $q = "SELECT * FROM ". CATER_TABLE;
+        $q = "SELECT * FROM ". CATER;
         $select_cater_sidebar = mysqli_query($connect, $q);
         if($select_cater_sidebar){
             while($fetch_row = mysqli_fetch_assoc($select_cater_sidebar)){
@@ -99,7 +99,7 @@
     function fetch_partof_cater(){
         global $connect;
 
-        $q = "SELECT * FROM ". CATER_TABLE;
+        $q = "SELECT * FROM ". CATER;
         $select_cater_sidebar = mysqli_query($connect, $q);
         if($select_cater_sidebar){
             $i = 0;
@@ -227,14 +227,14 @@
                 $img = $result_img;
             }
 
-            $sql = "SELECT cat_id FROM ".CATER_TABLE." WHERE cat_title = '{$cater_n}'";
+            $sql = "SELECT cat_id FROM ".CATER." WHERE cat_title = '{$cater_n}'";
             $q = mysqli_query($connect, $sql);
             if(mysqli_num_rows($q) > 0){
                 $result =  mysqli_fetch_assoc($q);
                 $cater_id = $result['cat_id'];
             }
 
-            $sql2 = "UPDATE ".POSTS_TABLE." SET  post_title = '{$title}', post_author = '{$author}',";
+            $sql2 = "UPDATE ".POSTS." SET  post_title = '{$title}', post_author = '{$author}',";
             $sql2 .= " post_date = '{$date}', post_image = '{$img}', post_tags = '{$tag}', post_comment_count = {$comment},";
             $sql2 .= " post_status = '{$status}', post_cater_id = '{$cater_id}', post_content = '{$post_content}'";
             $sql2 .= " WHERE post_id = '{$id}';";
@@ -257,7 +257,7 @@
         
         if($_POST['comment_setting'] == 'Approved'||$_POST['comment_setting'] == 'Unapproved'){
             foreach($_POST['select_ary'] as $checkbox){
-                $sql = "UPDATE ".COMMENTS_TABLE." SET comment_status = '{$status}' WHERE comment_id = {$checkbox}";
+                $sql = "UPDATE ".COMMENTS." SET comment_status = '{$status}' WHERE comment_id = {$checkbox}";
                 $q = mysqli_query($connect, $sql);
             }
     
@@ -277,7 +277,7 @@
             switch($status){
                 case "Spam":case "Published";case"Draft":
                     foreach($_POST['select_ary'] as $checkbox){
-                        $sql = "UPDATE ".POSTS_TABLE." SET post_status = '{$status}' WHERE post_id = {$checkbox}";
+                        $sql = "UPDATE ".POSTS." SET post_status = '{$status}' WHERE post_id = {$checkbox}";
                         $q = mysqli_query($connect, $sql);
                     }
             
@@ -288,7 +288,7 @@
                 
                 case "Delete":
                     foreach($_POST['select_ary'] as $checkbox){
-                        $sql = "DELETE FROM ".POSTS_TABLE." WHERE post_id = '{$checkbox}' ";
+                        $sql = "DELETE FROM ".POSTS." WHERE post_id = '{$checkbox}' ";
                         $q = mysqli_query($connect, $sql);
                     }
                     $msg = query_confirm($q);     
@@ -299,7 +299,7 @@
                 
                 case "Duplicate":
                     foreach($_POST['select_ary'] as $checkbox){
-                        $query1 = "SELECT * FROM ".POSTS_TABLE." WHERE post_id = '{$checkbox}';";
+                        $query1 = "SELECT * FROM ".POSTS." WHERE post_id = '{$checkbox}';";
                         $result1 = mysqli_query($connect, $query1);
                         if($result1){
                             if(mysqli_num_rows($result1) > 0){
@@ -330,7 +330,7 @@
                 
                 case "ResetViews":
                     foreach($_POST['select_ary'] as $checkbox){
-                        $sql = "UPDATE ".POSTS_TABLE." SET post_view_count = '0' WHERE post_id = {$checkbox}";
+                        $sql = "UPDATE ".POSTS." SET post_view_count = '0' WHERE post_id = {$checkbox}";
                         $q = mysqli_query($connect, $sql);
                     }
             
@@ -346,7 +346,7 @@
         global $connect;
         
         if($p_id > -1 ){
-            $sql = "SELECT * FROM ".POSTS_TABLE." WHERE post_id = '{$p_id}'";            
+            $sql = "SELECT * FROM ".POSTS." WHERE post_id = '{$p_id}'";            
             $q = mysqli_query($connect, $sql);
             if(mysqli_num_rows($q) > 0){
                 $result =  mysqli_fetch_assoc($q);
@@ -364,7 +364,7 @@
 
     function increase_comment_count($p_id){
         global $connect;
-        $sql = "UPDATE ".POSTS_TABLE." SET post_comment_count = post_comment_count + 1 WHERE post_id = ".$p_id;
+        $sql = "UPDATE ".POSTS." SET post_comment_count = post_comment_count + 1 WHERE post_id = ".$p_id;
         
         $q = mysqli_query($connect, $sql);
         if(!$q){
@@ -375,14 +375,14 @@
     function decrease_comment_count($comment_id){
         global $connect;
         $p_id = -1;
-        $sql1= "SELECT * FROM ".COMMENTS_TABLE." WHERE comment_id = {$comment_id}";
+        $sql1= "SELECT * FROM ".COMMENTS." WHERE comment_id = {$comment_id}";
         $q1 = mysqli_query($connect, $sql1);
         if($q1){
             if(mysqli_num_rows($q1) > 0){
                 $row = mysqli_fetch_assoc($q1);
                 $p_id = $row['comment_post_id'];
             
-                $sql2 = "UPDATE ".POSTS_TABLE." SET post_comment_count = post_comment_count - 1 WHERE post_id = {$p_id}";
+                $sql2 = "UPDATE ".POSTS." SET post_comment_count = post_comment_count - 1 WHERE post_id = {$p_id}";
                 
                 $q2 = mysqli_query($connect, $sql2);
                 if(!$q2){
@@ -399,7 +399,7 @@
             $email = $_POST['email'];
             $comment_content = $_POST['comment_content'];
             if(!empty($author)&&!empty($email)&&!empty($comment_content)){
-                $sql = "INSERT INTO ".COMMENTS_TABLE."(comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date) ";
+                $sql = "INSERT INTO ".COMMENTS."(comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date) ";
                 $sql .= "VALUE('{$p_id}', '{$author}', '{$email}', '{$comment_content}', 'Unapproved', now())";
                 $q = mysqli_query($connect, $sql);
                 $msg = query_confirm($q);
@@ -438,7 +438,7 @@
                 $user_password = $_POST['password'];
 
 
-                $sql = "INSERT INTO ".USERS_TABLE."(user_firstname, user_lastname, user_role, username, user_email, user_password) ";
+                $sql = "INSERT INTO ".USERS."(user_firstname, user_lastname, user_role, username, user_email, user_password) ";
                 $sql .= "VALUE('{$first_n}', '{$last_n}', '{$user_role}', '{$username}', '{$user_email}', '{$user_password}' )";
                 $q = mysqli_query($connect, $sql);
                 $msg = query_confirm($q);
@@ -464,7 +464,7 @@
         
         //$_POST['select_ary'] is an array
         foreach($_POST['select_ary'] as $checkbox){
-            $sql = "DELETE FROM ".USERS_TABLE." WHERE user_id = '{$checkbox}'";
+            $sql = "DELETE FROM ".USERS." WHERE user_id = '{$checkbox}'";
             $q = mysqli_query($connect, $sql);
         }
         $msg = query_confirm($q);     
@@ -486,7 +486,7 @@
             $salt = "$2a$07$"."Sphinxofblackfoxelephjflks$";
             $en_password = crypt($user_password, $salt);
 
-            $sql2 = "UPDATE ".USERS_TABLE." SET  user_firstname = '{$first_n}', user_lastname = '{$last_n}',";
+            $sql2 = "UPDATE ".USERS." SET  user_firstname = '{$first_n}', user_lastname = '{$last_n}',";
             $sql2 .= " user_role = '{$user_role}', user_email = '{$user_email}', user_password = '{$user_password}', username = '{$username}', user_randSalt = '{$en_password}'";
             $sql2 .= " WHERE user_id = '{$user_id}';";
             $query2 = mysqli_query($connect, $sql2);                        
@@ -500,7 +500,7 @@
         global $connect;
 
         foreach($_POST['select_ary'] as $checkbox){
-            $sql = "UPDATE ".USERS_TABLE." SET user_role = '{$role}' WHERE user_id = '{$checkbox}'";
+            $sql = "UPDATE ".USERS." SET user_role = '{$role}' WHERE user_id = '{$checkbox}'";
             $q = mysqli_query($connect, $sql);
         }
 
@@ -538,7 +538,7 @@
 
             $role = "Subscriber";
     
-            $sql = "INSERT INTO ".USERS_TABLE."(username, user_email, user_password, user_role, user_randSalt) VALUE('{$username}', '{$email}', '{$password}', '{$role}', '{$en_password}')";
+            $sql = "INSERT INTO ".USERS."(username, user_email, user_password, user_role, user_randSalt) VALUE('{$username}', '{$email}', '{$password}', '{$role}', '{$en_password}')";
             $q = mysqli_query($connect, $sql);
             if($q){
                 $msg = "Congrats! You are our subscriber from now on.";
@@ -549,7 +549,7 @@
     }
 
     function increase_view_count($connect, $p_id){
-        $sql = "UPDATE ".POSTS_TABLE." SET post_view_count = post_view_count + 1 WHERE post_id = ".$p_id;
+        $sql = "UPDATE ".POSTS." SET post_view_count = post_view_count + 1 WHERE post_id = ".$p_id;
         $q = mysqli_query($connect, $sql);
         if(!$q){
             die("Error").mysqli_error($connect, $q);
@@ -559,7 +559,7 @@
     function like_dis($connect, $p_id, $like){
         
         if(isset($_SESSION['user_role'])){
-            $sql2 = "SELECT * FROM ".LIKES_TABLE." WHERE user_id = ".$_SESSION['user_id']." AND post_id = ".$p_id;
+            $sql2 = "SELECT * FROM ".LIKES." WHERE user_id = ".$_SESSION['user_id']." AND post_id = ".$p_id;
             
             $q2 = mysqli_query($connect, $sql2);
             if($q2){
@@ -570,7 +570,7 @@
 
                     // If the like_dis is not the same, means change the like
                     if($row['like_dis'] != $like){
-                        $sql4 = "UPDATE ". LIKES_TABLE ." SET like_dis = '{$like}' WHERE user_id = '{$_SESSION['user_id']}' AND post_id = '{$p_id}';";
+                        $sql4 = "UPDATE ". LIKES ." SET like_dis = '{$like}' WHERE user_id = '{$_SESSION['user_id']}' AND post_id = '{$p_id}';";
                         $q4 = mysqli_query($connect, $sql4);
                         if(!$q4){
                             die("Error").mysqli_error($connect, $q4);
@@ -583,7 +583,7 @@
                         else{
                             $condition = " SET post_dislike = post_dislike + 1, post_like = post_like - 1";
                         }
-                        $sql6 = "UPDATE " . POSTS_TABLE . $condition . " WHERE post_id = " . $p_id;
+                        $sql6 = "UPDATE " . POSTS . $condition . " WHERE post_id = " . $p_id;
                         
                         $q6 = mysqli_query($connect, $sql6);
                         if(!$q6){
@@ -597,7 +597,7 @@
                 }
                 else{
                     // NOT EXIST
-                    $sql3 = "INSERT INTO ". LIKES_TABLE ."(user_id, post_id, like_dis) VALUES('{$_SESSION['user_id']}', '{$p_id}', '{$like}');";
+                    $sql3 = "INSERT INTO ". LIKES ."(user_id, post_id, like_dis) VALUES('{$_SESSION['user_id']}', '{$p_id}', '{$like}');";
                     echo $sql3;
                     $q3 = mysqli_query($connect, $sql3);
                     if(!$q3){
@@ -612,7 +612,7 @@
                         $condition = " SET post_dislike = post_dislike + 1";
                     }
 
-                    $sql5 = "UPDATE ". POSTS_TABLE .$condition." WHERE post_id = " . $p_id;
+                    $sql5 = "UPDATE ". POSTS .$condition." WHERE post_id = " . $p_id;
                     
                     $q5 = mysqli_query($connect, $sql5);
                     if(!$q5){

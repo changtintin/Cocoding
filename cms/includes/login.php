@@ -10,7 +10,7 @@
         $username =  mysqli_real_escape_string ($connect, $_POST['username']);
         $password =  mysqli_real_escape_string ($connect, $_POST['password']);
 
-        $sql = "SELECT * FROM ".USERS_TABLE." WHERE username = '{$username}';";
+        $sql = "SELECT * FROM ".USERS." WHERE username = '{$username}';";
         
         $q = mysqli_query($connect, $sql);
         if($q){

@@ -22,7 +22,7 @@
         <?php
             if(isset($_GET['edit_id'])){
                 $id = $_GET['edit_id'];
-                $sql = "SELECT * FROM ".POSTS_TABLE. " WHERE post_id = '{$id}';";
+                $sql = "SELECT * FROM ".POSTS. " WHERE post_id = '{$id}';";
                 
                 $q = mysqli_query($connect, $sql);
                 
@@ -55,7 +55,7 @@
                 <?php
                     
                     if($connect){
-                        $sql = "SELECT * FROM ".CATER_TABLE;
+                        $sql = "SELECT * FROM ".CATER;
                         $query = mysqli_query($connect, $sql);
                         if(mysqli_num_rows($query) > 0){
                             while($row = mysqli_fetch_assoc($query)){

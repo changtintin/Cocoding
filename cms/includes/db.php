@@ -4,18 +4,18 @@
     $db['password'] = "root";
     $db['db_name'] = "cms";
     
-    define('CATER_TABLE', "categories");
-    define('POSTS_TABLE', "posts");
-    define('COMMENTS_TABLE', "comments");
-    define('USERS_TABLE', "users");
-    define('LIKES_TABLE', "likes");
+    define('CATER', "categories");
+    define('POSTS', "posts");
+    define('COMMENTS', "comments");
+    define('USERS', "users");
+    define('LIKES', "likes");
 
+    define('HOST', "localhost");
+    define('USER', "root");
+    define('PASSWORD', "root");
+    define('DB_NAME', "cms");
 
-
-    foreach($db as $key => $value){
-        $upper = strtoupper($key);
-        define($upper, $value); // declare constant
-    }
+    
     $connect = mysqli_connect(HOST, USER, PASSWORD, DB_NAME);
 
     if(!$connect){

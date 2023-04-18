@@ -114,7 +114,7 @@
                     }
                     echo $order ;
 
-                    $sql = "SELECT * FROM ".POSTS_TABLE.$order;
+                    $sql = "SELECT * FROM ".POSTS.$order;
                     $query = mysqli_query($connect, $sql);
                     if(mysqli_num_rows($query) > 0){
                         while($row = mysqli_fetch_assoc($query)){
@@ -139,7 +139,7 @@
                                 
                                 <?php
                                     if(!empty($cater)){
-                                        $sql = "SELECT * FROM ".CATER_TABLE." WHERE cat_id = {$cater}";
+                                        $sql = "SELECT * FROM ".CATER." WHERE cat_id = {$cater}";
                                         $q = mysqli_query($connect, $sql);
                                         if(mysqli_num_rows($q) > 0){
                                             $r = mysqli_fetch_assoc($q);

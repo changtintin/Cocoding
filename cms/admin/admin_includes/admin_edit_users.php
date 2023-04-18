@@ -22,7 +22,7 @@
         <?php
             if(isset($_GET['edit_id'])){
                 $id = $_GET['edit_id'];
-                $sql = "SELECT * FROM ".USERS_TABLE. " WHERE user_id = '{$id}';";
+                $sql = "SELECT * FROM ".USERS. " WHERE user_id = '{$id}';";
                 
                 $q = mysqli_query($connect, $sql);
                 

@@ -64,7 +64,7 @@
                                     <?php
                                         
                                         if($connect){
-                                            $sql = "SELECT * FROM ".POSTS_TABLE;
+                                            $sql = "SELECT * FROM ".POSTS;
                                             $query = mysqli_query($connect, $sql);
                                             if(mysqli_num_rows($query) > 0){
                                                 while($row = mysqli_fetch_assoc($query)){
@@ -113,7 +113,7 @@
                 </h3> 
 
                 <?php
-                        $query = "SELECT * FROM ".COMMENTS_TABLE." WHERE comment_post_id = {$p_id} AND comment_status = 'Approved';";
+                        $query = "SELECT * FROM ".COMMENTS." WHERE comment_post_id = {$p_id} AND comment_status = 'Approved';";
                         $result = mysqli_query($connect, $query);
                         if($result){                    
                             if(mysqli_num_rows($result) > 0){

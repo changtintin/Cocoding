@@ -24,7 +24,7 @@
                         else{
                             $tag = "post_tags";
                             $title = "post_title";
-                            $query = "SELECT * FROM ".POSTS_TABLE." WHERE {$tag} LIKE '%{$search_input}%' OR {$title} LIKE '%{$search_input}%';";
+                            $query = "SELECT * FROM ".POSTS." WHERE {$tag} LIKE '%{$search_input}%' OR {$title} LIKE '%{$search_input}%';";
                            
                             $result = mysqli_query($connect, $query);
                             if(!$result)
