@@ -52,6 +52,12 @@
                                         <a href='./admin/index.php' style = 'font-weight:bold; font-size: small; color:#f2ca8f;'><span class='glyphicon glyphicon glyphicon-wrench'></span> Admin </a>
                                     </li>";
                             }
+                            if($_SESSION['user_id']){
+                                echo "
+                                    <li>
+                                        <a href='./user/index.php' style = 'font-weight:bold; font-size: small; color:#cdb39f;'><span class='glyphicon glyphicon-user'></span> User </a>
+                                    </li>";
+                            }
 
                             if(isset($_GET['p_id'])){
                                 echo"

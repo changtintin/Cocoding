@@ -8,7 +8,7 @@
     define('POSTS', "posts");
     define('COMMENTS', "comments");
     define('USERS', "users");
-    define('LIKES', "likes");
+    define('LIKES', "post_likes");
 
     define('HOST', "localhost");
     define('USER', "root");

@@ -15,7 +15,7 @@
                 <?php
                     if(isset($_GET['cat'])){
                         $c_id = $_GET['cat'];
-                        $query = "SELECT * FROM ".POSTS_TABLE." WHERE post_cater_id = {$c_id} AND post_status = 'Published';";
+                        $query = "SELECT * FROM ".POSTS." WHERE post_cater_id = {$c_id} AND post_status = 'Published';";
                         
                         $result = mysqli_query($connect, $query);
                         echo '<div id = "alert_edit" >';
@@ -104,7 +104,7 @@
                             ";
                             global $connect;
 
-                            $q = "SELECT * FROM ". CATER_TABLE;
+                            $q = "SELECT * FROM ". CATER;
                             $select_cater_sidebar = mysqli_query($connect, $q);
                             if($select_cater_sidebar){
                                 while($fetch_row = mysqli_fetch_assoc($select_cater_sidebar)){

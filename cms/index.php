@@ -28,21 +28,50 @@ include "includes/header.php";
             <!-- Blog Entries Column -->
             <div class="col-md-8">
                 <?php
-                $query = "SELECT * FROM " . POSTS . " WHERE post_status = 'Published' LIMIT 5";
-                $result = mysqli_query($connect, $query);
+                    $post_per_page = 3;
+                    $post_start = 0;
+                    $cur_page = 0;
+                    
+                    
+                    if(isset($_GET['next'])){
+                        $cur_page = $_GET['cur_page'];
+                        $post_start = $cur_page * $post_per_page - 1 + 3;
+                    }
+                    else if(isset($_GET['last'])){
+                        $cur_page = $_GET['cur_page'];
+                        $post_start = $cur_page * $post_per_page - 1 - 3;
+                    }
+                    else if(isset($_GET['cur_page'])){
+                        $cur_page = $_GET['cur_page'];
+                        $post_start = $cur_page * $post_per_page - 1;
+                    }
+                    
+                   
+                    $sql = "SELECT * FROM ".POSTS;
+                    $q = mysqli_query($connect, $sql);
+                    if(!$q){
+                        echo mysqli_error($connect, $q);
+                    }
+                    if(mysqli_num_rows($q) > 0){
+                        $post_num = mysqli_num_rows($q);
+                    }
 
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $post_id = $row['post_id'];
-                    $post_title = $row['post_title'];
-                    $post_author = $row['post_author'];
-                    $post_date = $row['post_date'];
-                    $post_image = $row['post_image'];
-                    $post_tags = $row['post_tags'];
-                    $post_comment_count = $row['post_comment_count'];
-                    $post_view_count = $row['post_view_count'];
-                    $post_status = $row['post_status'];
-                    $post_cater_id = $row['post_cater_id'];
-                    $post_content = $row['post_content'];
+
+                    $query = "SELECT * FROM " . POSTS . " WHERE post_status = 'Published' LIMIT {$post_start}, {$post_per_page}";
+                    $result = mysqli_query($connect, $query);
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $post_id = $row['post_id'];
+                        $post_title = $row['post_title'];
+                        $post_author = $row['post_author'];
+                        $post_date = $row['post_date'];
+                        $post_image = $row['post_image'];
+                        $post_tags = $row['post_tags'];
+                        $post_comment_count = $row['post_comment_count'];
+                        $post_view_count = $row['post_view_count'];
+                        $post_status = $row['post_status'];
+                        $post_cater_id = $row['post_cater_id'];
+                        $post_content = $row['post_content'];
                 ?>
                     <div class="well" style="background-color:rgba(255, 254, 251, 0.8);padding-left: 30px;padding-right: 30px;padding-bottom: 30px;">
 
@@ -94,9 +123,37 @@ include "includes/header.php";
                         </div>
                     </div>
 
-                <?php
-                }
-                ?>
+                    <?php
+                    }
+                    ?>
+
+                <ul class = "pager">
+                    
+                    <?php 
+                        $limit = $post_num/$post_per_page;
+                        if($limit != 0){
+                            echo '
+                                <li>
+                                    <a href="index.php?last=1&cur_page='.$cur_page.'"></a>
+                                </li>
+                            ';
+                        
+                            for($i = 1; $i < $limit; $i++){
+                                echo '
+                                <li>
+                                    <a href="index.php?cur_page='.$i.'">'.$i.'</a>
+                                </li>
+                                ';
+                            }
+
+                            echo '
+                                <li>
+                                    <a href="index.php?next=1&cur_page='.$cur_page.'"></a>
+                                </li>
+                            ';
+                        }
+                    ?>
+                </ul>
 
             </div>
 

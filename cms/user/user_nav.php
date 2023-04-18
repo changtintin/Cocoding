@@ -59,7 +59,7 @@
                     </li>
 
                     <li>
-                        <a href="#"><span class="glyphicon glyphicon-list-alt"></span> Likes / Dislikes</a>
+                        <a href="user_like.php"><span class="glyphicon glyphicon-list-alt"></span> Likes / Dislikes</a>
                     </li>
 
                 </ul>

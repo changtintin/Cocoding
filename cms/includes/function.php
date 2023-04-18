@@ -496,6 +496,25 @@
         }
     }
 
+    function edit_profile($user_id){        
+        global $connect;
+        if(isset($_POST['edit_user'])){
+            $first_n = $_POST['first_n'];
+            $last_n = $_POST['last_n'];
+            $username = $_POST['username'];            
+            $user_email= $_POST['email'];
+
+
+            $sql2 = "UPDATE ".USERS." SET  user_firstname = '{$first_n}', user_lastname = '{$last_n}',";
+            $sql2 .= " user_email = '{$user_email}', username = '{$username}'";
+            $sql2 .= " WHERE user_id = '{$user_id}';";
+            $query2 = mysqli_query($connect, $sql2);                        
+            
+            $msg = query_confirm($query2);     
+            header("Location: http://localhost:8888/cms/user/user_profile.php?confirm_msg={$msg}", TRUE, 301);
+        }
+    }
+
     function switch_user_role($role){
         global $connect;
 
@@ -556,7 +575,7 @@
         }
     }
 
-    function like_dis($connect, $p_id, $like){
+    function user_feel($connect, $p_id, $like){
         
         if(isset($_SESSION['user_role'])){
             $sql2 = "SELECT * FROM ".LIKES." WHERE user_id = ".$_SESSION['user_id']." AND post_id = ".$p_id;
@@ -568,9 +587,9 @@
                     
                     $row = mysqli_fetch_assoc($q2);
 
-                    // If the like_dis is not the same, means change the like
-                    if($row['like_dis'] != $like){
-                        $sql4 = "UPDATE ". LIKES ." SET like_dis = '{$like}' WHERE user_id = '{$_SESSION['user_id']}' AND post_id = '{$p_id}';";
+                    // If the user_feel is not the same, means change the like
+                    if($row['user_feel'] != $like){
+                        $sql4 = "UPDATE ". LIKES ." SET user_feel = '{$like}' WHERE user_id = '{$_SESSION['user_id']}' AND post_id = '{$p_id}';";
                         $q4 = mysqli_query($connect, $sql4);
                         if(!$q4){
                             die("Error").mysqli_error($connect, $q4);
@@ -597,7 +616,7 @@
                 }
                 else{
                     // NOT EXIST
-                    $sql3 = "INSERT INTO ". LIKES ."(user_id, post_id, like_dis) VALUES('{$_SESSION['user_id']}', '{$p_id}', '{$like}');";
+                    $sql3 = "INSERT INTO ". LIKES ."(user_id, post_id, user_feel) VALUES('{$_SESSION['user_id']}', '{$p_id}', '{$like}');";
                     echo $sql3;
                     $q3 = mysqli_query($connect, $sql3);
                     if(!$q3){
@@ -629,5 +648,30 @@
         else{
             echo "Plz login !!!!!";
         }
+    }
+
+    function fetch_like_posts($connect, $id){
+        $sql = "SELECT * FROM ".LIKES." WHERE user_id = {$id} AND user_feel = 'like';";
+        $q = mysqli_query($connect ,$sql);
+        if($q){
+            if(mysqli_num_rows($q) > 0 ){
+                while($result = mysqli_fetch_assoc($q)){                    
+                    $sql = "SELECT post_title FROM ".POSTS. " WHERE post_id = '{$result['post_id']}'; ";
+                    $q = mysqli_query($connect ,$sql);
+                    if($q){
+                        if(mysqli_num_rows($q) > 0){
+                            $result = mysqli_fetch_row($q);
+                            echo '
+                                <a href="#" class="list-group-item">'.$result[0].'</a>
+                            ';
+                        }
+                    }
+                }
+            }
+        }
+        else{
+            echo mysqli_error($connect, $q);
+        }
+        
     }
 ?>

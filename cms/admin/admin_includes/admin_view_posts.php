@@ -10,7 +10,9 @@
                     <option value = "post_cater_id">Category</option>
                     <option value = "post_comment_count">Comment count</option>
                     <option value = "post_view_count">View count</option>
-                    <option value = "post_date">Date</option>         
+                    <option value = "post_date">Date</option>       
+                    <option value = "post_like">Like</option>
+                    <option value = "post_dislike">Dislike</option>     
                 </select>
             </div>
             <div class="btn-group mr-3" role="group">
@@ -32,13 +34,6 @@
 <form method="post">
     <div class="text-right" style="padding-bottom: 20px;">
         
-        <div class="btn-group mr-5" role="group">
-            <a id="sorting_button" href="#">
-                <i style = "text-decoration: underline; font-weight:400; padding-right:500px;">
-                    Sorting
-                </i>
-            </a>
-        </div>
         
         <div class="btn-group dropup mr-3">
             <div class="btn-group mr-3" role="group">
@@ -61,8 +56,16 @@
             
         <div class="btn-group mr-3 " role="group">
             <div class="btn-group mr-3" role="group">
+                <a class="btn btn-primary" id="sorting_button" href="#">
+                    <i style = "font-weight:600; color: #ffffb5;">
+                        SORT                                            
+                    </i>
+                </a>
+            </div>
+            <div class="btn-group mr-3" role="group">
                 <a href="admin_posts.php?source=admin_add_posts" class="btn btn-primary">
-                    Add a new post
+                    <span class="glyphicon glyphicon-edit"></span>
+                    New post
                 </a>
             </div>
             <div class="btn-group mr-3" role="group" >
@@ -94,7 +97,10 @@
                 <th scope = "col">Comments</th>
                 <th scope = "col">Views</th>
                 <th scope = "col">Date</th>
+                <th scope = "col">Like</th>
+                <th scope = "col">Dislike</th>
                 <th scope = "col">Select</th>
+                
             </tr>
         </thead>
             
@@ -129,6 +135,8 @@
                             $comment = $row['post_comment_count'];
                             $view = $row['post_view_count'];
                             $date = $row['post_date'];
+                            $like = $row['post_like'];
+                            $dislike = $row['post_dislike'];
                 ?>
                             <tr>
                                 <th scope="row"><?php echo $id;?></th> 
@@ -160,6 +168,8 @@
                                 <td><?php echo $view;?></td>
                             
                                 <td><?php echo $date;?></td>
+                                <td><?php echo $like;?></td>
+                                <td><?php echo $dislike;?></td>
 
                                 <td>                        
                                     <div class="form-check checkbox-lg">

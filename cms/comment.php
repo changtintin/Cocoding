@@ -2,12 +2,12 @@
                     
                     if(isset($_POST['like_btn'])){
                         $like_dis = 'like';
-                        like_dis($connect, $p_id, $like_dis);
+                        user_feel($connect, $p_id, $like_dis);
                         
                     }
                     if(isset($_POST['dislike_btn'])){
                         $like_dis = 'dislike';
-                        like_dis($connect, $p_id, $like_dis);
+                        user_feel($connect, $p_id, $like_dis);
                     }
                     
                 ?>
