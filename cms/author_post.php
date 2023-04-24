@@ -25,7 +25,7 @@
                         query_msg_alert();
                         if(isset($_GET['author'])){
                             $author = $_GET['author'];
-                            $query = "SELECT * FROM ".POSTS_TABLE." WHERE post_status = 'Published' AND post_author = '{$author}';";
+                            $query = "SELECT * FROM ".POSTS." WHERE post_status = 'Published' AND post_author = '{$author}';";
                             $result = mysqli_query($connect, $query);
                             if($result){
                                 if(mysqli_num_rows($result) > 0){

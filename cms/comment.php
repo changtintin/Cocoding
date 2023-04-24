@@ -1,19 +1,16 @@
-                <?php 
-                    
+                <?php                     
                     if(isset($_POST['like_btn'])){
                         $like_dis = 'like';
-                        like_dis($connect, $p_id, $like_dis);
+                        user_feel($connect, $p_id, $like_dis);
                         
                     }
                     if(isset($_POST['dislike_btn'])){
                         $like_dis = 'dislike';
-                        like_dis($connect, $p_id, $like_dis);
-                    }
-                    
+                        user_feel($connect, $p_id, $like_dis);
+                    }                    
                 ?>
                 
-                <div class="well">
-
+                <div class="well">                    
                     <form method="post">
                         <div class="col">
                             <h4>What do you think?</h4>
@@ -57,29 +54,24 @@
                             </div>
                         </div>
                         
-                        <!-- <div class="form-group row">
-                            <label class="col-sm-4 col-form-label  pt-0" for = "cater_id">In response to</label>
-                            <div class="col-sm-8">
-                                <select multiple class="form-control" name = "cater_id">
-                                    <?php
-                                        
-                                        if($connect){
-                                            $sql = "SELECT * FROM ".POSTS_TABLE;
-                                            $query = mysqli_query($connect, $sql);
-                                            if(mysqli_num_rows($query) > 0){
-                                                while($row = mysqli_fetch_assoc($query)){
-                                                    $name = $row['post_title'];
-                                                    $id = $row['post_id'];
-                                    ?>
-                                            <option value = "<?php echo $id;?>"><?php echo $name;?></option>    
-                                    <?php                
-                                                }
-                                            }
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                        </div> -->
+                        
+                        <?php
+                            
+                            if($connect){
+                                $sql = "SELECT * FROM ".POSTS;
+                                $query = mysqli_query($connect, $sql);
+                                if(mysqli_num_rows($query) > 0){
+                                    while($row = mysqli_fetch_assoc($query)){
+                                        $name = $row['post_title'];
+                                        $id = $row['post_id'];
+                        ?>
+                                <option value = "<?php echo $id;?>"><?php echo $name;?></option>    
+                        <?php                
+                                    }
+                                }
+                            }
+                        ?>
+                                
 
                         <div class="form-group row">
                             <label for="author" class="col-sm-2 col-form-label">Author</label>
@@ -113,7 +105,7 @@
                 </h3> 
 
                 <?php
-                        $query = "SELECT * FROM ".COMMENTS_TABLE." WHERE comment_post_id = {$p_id} AND comment_status = 'Approved';";
+                        $query = "SELECT * FROM ".COMMENTS." WHERE comment_post_id = {$p_id} AND comment_status = 'Approved';";
                         $result = mysqli_query($connect, $query);
                         if($result){                    
                             if(mysqli_num_rows($result) > 0){

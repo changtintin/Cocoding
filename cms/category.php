@@ -8,21 +8,41 @@
     <?php
         include "includes/nav.php";
     ?>
+    <script>
+        function close_alert_edit(field_name) {
+            switch(field_name){
+                case "ad":
+                    document.getElementById("ad_window").innerHTML = " ";
+                break;
 
+                case "social":
+                    document.getElementById("social_window").innerHTML = " ";
+                break;
+
+                case "notice":
+                    document.getElementById("notice_window").innerHTML = " ";
+                break;
+
+                default:
+                    document.getElementById("alert_edit").innerHTML = " ";
+                break;
+            }
+        }
+    </script>
     <!-- Page Content -->
     <div class="container">
         <div class="row">
-                <?php
-                    if(isset($_GET['cat'])){
-                        $c_id = $_GET['cat'];
-                        $query = "SELECT * FROM ".POSTS_TABLE." WHERE post_cater_id = {$c_id} AND post_status = 'Published';";
-                        
-                        $result = mysqli_query($connect, $query);
-                        echo '<div id = "alert_edit" >';
-                        query_confirm($result);
-                        echo '<div>';
-                        if(mysqli_num_rows($result) > 0){
-                ?>
+            <?php
+                if(isset($_GET['cat'])){
+                    $c_id = $_GET['cat'];
+                    $query = "SELECT * FROM ".POSTS." WHERE post_cater_id = {$c_id} AND post_status = 'Published';";
+                    
+                    $result = mysqli_query($connect, $query);
+                    echo '<div id = "alert_edit" >';
+                    query_confirm($result);
+                    echo '<div>';
+                    if(mysqli_num_rows($result) > 0){
+            ?>
             <!-- Blog Entries Column -->
             <div class="col-md-8">
                 <?php
@@ -70,7 +90,9 @@
 
 
                 <div style='padding-bottom: 50px; padding-top: 40px;'>
-                    <img class = "img-responsive" src = "image/<?php echo $post_image;?>" alt="<?php echo $post_image;?>">
+                    <a href="post.php?p_id=<?php echo $post_id; ?>">
+                        <img class = "img-responsive" src = "image/<?php echo $post_image;?>" alt="<?php echo $post_image;?>">
+                    </a>
                 </div>
 
                 <p>
@@ -81,12 +103,12 @@
                             ?> 
                         </div>
                                 
-                                <div class="mt-4">
-                                    <a class = "btn btn-primary" href = "post.php?p_id=<?php echo $post_id; ?>">
-                                        Read More <span class="glyphicon glyphicon-chevron-right"></span>
-                                    </a>
-                                </div> 
-                                <hr>
+                        <div class="mt-4">
+                            <a class = "btn btn-primary" href = "post.php?p_id=<?php echo $post_id; ?>">
+                                Read More <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div> 
+                        <hr>
                     <?php
                             }
                         }
@@ -102,7 +124,7 @@
                             ";
                             global $connect;
 
-                            $q = "SELECT * FROM ". CATER_TABLE;
+                            $q = "SELECT * FROM ". CATER;
                             $select_cater_sidebar = mysqli_query($connect, $q);
                             if($select_cater_sidebar){
                                 while($fetch_row = mysqli_fetch_assoc($select_cater_sidebar)){
@@ -136,13 +158,13 @@
             <?php
                 include "includes/sidebar.php";
             ?>
-    </div>
+    
         <!-- /.row -->
 
-        <hr>
-        <?php
-            include "includes/footer.php";
-        ?>
+    <hr>
+    <?php
+        include "includes/footer.php";
+    ?>
 
 </body>
 

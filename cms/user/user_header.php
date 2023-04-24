@@ -1,46 +1,36 @@
-
 <?php
-    
     include "../includes/function.php";
+
     ob_start(); //buffering our request
     session_start();
     
     if(isset($_SESSION['user_role'])){
-        if($_SESSION['user_role'] !== "Admin"){
-            $msg = "You can't access the admin";
-            header("Location: http://localhost:8888/cms/index.php?confirm_msg={$msg}");
-        }
+        header("index.php");
     }
-    else{
-        header("Location:../index.php");
-    }
- 
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CMB Admin - Bootstrap Admin Template</title>
+    <title>User Admin</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="./css/bootstrap.main.css" rel="stylesheet">
+    <link href="../admin/css/bootstrap.main.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="./css/admin.css" rel="stylesheet">
+    <link href="../admin/css/admin.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Loader CSS -->
-    <link href="./css/loader.css" rel="stylesheet">
+    <link href="../admin/css/loader.css" rel="stylesheet">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -58,9 +48,9 @@
 
     <!-- include summernote css/js -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="css/summernote.css">
+    <link rel="stylesheet" href="../admin/css/summernote.css">
     
-    <script src="js/scripts.js"></script>
+    <script src="../admin/js/scripts.js"></script>
 
 </head>
 
@@ -88,7 +78,7 @@
 
     /* When moving the mouse over the close button */
     .closebtn:hover {
-        color: black;
+        color: #a0d7de;
     }
     
     /* Loader */

@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <?php
-include "includes/header.php";
-
+    include "includes/header.php";
 ?>
-
 
 <body>
     <!-- Navigation -->
@@ -14,11 +12,28 @@ include "includes/header.php";
     <!-- Page Content -->
     <div class="container">
         <div class="row">
-
+            
             <script>
-                function close_alert_edit() {
-                    document.getElementById("alert_edit").innerHTML = " ";
+                function close_alert_edit(field_name) {
+                    switch(field_name){
+                        case "ad":
+                            document.getElementById("ad_window").innerHTML = " ";
+                        break;
+
+                        case "social":
+                            document.getElementById("social_window").innerHTML = " ";
+                        break;
+
+                        case "notice":
+                            document.getElementById("notice_window").innerHTML = " ";
+                        break;
+
+                        default:
+                            document.getElementById("alert_edit").innerHTML = " ";
+                        break;
+                    }
                 }
+                
             </script>
 
             <?php
@@ -26,47 +41,63 @@ include "includes/header.php";
             ?>
 
             <!-- Blog Entries Column -->
-            <div class="col-md-8">
+            <div class="col-md-8">  
                 <?php
-                if(isset($_GET['page'])){
-                    $start = $_GET['page'] * 3;
-                    echo "NEW ".$start;
-                }
-                else{
-                    $start = 0;                    
-                    $limit = 3;
-                }
 
+                    
+                    $post_per_page = 3;
+                    $post_start = 0;
+                    
 
-                $query1 = "SELECT COUNT(post_title) FROM ".POSTS_TABLE." WHERE post_status = 'Published';";
-                $result1 = mysqli_query($connect, $query1);
-                if($result1){
-                    if(mysqli_num_rows($result1)>0){
-                       $post_count = mysqli_fetch_row($result1);
-                       $post_nums = $post_count[0];
-                       
+                    $sql = "SELECT * FROM ".POSTS;
+                    $q = mysqli_query($connect, $sql);
+                    
+                    if(!$q){
+                        echo mysqli_error($connect, $q);
                     }
-                }
+                    if(mysqli_num_rows($q) > 0){
+                        $post_num = mysqli_num_rows($q);
+                    }
+                    
+                    $limit = $post_num / $post_per_page;
+                    
 
-                
-                $query = "SELECT * FROM " . POSTS_TABLE . " WHERE post_status = 'Published' LIMIT {$start},3";
-                $result = mysqli_query($connect, $query);
-                if($result){
-                
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $post_id = $row['post_id'];
-                        $post_title = $row['post_title'];
-                        $post_author = $row['post_author'];
-                        $post_date = $row['post_date'];
-                        $post_image = $row['post_image'];
-                        $post_tags = $row['post_tags'];
-                        $post_comment_count = $row['post_comment_count'];
-                        $post_view_count = $row['post_view_count'];
-                        $post_status = $row['post_status'];
-                        $post_cater_id = $row['post_cater_id'];
-                        $post_content = $row['post_content'];
+                    if(isset($_GET['cur_page'])){
+                        $cur_page = $_GET['cur_page'];  
+                        $post_start = $cur_page * $post_per_page;  
+
+                        if($post_start < 0 || $post_start > $post_num - $post_per_page){
+                            $post_start = 0;
+                        }
+                    }
+                    else{
+                        $cur_page = 0;
+                    }
+                    
+                    
+
+                    $query = "SELECT * FROM " . POSTS . " WHERE post_status = 'Published' LIMIT {$post_start}, {$post_per_page}; ";
+                    // echo $query;
+                    $result = mysqli_query($connect, $query);
+                    if(!$result){
+                        echo "Error";
+                    }
+                    if(mysqli_num_rows($result) > 0){
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $post_id = $row['post_id'];
+                            $post_title = $row['post_title'];
+                            $post_author = $row['post_author'];
+                            $post_date = $row['post_date'];
+                            $post_image = $row['post_image'];
+                            $post_tags = $row['post_tags'];
+                            $post_comment_count = $row['post_comment_count'];
+                            $post_view_count = $row['post_view_count'];
+                            $post_status = $row['post_status'];
+                            $post_cater_id = $row['post_cater_id'];
+                            $post_content = $row['post_content'];
                     ?>
-                        <div class="well" style="background-color:rgba(255, 254, 251, 0.8);padding-left: 30px;padding-right: 30px;padding-bottom: 30px;">
+                    
+                        <div class="well" style="background-color:rgba(255, 254, 251, 0.8);padding-left: 30px;padding-right: 30px;padding-bottom: 30px;">                        
 
                             <h1 class="page-header">
                                 <a href="post.php?p_id=<?php echo $post_id; ?>" ><?php echo $post_title; ?></a>
@@ -117,48 +148,63 @@ include "includes/header.php";
                         </div>
 
                     <?php
+
+                        }
                     }
-                }
-                ?>
+                    ?>
 
+
+                <ul class = "pager">                    
+                    <?php                         
+                        if($limit != 0){
+                            
+                            if($cur_page >= $limit){
+                                $cur_page = 0;
+                            }
+                            else if(($cur_page - 1) <  -1){
+                                $cur_page = 0;
+                            }
+                            
+
+                            echo '
+                                <li>
+                                    <a href="index.php?cur_page='.($cur_page - 1).'">
+                                        <span class = "glyphicon glyphicon-arrow-left"></span>
+                                    </a>
+                                </li>
+                            ';
+                        
+                            for($i = 0; $i < $limit - 1; $i++){
+                                echo '
+                                <li>
+                                    <a href="index.php?cur_page='.$i.'">'.($i + 1).'</a>
+                                </li>
+                                ';
+                            }
+                                                        
+                            echo '
+                                <li>
+                                    <a href="index.php?cur_page='.($cur_page + 1).'">
+                                        <span class = "glyphicon glyphicon-arrow-right"></span>
+                                    </a>
+                                </li>
+                            ';
+                        }
+                    ?>
+                </ul>                
             </div>
-
+            
             <!-- Blog Sidebar Widgets Column -->
             <?php
-            include "includes/sidebar.php";
+                include "includes/sidebar.php";
             ?>
             <!-- /.row -->
-            
-            
-            <ul class="pager">
-                <li>
-                    <a href='index.php?page=<?php if(isset($_GET['page']) && $_GET['page'] - 1 > 0){echo ($_GET['page'] -1);}else{ echo 0;}?>' style = 'font-family: Open Sans, sans-serif; font-weight: bold;'> 
-                        <span class="glyphicon glyphicon-arrow-left"></span>
-                    </a>
-                </li>
-                <?php
-                    $total_page = ceil($post_nums/ 3);
-                    for($i = 0; $i < $total_page; $i++){
-                        
-                        echo "
-                            <li>
-                                <a href='index.php?page={$i}' style = 'font-family: Open Sans, sans-serif; font-weight: bold;'> ".($i + 1)." </a>
-                            </li>
-                        ";
-                    }
-                ?>
-                <li>
-                    <a href='index.php?page=<?php if(isset($_GET['page']) && $_GET['page'] + 1 < $total_page){echo ($_GET['page'] + 1);}else{ echo 0;}?>' style = 'font-family: Open Sans, sans-serif; font-weight: bold;'> 
-                        <span class="glyphicon glyphicon-arrow-right"></span>
-                    </a>
-                </li>
-                
-            </ul>
+
+>>>>>>> develop
             
             <?php
                 include "includes/footer.php";
             ?>
-
 </body>
                 
 </html>

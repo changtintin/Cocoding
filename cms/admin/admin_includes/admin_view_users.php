@@ -50,12 +50,28 @@
         
         <tbody>
             <script>
-                function close_alert_edit(){
-                    document.getElementById("alert_edit").innerHTML=" ";
+                function close_alert_edit(field_name) {
+                    switch(field_name){
+                        case "ad":
+                            document.getElementById("ad_window").innerHTML = " ";
+                        break;
+
+                        case "social":
+                            document.getElementById("social_window").innerHTML = " ";
+                        break;
+
+                        case "notice":
+                            document.getElementById("notice_window").innerHTML = " ";
+                        break;
+
+                        default:
+                            document.getElementById("alert_edit").innerHTML = " ";
+                        break;
+                    }
                 }
             </script>
             <?php
-                $sql = "SELECT * FROM ".USERS_TABLE;
+                $sql = "SELECT * FROM ".USERS;
                 $query = mysqli_query($connect, $sql);
                 if(mysqli_num_rows($query) > 0){
                     while($row = mysqli_fetch_assoc($query)){
