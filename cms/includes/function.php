@@ -1,5 +1,24 @@
 
 <?php
+    //db.php
+    define('CATER', "categories");
+    define('POSTS', "posts");
+    define('COMMENTS', "comments");
+    define('USERS', "users");
+    define('LIKES', "post_likes");
+    define('ONLINE', "users_online");
+
+    define('HOST', "localhost");
+    define('USER', "root");
+    define('PASSWORD', "root");
+    define('DB_NAME', "cms");
+
+    
+    $connect = mysqli_connect(HOST, USER, PASSWORD, DB_NAME);
+
+    if(!$connect){
+        echo "Connection Failed";
+    }
     
     function insert_cater(){
         global $connect;
@@ -46,9 +65,10 @@
                 exit();
             }
             else{
+                $r = "\"ok\"";
                 echo "<div id = 'alert_edit'>
                         <div class='alert' >
-                            <span class='closebtn' onclick='close_alert_edit()'>&times;</span>
+                            <span class='closebtn' onclick='close_alert_edit({$r})'>&times;</span>
                             This Field should not be empty!!!!
                         </div> 
                     </div>";
@@ -88,7 +108,7 @@
                 $title = $fetch_row['cat_title'];
                 $id = $fetch_row['cat_id'];
                 echo "<li>
-                    <a href='category.php?cat={$id}' > 
+                    <a href='category.php?cat={$id}' target='_blank' rel='noopener noreferrer'> 
                         {$title} 
                     </a>
                 </li>";
@@ -105,7 +125,7 @@
             $i = 0;
             if(mysqli_num_rows($select_cater_sidebar) > 0){
                 while($fetch_row = mysqli_fetch_assoc($select_cater_sidebar)){
-                    if($i > 5)
+                    if($i > 4)
                         break;
                     $title = $fetch_row['cat_title'];
                     $id = $fetch_row['cat_id'];
@@ -138,18 +158,19 @@
             $sim = similar_text($m, 'ERROR', $perc);
             $sim2 = similar_text($m, 'Wrong', $perc);
             $sim3 = similar_text($m, "You can't", $perc);
+            $r = "\"ok\"";
 
             if($sim >= 5 ||  $sim2 >= 5 || $sim3 >= 7){
-                $m = "<span class='glyphicon glyphicon-remove'></span>  ".$m;
+                $m = "<span class='glyphicon glyphicon-remove'></span>".$m;
             }
             else{
-                $m = "<span class='glyphicon glyphicon-ok'></span>  ".$m;
+                $m = "<span class='glyphicon glyphicon-ok'></span>".$m;
             }
 
             echo "
                 <div id = 'alert_edit'>
                     <div class='alert' >
-                        <span class='closebtn' onclick='close_alert_edit()'>&times;</span>".$m
+                        <span class='closebtn' onclick='close_alert_edit({$r})'>&times;</span>".$m
                         ."
                     </div> 
                 </div>
@@ -564,7 +585,6 @@
             $en_password = crypt($password, $salt);
 
             $role = "Subscriber";
-    
             $sql = "INSERT INTO ".USERS."(username, user_email, user_password, user_role, user_randSalt) VALUE('{$username}', '{$email}', '{$password}', '{$role}', '{$en_password}')";
             $q = mysqli_query($connect, $sql);
             if($q){
@@ -670,9 +690,44 @@
         }
         else{
             echo mysqli_error($connect, $q);
-        }
-        
+        }        
     }
 
+    function users_online($connect){
+        if(isset($_GET['fetch_online'])){
+            session_start();
+            $session = session_id();
+            // echo "(session: ".$session.")";
+            $time = time();
+            $time_out_sec = 60;
+            $time_out = $time + $time_out_sec;                       
+
+            $sql = "SELECT * FROM users_online WHERE session = '{$session}';";
+            $q = mysqli_query($connect, $sql);
+            if(!$q){
+                die("Error").mysqli_error($connect, $q);
+            }
+            else{
+                   
+                if(mysqli_num_rows($q) > 0){
+                    // user has been here
+                    $sql2 = "UPDATE users_online(session, time) SET time = '{$time}' WHERE session = '{$session}'; ";
+                    mysqli_query($connect, $sql2);
+                }   
+                else{
+                    // new user login
+                    $sql2 = "INSERT INTO users_online(session, time) VALUES('{$session}','{$time}')";
+                    mysqli_query($connect, $sql2);
+                }                                                
+                
+                $sql3 = "SELECT * FROM users_online WHERE time < {$time_out}; ";
+                $q3 = mysqli_query($connect, $sql3);
+                $user_count = mysqli_num_rows($q3); 
+                echo $user_count;
+            }
+        }
+    }
     
+    users_online($connect);
+
 ?>

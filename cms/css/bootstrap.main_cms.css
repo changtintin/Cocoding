@@ -1798,6 +1798,7 @@ ul ul {
 .list-unstyled {
     padding-left: 0;
     list-style: none;
+    z-index: 1px;
 }
 
 .list-inline {
@@ -3988,8 +3989,8 @@ fieldset[disabled] .btn-primary:hover {
 
 .btn-success {
     color: #fff;
-    background-color: #5c82b8;
-    border-color: #8599b7
+    background-color: #cec3a2;
+    border-color: #cec3a2
 }
 
 .btn-success.active,

@@ -23,9 +23,9 @@
     <![endif]-->
 
     <!-- include summernote css/js -->
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-
+    <link rel="stylesheet" href="../admin/css/summernote.css">
+    <script src="js/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <style>
     .alert {
@@ -103,5 +103,34 @@
         letter-spacing: 0.8px;
     }
 
+
+    #float_window {
+        position:fixed;
+        left:0;
+        bottom: 30px;
+        top: 400px;
+        z-index: 10;
+    }
+
+    #float_content{               
+        width: 250px;
+        height: 50px;
+        float: left;                
+        
+    }
+
+    .card-body{
+        padding: 10px;
+        background-color: #ad9f95;
+        border-radius: 20px;
+    }
+    
+    .card-text{
+        font-size: small;
+    }
+    
     
 </style>
+<?php 
+    include "function.php";
+?>

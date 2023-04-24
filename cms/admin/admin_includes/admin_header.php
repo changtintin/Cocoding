@@ -1,6 +1,6 @@
 
 <?php
-    include "../includes/db.php";
+    
     include "../includes/function.php";
     ob_start(); //buffering our request
     session_start();

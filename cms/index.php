@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <?php
-include "includes/header.php";
-
+    include "includes/header.php";
 ?>
-
 
 <body>
     <!-- Navigation -->
@@ -14,11 +12,28 @@ include "includes/header.php";
     <!-- Page Content -->
     <div class="container">
         <div class="row">
-
+            
             <script>
-                function close_alert_edit() {
-                    document.getElementById("alert_edit").innerHTML = " ";
+                function close_alert_edit(field_name) {
+                    switch(field_name){
+                        case "ad":
+                            document.getElementById("ad_window").innerHTML = " ";
+                        break;
+
+                        case "social":
+                            document.getElementById("social_window").innerHTML = " ";
+                        break;
+
+                        case "notice":
+                            document.getElementById("notice_window").innerHTML = " ";
+                        break;
+
+                        default:
+                            document.getElementById("alert_edit").innerHTML = " ";
+                        break;
+                    }
                 }
+                
             </script>
 
             <?php
@@ -26,8 +41,7 @@ include "includes/header.php";
             ?>
 
             <!-- Blog Entries Column -->
-            <div class="col-md-8">
-                
+            <div class="col-md-8">  
                 <?php
                     
                     $post_per_page = 3;
@@ -55,7 +69,10 @@ include "includes/header.php";
                             $post_start = 0;
                         }
                     }
-                     
+                    else{
+                        $cur_page = 0;
+                    }
+                    
                     
 
                     $query = "SELECT * FROM " . POSTS . " WHERE post_status = 'Published' LIMIT {$post_start}, {$post_per_page}; ";
@@ -78,7 +95,8 @@ include "includes/header.php";
                             $post_cater_id = $row['post_cater_id'];
                             $post_content = $row['post_content'];
                     ?>
-                        <div class="well" style="background-color:rgba(255, 254, 251, 0.8);padding-left: 30px;padding-right: 30px;padding-bottom: 30px;">
+                    
+                        <div class="well" style="background-color:rgba(255, 254, 251, 0.8);padding-left: 30px;padding-right: 30px;padding-bottom: 30px;">                        
 
                             <h1 class="page-header">
                                 <a href="post.php?p_id=<?php echo $post_id; ?>" ><?php echo $post_title; ?></a>
@@ -133,17 +151,17 @@ include "includes/header.php";
                     }
                     ?>
 
-                <ul class = "pager">
-                    
+                <ul class = "pager">                    
                     <?php                         
                         if($limit != 0){
-                            if($cur_page = 0){
-                                $cur_page +=2;
+                            
+                            if($cur_page >= $limit){
+                                $cur_page = 0;
                             }
-
-                            if($cur_page > $limit){
-                                $cur_page = 1;
+                            else if(($cur_page - 1) <  -1){
+                                $cur_page = 0;
                             }
+                            
 
                             echo '
                                 <li>
@@ -160,8 +178,7 @@ include "includes/header.php";
                                 </li>
                                 ';
                             }
-                            
-                            
+                                                        
                             echo '
                                 <li>
                                     <a href="index.php?cur_page='.($cur_page + 1).'">
@@ -171,9 +188,9 @@ include "includes/header.php";
                             ';
                         }
                     ?>
-                </ul>
+                </ul>                
             </div>
-
+            
             <!-- Blog Sidebar Widgets Column -->
             <?php
                 include "includes/sidebar.php";

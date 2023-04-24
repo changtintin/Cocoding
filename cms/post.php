@@ -16,8 +16,24 @@
             <!-- Blog Entries Column -->
             <div class="col-md-8">
                     <script>
-                        function close_alert_edit(){
-                            document.getElementById("alert_edit").innerHTML=" ";
+                        function close_alert_edit(field_name) {
+                            switch(field_name){
+                                case "ad":
+                                    document.getElementById("ad_window").innerHTML = " ";
+                                break;
+
+                                case "social":
+                                    document.getElementById("social_window").innerHTML = " ";
+                                break;
+
+                                case "notice":
+                                    document.getElementById("notice_window").innerHTML = " ";
+                                break;
+
+                                default:
+                                    document.getElementById("alert_edit").innerHTML = " ";
+                                break;
+                            }
                         }
                     </script>
 

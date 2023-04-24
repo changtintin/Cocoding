@@ -13,7 +13,9 @@
                 <!-- <li>
                     <a href = "#" > USERS ONLINE: <?php echo $user_count; ?> </a>
                 </li> -->
-
+                <?php
+                   
+                ?>
                 <li>
                     <a href = "../index.php" ><span class="glyphicon glyphicon-home"></span> Home </a>
                 </li>

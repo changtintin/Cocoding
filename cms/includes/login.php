@@ -1,5 +1,5 @@
 <?php 
-    include "db.php";
+    
     include "function.php";
     
     // Send a variable across the pages
@@ -28,7 +28,7 @@
                         $_SESSION['user_image'] = $row['user_image'];
     
                         $msg = "Welcome back here";
-                        header("Location: ../admin/index.php?confirm_msg={$msg}", true, 301);
+                        header("Location: ../user/index.php?confirm_msg={$msg}", true, 301);
                     }
                     else{
                         echo "Error";

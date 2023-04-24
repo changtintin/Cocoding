@@ -14,8 +14,24 @@
 
         <div id="page-wrapper">
             <script>
-                function close_alert_edit(){
-                    document.getElementById("alert_edit").innerHTML=" ";
+                function close_alert_edit(field_name) {
+                    switch(field_name){
+                        case "ad":
+                            document.getElementById("ad_window").innerHTML = " ";
+                        break;
+
+                        case "social":
+                            document.getElementById("social_window").innerHTML = " ";
+                        break;
+
+                        case "notice":
+                            document.getElementById("notice_window").innerHTML = " ";
+                        break;
+
+                        default:
+                            document.getElementById("alert_edit").innerHTML = " ";
+                        break;
+                    }
                 }
             </script>
 
@@ -56,25 +72,21 @@
                 <div class="row">
 
                     <div class="tab-content">
-                        <div id="all" class="tab-pane fade in active">
-                            
+                        <div id="all" class="tab-pane fade in active">                            
                             <?php 
                                 $like = "no";
                                 include "user_like_table.php";                                
-                            ?>
-                            
+                            ?>                            
                         </div>
 
-                        <div id="like_post" class="tab-pane fade">
-                            
+                        <div id="like_post" class="tab-pane fade">                            
                             <?php 
                                 $like = "like";
                                 include "user_like_table.php";                                
                             ?>
                         </div>
 
-                        <div id="dis_post" class="tab-pane fade">
-                           
+                        <div id="dis_post" class="tab-pane fade">                           
                             <?php 
                                 $like = "dislike";
                                 include "user_like_table.php";                                
@@ -90,20 +102,33 @@
             <!-- /.container-fluid -->
 
         </div>
-        <!-- /#page-wrapper -->
-        
-
+        <!-- /#page-wrapper -->        
     </div>
     <!-- /#wrapper -->
-
-
+    
     <?php 
         include "user_footer.php";
     ?>
 
 <script>
-    function close_alert_edit(){
-        document.getElementById("alert_edit").innerHTML=" ";
+    function close_alert_edit(field_name) {
+        switch(field_name){
+            case "ad":
+                document.getElementById("ad_window").innerHTML = " ";
+            break;
+
+            case "social":
+                document.getElementById("social_window").innerHTML = " ";
+            break;
+
+            case "notice":
+                document.getElementById("notice_window").innerHTML = " ";
+            break;
+
+            default:
+                document.getElementById("alert_edit").innerHTML = " ";
+            break;
+        }
     }
 </script>
 
