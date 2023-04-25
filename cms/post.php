@@ -67,9 +67,9 @@
 
                                         echo "    
                                                 
-                                                <h1 class='page-header'>
+                                                <div class='post_header'>
                                                     {$post_title}              
-                                                </h1>
+                                                </div>
 
                                                 <p class='lead'>
                                                     by 

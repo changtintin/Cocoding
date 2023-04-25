@@ -9,41 +9,67 @@
                         user_feel($connect, $p_id, $like_dis);
                     }                    
                 ?>
+                <script>
+                    var post_id = <?php echo $p_id; ?>;
+
+                    function like(){ 
+                        const xhr = new XMLHttpRequest();
+                        xhr.open('GET', 'includes/function.php?fetch_likes=ok&p_id='+post_id);
+                        xhr.onload = function(){
+                            console.log(xhr.status); // 200
+                            document.getElementById("user_like").innerHTML =  xhr.responseText;
+                        }         
+                        xhr.send();                                            
+                    }
+
+                    function dislike(){ 
+                        const xhr = new XMLHttpRequest();
+                        xhr.open('GET', 'includes/function.php?fetch_dislikes=ok&p_id='+post_id);
+                        xhr.onload = function(){
+                            console.log(xhr.status); // 200
+                            document.getElementById("user_dislike").innerHTML =  xhr.responseText;
+                        }         
+                        xhr.send();                                            
+                    }
+
+                    setInterval(like, 2000);
+                    setInterval(dislike, 2000);
+                </script>
+                
                 
                 <div class="well">                    
                     <form method="post">
                         <div class="col">
-                            <h4>What do you think?</h4>
-                            
-                            <label for="like_btn">
-                                <?php echo $like; ?> users like this post
+                            <h3 class="response_title">What do you think?</h3>
+                           
+                            <label for="like_btn" id = "user_like">
+                                
                             </label>
-
+                            
                             <button class="btn btn-success btn-sm" id = "like_btn"  name = "like_btn" type="submit">
                                 <span class="glyphicon glyphicon-thumbs-up"></span> Like
                             </button>
 
-                            <span style="padding-left:20px;"></span>
-                            <label for="dislike_btn" >
-                                <?php echo $dislike; ?> users dislike this post
-                            </label>
+                            <span style="padding-left:20px;"></span>                            
+                                <label for="dislike_btn" id = "user_dislike" >
+                                    
+                                </label>                                                   
                             <button class="btn btn-primary btn-sm" id = "dislike_btn"  name = "dislike_btn" type="submit">
                                 <span class="glyphicon glyphicon-thumbs-down"></span> Dislike
                             </button>
                         </div>
                     </form>
-                    
-
                 </div>
                 
+               
                 <!-- Comments Form -->
-                <div class="well">
+            
                     <!-- enctype= Sending Different Form Data -->
                     
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="form-group row">
-                            <div class="col-sm-10 text-muted "> 
-                                <h4>Leave a comment?</h4>
+                            <div class="col-sm-10 text-muted" > 
+                                <h3 class="response_title">Leave a comment?</h3>
                             </div>
                         </div>
                        
@@ -52,31 +78,20 @@
                             <div class="col-sm-10">
                                 <textarea class="form-control" rows="3" name="comment_content"></textarea>
                             </div>
-                        </div>
-                        
-                        
+                        </div> 
+
                         <?php
-                            
-                            if($connect){
-                                $sql = "SELECT * FROM ".POSTS;
-                                $query = mysqli_query($connect, $sql);
-                                if(mysqli_num_rows($query) > 0){
-                                    while($row = mysqli_fetch_assoc($query)){
-                                        $name = $row['post_title'];
-                                        $id = $row['post_id'];
-                        ?>
-                                <option value = "<?php echo $id;?>"><?php echo $name;?></option>    
-                        <?php                
-                                    }
-                                }
+                            if(isset($_SESSION['user_id'])){
+                                $author_val = $_SESSION['username'];
+                            }
+                            else{
+                                $author_val = " ";
                             }
                         ?>
-                                
-
                         <div class="form-group row">
                             <label for="author" class="col-sm-2 col-form-label">Author</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="author">
+                                <input type="text" class="form-control" name="author" value="<?php echo $author_val; ?>">
                             </div>
                         </div>
 
@@ -93,11 +108,11 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                <hr>
                 <!-- Posted Comments -->
-
+                
                 <!-- Comment -->
-                <h3 style="padding-top: 50px; padding-bottom: 10px; letter-spacing: 0.6px; font-family: 'Rockwell'; color: #ad9f95;">
+                <h3 class="response_title">
                     Responses
                     <p class="lead">
                     ( <?php echo $post_comment_count; ?> comments)

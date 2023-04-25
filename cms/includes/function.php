@@ -161,10 +161,10 @@
             $r = "\"ok\"";
 
             if($sim >= 5 ||  $sim2 >= 5 || $sim3 >= 7){
-                $m = "<span class='glyphicon glyphicon-remove'></span>".$m;
+                $m = "<span class='glyphicon glyphicon-remove'></span> ".$m;
             }
             else{
-                $m = "<span class='glyphicon glyphicon-ok'></span>".$m;
+                $m = "<span class='glyphicon glyphicon-ok'></span> ".$m;
             }
 
             echo "
@@ -419,13 +419,8 @@
             
             $email = $_POST['email'];
             $comment_content = $_POST['comment_content'];
-
-            if(isset($_SESSION['username'])){
-                $author = $_SESSION['username'];
-            }
-            else{
-                $author = $_POST['author'];
-            }
+            $author = $_POST['author'];
+            
 
             if(!empty($author) && !empty($email) && !empty($comment_content)){
                 $sql = "INSERT INTO ".COMMENTS."(comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date, comment_role) ";
@@ -632,10 +627,8 @@
                         $q6 = mysqli_query($connect, $sql6);
                         if(!$q6){
                             die("Error").mysqli_error($connect, $q6);
-                        }
-                        
+                        }                        
                     }
-
                 }
                 else{
                     echo "OK";
@@ -668,6 +661,30 @@
         }
     }
 
+    function fecth_likes($connect){
+        
+        if(isset($_GET['fetch_likes']) || isset($_GET['fetch_dislikes']) && isset($_GET['p_id'])){ 
+            $p_id = $_GET['p_id'];
+            
+            $sql = "SELECT * FROM ".POSTS." WHERE post_id = '{$p_id}';";
+            $q = mysqli_query($connect, $sql);
+            if($q){
+                if(mysqli_num_rows($q) > 0){
+                    $result = mysqli_fetch_assoc($q);
+                    $likes = $result['post_like'];
+                    $dislikes = $result['post_dislike'];
+
+                    if(isset($_GET['fetch_likes'])){
+                        echo $likes." users like this post";
+                    }
+                    else{
+                        echo $dislikes." users dislike this post";
+                    }
+                }
+            }
+        }
+    }
+    
     function fetch_like_posts($connect, $id){
         $sql = "SELECT * FROM ".LIKES." WHERE user_id = '{$id}' AND user_feel = 'like';";
         $q = mysqli_query($connect ,$sql);
@@ -697,7 +714,6 @@
         if(isset($_GET['fetch_online'])){
             session_start();
             $session = session_id();
-            // echo "(session: ".$session.")";
             $time = time();
             $time_out_sec = 60;
             $time_out = $time + $time_out_sec;                       
@@ -729,5 +745,6 @@
     }
     
     users_online($connect);
+    fecth_likes($connect);
 
 ?>

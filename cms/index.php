@@ -8,9 +8,23 @@
     <?php
         include "includes/nav.php";
     ?>
-
+        <div class="jumbotron text-center banner_img"> 
+            <div class="banner_content">           
+                <h2 class="h2">Another way to learn</h2>
+                <p style="font-size: small;">Subscribe our newsletter</p>
+                <form class="form-inline">
+                    <div class="input-group">
+                        <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+                        <div class="input-group-btn ">
+                            <button type="button" class="btn btn-primary" style="font-size: small;">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     <!-- Page Content -->
     <div class="container">
+        
         <div class="row">
             
             <script>
@@ -34,16 +48,12 @@
                     }
                 }
                 
-            </script>
-
-            <?php
-                query_msg_alert();
-            ?>
+            </script>            
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">  
                 <?php
-
+                    query_msg_alert();
                     
                     $post_per_page = 3;
                     $post_start = 0;
@@ -97,16 +107,16 @@
                             $post_content = $row['post_content'];
                     ?>
                     
-                        <div class="well" style="background-color:rgba(255, 254, 251, 0.8);padding-left: 30px;padding-right: 30px;padding-bottom: 30px;">                        
+                        <div class=" ">                        
 
                             <h1 class="page-header">
                                 <a href="post.php?p_id=<?php echo $post_id; ?>" ><?php echo $post_title; ?></a>
                             </h1>
                             
 
-                            <p class="lead">
+                            <p class="lead" style="font-size: large;">
                                 by 
-                                <a href="author_post.php?author=<?php echo $post_author; ?>">
+                                <a href="author_post.php?author=<?php echo $post_author; ?>" >
                                     <?php echo $post_author; ?>
                                 </a>
                             </p>
@@ -122,9 +132,9 @@
                             </p>
 
                             <p style="font-family:'Rockwell';">
-                                <strong>
+                               
                                     <?php echo "# {$post_tags}"; ?>
-                                </strong>
+                                
                             </p>
 
                             <div style='padding-bottom: 30px; padding-top: 10px;'>
@@ -133,7 +143,7 @@
                                 </a>
                             </div>
                             
-                            <div style="overflow:hidden; white-space: nowrap; text-overflow: ellipsis; height: 200px; margin-bottom:10px;">
+                            <div class="post_content_preview">
                                 <?php
                                     $post_content = base64_decode($post_content);
                                     echo $post_content;
@@ -145,6 +155,8 @@
                                     Read More <span class="glyphicon glyphicon-chevron-right"></span>
                                 </a>
                             </div>
+
+                            <hr class="homepage_hr">
                         </div>
 
                     <?php
@@ -200,7 +212,6 @@
             ?>
             <!-- /.row -->
 
->>>>>>> develop
             
             <?php
                 include "includes/footer.php";

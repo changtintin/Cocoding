@@ -13,7 +13,11 @@
     <link href="css/bootstrap.main_cms.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/blog-home.css" rel="stylesheet">
+    <link href="css/blog_home.css" rel="stylesheet">
+
+    
+
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,107 +32,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <style>
-    .alert {
-        padding: 20px;
-        background-color: #9398b0; 
-        color: white;
-        font:bold;
-        font-family: 'Courier New', monospace;
-        margin-bottom: 15px;
-    }
 
-    /* The close button */
-    .closebtn {
-        margin-left: 15px;
-        color: white;
-        font-weight: bold;
-        float: right;
-        font-size: 22px;
-        line-height: 20px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    /* When moving the mouse over the close button */
-    .closebtn:hover {
-        color: black;
-    }
-
-    .navbar .nav {
-        font-family: 'Open Sans', sans-serif;
-        letter-spacing: 1px;
-        font-size: 1.4rem;
-    }
-    .navbar{
-        background-color:#f3f0ed;
-        border-color: #f3f0ed;
-    }
-
-    h4{
-        color: #6c6a71;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: bold;
-        letter-spacing: 0.6px;
-    }
-
-    .page-header{
-        font-family: 'Rockwell';
-    }
-
-    h1{
-        color: #ad9f95;
-        font-family: 'Open Sans', sans-serif;
-        font: bold;
-    }
-
-    p{
-        color: #605954;
-    }
-
-    .well{
-        background-color: #f3f0ed;
-        border-color: #f3f0ed;
-    }
-
-    .form-control:valid {
-        background-color:  #e0dfdb!important;
-        border: none;
-        
-    }
-
-    .col-form-label{
-        color: #6c6a71;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: bold;
-        letter-spacing: 0.8px;
-    }
-
-
-    #float_window {
-        position:fixed;
-        left:0;
-        bottom: 30px;
-        top: 400px;
-        z-index: 10;
-    }
-
-    #float_content{               
-        width: 250px;
-        height: 50px;
-        float: left;                
-        
-    }
-
-    .card-body{
-        padding: 10px;
-        background-color: #ad9f95;
-        border-radius: 20px;
-    }
     
-    .card-text{
-        font-size: small;
-    }
+
     
+
+    
+
+   
     
 </style>
 <?php 

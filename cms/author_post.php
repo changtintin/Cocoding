@@ -37,8 +37,8 @@
                                         $be_v = "is";
                                     }
                                     echo"
-                                        <p class='lead'>
-                                            Here {$be_v} {$num} articles written by {$author}:             
+                                        <p class='lead author_post_h'>
+                                            Here {$be_v} {$num} articles written by {$author} —            
                                         </p>
                                     ";
                                     while($row = mysqli_fetch_assoc($result)){

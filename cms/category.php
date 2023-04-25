@@ -30,6 +30,20 @@
         }
     </script>
     <!-- Page Content -->
+    <div class="jumbotron text-center banner_img"> 
+            <div class="banner_content">           
+                <h2 class="h2">Another way to learn</h2>
+                <p style="font-size: small;">Subscribe our newsletter</p>
+                <form class="form-inline">
+                    <div class="input-group">
+                        <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+                        <div class="input-group-btn ">
+                            <button type="button" class="btn btn-primary" style="font-size: small;">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     <div class="container">
         <div class="row">
             <?php

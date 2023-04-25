@@ -126,6 +126,7 @@ hr {
     
 }
 
+
 pre {
     overflow: auto
 }
@@ -302,11 +303,7 @@ th {
         background: #fff !important
     }
 
-    .navbar {
-        display: none;
-        background-color: #696561;
-    }
-
+    
     .btn>.caret,
     .dropup>.btn>.caret {
         border-top-color: #000 !important
@@ -1405,7 +1402,7 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
-    background-color:#ccc7c3;
+    background-color:#d6d4d2;
 }
 
 button,
@@ -1476,13 +1473,7 @@ img {
     border-radius: 50%
 }
 
-hr {
-    margin-top: 30px;
-    margin-bottom: 100px;
-    border: 0;
-    border-top: 1px solid #6c6a71;
 
-}
 
 .sr-only {
     position: absolute;
@@ -1604,12 +1595,13 @@ h6 small {
 
 .h1,
 h1 {
-    font-size: 36px
+    font-size: 25px
 }
 
 .h2,
 h2 {
-    font-size: 30px
+    font-size: 30px;
+    color: #6c6a71;
 }
 
 .h3,
@@ -1778,8 +1770,7 @@ a.bg-danger:hover {
 }
 
 .page-header {
-    padding-bottom: 9px;
-    margin: 40px 0 20px;
+    margin: 35px 0 15px;
 }
 
 ol,
@@ -1992,8 +1983,6 @@ pre code {
 }
 
 .container {
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto
 }
@@ -4864,7 +4853,10 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .nav {
     padding-left: 0;
     margin-bottom: 0;
-    list-style: none
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
 }
 
 .nav>li {
@@ -5099,12 +5091,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
     border-top-right-radius: 0
 }
 
-.navbar {
-    position: relative;
-    min-height: 50px;
-    margin-bottom: 20px;
-    border: 1px solid transparent
-}
+
 
 @media (min-width:768px) {
     .navbar {
@@ -5155,7 +5142,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
     .navbar-fixed-bottom .navbar-collapse,
     .navbar-fixed-top .navbar-collapse,
     .navbar-static-top .navbar-collapse {
-        padding-right: 0;
+        padding: 0;
         padding-left: 0
     }
 }
@@ -5613,15 +5600,22 @@ fieldset[disabled] .navbar-default .btn-link:hover {
     color: #ccc
 }
 
-.navbar-inverse {
-    background-color: #222;
-    border-color: #080808
+
+
+.navbar {
+    background-color:#f3f0ed;
+    border-color: #f3f0ed;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
 }
 
 .navbar-inverse .navbar-brand {
     color: #9d9d9d
 }
-
+.navbar-inverse {
+    
+}
 .navbar-inverse .navbar-brand:focus,
 .navbar-inverse .navbar-brand:hover {
     color: #eec89c;
@@ -6052,10 +6046,14 @@ a.badge:hover {
 
 .jumbotron {
     padding: 30px 15px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     color: inherit;
-    background-color: #eee
+    background-color: #eee;
+    height: 500px;
+
 }
+
+
 
 .jumbotron .h1,
 .jumbotron h1 {
@@ -6063,7 +6061,7 @@ a.badge:hover {
 }
 
 .jumbotron p {
-    margin-bottom: 15px;
+    margin-bottom: 50px;
     font-size: 21px;
     font-weight: 200
 }
@@ -6128,12 +6126,17 @@ a.thumbnail:hover {
     color: #333
 }
 
+
 .alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px
+    padding: 20px;
+    background-color: #9398b0; 
+    color: white;
+    font:bold;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 15px;
 }
+
+
 
 .alert h4 {
     margin-top: 0;
@@ -6402,7 +6405,9 @@ a.thumbnail:hover {
     padding: 10px 15px;
     margin-bottom: -1px;
     background-color: #fff;
-    border: 1px solid #ddd
+    border: 1px solid #ddd;
+    
+    font-weight: 300;
 }
 
 .list-group-item:first-child {
@@ -7043,6 +7048,23 @@ a.list-group-item-danger.active:hover {
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05)
 }
+
+.post_well{
+    background-color:rgba(255, 254, 251, 0.8);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+
+.post_content_preview{
+    overflow:hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    height: 200px; 
+    margin-bottom:10px;
+}
+
+
 
 .well blockquote {
     border-color: #ddd;
@@ -7847,6 +7869,15 @@ button.close {
     position: fixed
 }
 
+.ad_window{
+    position:fixed;  
+    bottom: 5px; 
+    right:0px; 
+    z-index:100;
+}
+
+
+
 @-ms-viewport {
     width: device-width
 }
@@ -8103,3 +8134,4 @@ button.close {
         display: none !important
     }
 }
+

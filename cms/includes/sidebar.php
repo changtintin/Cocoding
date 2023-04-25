@@ -1,4 +1,3 @@
-
     <script>
         function request(){ 
             const xhr = new XMLHttpRequest();
@@ -59,7 +58,7 @@
         
         
         <!-- Ads -->
-        <div style = "position:fixed;  bottom: 5px; right:0px; z-index:100;" id = 'ad_window'>
+        <div  class="ad_window" id = 'ad_window'>
             <div class="card"  style="width:170px; height:400px; ">                                    
                 <div class="card-body">
                     <span class='closebtn' onclick='close_alert_edit("ad")'>&times;</span>  
@@ -134,7 +133,7 @@
         <div class="well">
             <h4>Like Posts</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <ol class="list-group" style='font-size: 10px; font-family: Helvetica, Arial, sans-serif; font-weight:300; '>
+            <ol class="list-group sidebar_well">
                 <?php fetch_like_posts($connect, $_SESSION['user_id']); ?>                
             </ol>
         </div>
@@ -144,58 +143,56 @@
         ?>
         <!-- Side Widget Well -->
         <div class="well">
-            
-            
             <h4>Campaign</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
-            <ol class='list-group' style='font-size: 10px; font-family: Helvetica, Arial, sans-serif; font-weight:300; '>
-                <li class='list-group-item'>
+            <ol class='list-group sidebar_well'>
+                <li class='list-group-item cam'>
                     <a href="#">
                         Vote for 2022 American Influencer Awards   
                     </a>     
                 </li>
-                <li class='list-group-item'>
+                <li class='list-group-item cam'>
                     <a href="#">
                         McDonald / BurgerKing: 2023 Free Coupons
                     </a>
                 </li>
-                <li class='list-group-item'>
+                <li class='list-group-item cam'>
                     <a href="#">
                         Learn best practices from experienced developers
                     </a>
                 </li>
-                <li class='list-group-item'>
+                <li class='list-group-item cam'>
                     <a href="#">
                         The rise of the K-drama heroine
                     </a>
                 </li>
-                <li class='list-group-item'>
+                <li class='list-group-item cam'>
                     <a href="#">
                         Inside China's crackdown on tattoo culture   
                     </a>
                 </li>
-                <li class='list-group-item'>
+                <li class='list-group-item cam'>
                     <a href="#">
                         Be the first to know the new products and features
                     </a>
                 </li>
-                <li class='list-group-item'>
+                <li class='list-group-item cam'>
                     <a href="#">
                         Start with $200 Azure credit
                     </a>
                 </li>
-                <li class='list-group-item'>
+                <li class='list-group-item cam'>
                     <a href="#">
                         Build in the cloud with an Azure free account
                     </a>
                 </li>
-                <li class='list-group-item'>
+                <li class='list-group-item cam'>
                     <a href="#">
                         Complete List of All Bootstrap Classes
                     </a>
                 </li>
-                <li class='list-group-item'>
+                <li class='list-group-item cam'>
                     <a href="#">
                         W3.CSS is Smaller, Faster and Easier to Use.
                     </a>
