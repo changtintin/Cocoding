@@ -14,9 +14,14 @@
 </script>
 
 
+<div class="useradmin-header">
+    Add a New Post        
+</div>
+
 <!-- enctype= Sending Different Form Data -->
 <form method="post" enctype="multipart/form-data">
-    <div class="form-group row">
+
+    <div class="form-group row">        
         <label for="title" class="col-sm-2 col-form-label">Post Title</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" name="title">
@@ -48,24 +53,23 @@
     
 
     <div class="form-group row">
-        <label for="author" class="col-sm-2 col-form-label">Author</label>
+        <label for="author" class="col-sm-2 col-form-label">Author (Username)</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" name="author">
+            <input type="text" class="form-control" name="author" value = <?php echo $_SESSION['username']; ?> disabled="disabled">            
         </div>
     </div>
-    
+
     <div class="form-group row">
         <label class="col-sm-2 col-form-label  pt-0" for = "status">Post Status</label>
         <div class="col-sm-10">
             <select multiple class="form-control" name = "status" id ="status">
-                <option value = "Draft">Draft</option>    
-                <option value = "Published">Published</option>    
-                <option value = "Spam">Spam</option>   
+                <option value = "Draft" selected="selected">Draft</option>    
+                <option disabled="disabled">Published</option>    
+                <option disabled="disabled">Spam</option>   
             </select>
         </div>
     </div>
-    
-    
+
     <div class="form-group row">
         <label for="img" class="col-sm-2 col-form-label">Post Image</label>
         <div class="col-sm-10" >
@@ -101,7 +105,6 @@
                 <?php
                     checkbox_tags($connect);
                 ?>
-                
                 <span id = "add_confirm"></span>
             </div>
         </div> 
@@ -111,7 +114,6 @@
         <label for="date" class="col-sm-2 col-form-label">Post Date</label>
         <div class="col-sm-10">
             <input type="date" class="form-control" name="date">
-            
         </div>
     </div>
     
@@ -124,6 +126,6 @@
 </form>
 
 <?php
-    add_posts("admin");
+    
+    add_posts("user");
 ?>
-

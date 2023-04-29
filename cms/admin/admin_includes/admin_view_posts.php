@@ -8,7 +8,6 @@
                     <option value = "post_author">Author</option>
                     <option value = "post_title">Title</option>
                     <option value = "post_cater_id">Category</option>
-                    <option value = "post_comment_count">Comment count</option>
                     <option value = "post_view_count">View count</option>
                     <option value = "post_date">Date</option>       
                     <option value = "post_like">Like</option>
@@ -131,8 +130,7 @@
                             $cater = $row['post_cater_id'];
                             $status = $row['post_status'];
                             $img = $row['post_image'];
-                            $tags = $row['post_tags'];
-                            $comment = $row['post_comment_count'];
+                            $comment = comment_count($connect, $id);
                             $view = $row['post_view_count'];
                             $date = $row['post_date'];
                             $like = $row['post_like'];
@@ -161,9 +159,13 @@
                             
                                 <td><img class="media-object" src="../image/<?php echo $img;?>" alt="" style="width:100px;height:100px;"></td>
                             
-                                <td><?php echo $tags;?></td>
+                                <td><?php fetch_tags($id, $connect); ?></td>
                             
-                                <td><?php echo $comment;?></td>
+                                <td>
+                                    <a href="admin_comments.php?pid=<?php echo $id; ?>">
+                                        <?php echo $comment;?>
+                                    </a>                                    
+                                </td>
 
                                 <td><?php echo $view;?></td>
                             

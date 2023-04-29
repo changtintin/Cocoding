@@ -231,3 +231,23 @@ ul.alert-dropdown {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+.useradmin-header {
+    margin: 10px 0 15px;
+    font-family: "Consolas","Menlo","courier new",monospace;
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    font-weight: bolder;
+    color: #6db1bb;
+}
+
+.post-table {
+    margin:30px;
+}
+
+.select-tag {
+    padding-right:20px;
+    font-weight:500;
+}

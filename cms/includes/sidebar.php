@@ -12,12 +12,15 @@
     </script>
    
     <div class="col-md-4">
+        
         <!-- Blog Search Well -->
         <div id = 'social_window'>
             <div id="float_window" style = "color:white; font-size:medium; ";>
                 <div class="card"  id="float_content">     
                     <div class="card-body">
-                        <span class='closebtn' onclick='close_alert_edit("social")'>&times;</span>  
+                        <span class='closebtn' onclick='close_alert_edit("social")'>&times;</span> 
+                                    
+ 
                         <h5 class="card-title">                                                        
                             Online users:
                             <span id = "online_user"> 
@@ -49,8 +52,8 @@
                         </a>
 
                         <p class="card-text" id = "c_text" >Subscribe our email letter or meet at social media</p>
-
-                        <a href="#" class="btn btn-success">I'm intrested</a>
+                        
+                        <button href="#" class="btn btn-success btn-sm" onclick='close_alert_edit("social")'>No, Thanks</button>
                     </div>                       
                 </div>
             </div>
@@ -70,7 +73,7 @@
         <div class="well">
             <h4 id = "blog">Blog Search</h4>
             <form action="./search.php" method="post">
-                <div class = "input-group">                
+                <div class = "input-group input-group-sm">                
                     <input type = "text" class="form-control" name = "search_input" placeholder="keywords, author, topic......">                    
                     <span class = "input-group-btn">
                         <button class = "btn btn-primary" type = "submit" name = "search_submit">
@@ -86,11 +89,11 @@
         <div class="well">
             <h4>Login</h4>
             <form action="includes/login.php" method="post">
-                <div class = "form-group">                
+                <div class = "form-group form-group-sm">                
                     <input type = "text" class="form-control" name = "username" placeholder="Username">                    
                 </div>
 
-                <div class = "input-group">                
+                <div class = "input-group input-group-sm">                
                     <input type = "password" class="form-control" name = "password" placeholder="Password">                                               
                     <span class = "input-group-btn">
                         <button class = "btn btn-primary" type = "submit" name = "login_submit" style="font-family: 'Open Sans', sans-serif;">
@@ -105,7 +108,7 @@
                         <a href="./registration.php" style="font-size: small;">Create an account</a>
                     </div>
                 </div>
-                
+               
             </form>
             <!-- /.input-group -->
         </div>
@@ -143,6 +146,8 @@
         ?>
         <!-- Side Widget Well -->
         <div class="well">
+           
+
             <h4>Campaign</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
@@ -199,8 +204,37 @@
                 </li>
 
             </ol>
+            
+        </div>
+        
+        <div class="well">
+            <h4>About Us</h4>
+            
+            <div class="sidebar_content">
+                <p>
+                We aren't trying to be the first to break news stories; our aim is to be your first resource 
+                for thoughtful content to educate about the technologies affecting the marketplace.
+                </p>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/1OIIrbE_Vd4" allowfullscreen></iframe>
+            </div>
         </div>
 
+        <div class="well">
+            <h4>How to Start Coding | Programming for Beginners</h4>
+            <div class="sidebar_content">
+                <p>
+                    In this video you will know how one can start coding and best programming languages 
+                    to learn in 2020 for Job in Google, Microsoft, 
+                    Infosys, TCS etc. Also you will know the top 5 programming languages to learn 
+                    in 2020 for a rewarding career.
+                </p>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/HIj8wU_rGIU" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
     </div>
 </div>

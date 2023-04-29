@@ -11,64 +11,56 @@
 
     <!-- Page Content -->
     <div class="container">
-
         <div class="row">
             <!-- Blog Entries Column -->
             <div class="col-md-8">
                 <?php
-                    if(isset($_POST['search_submit'])){
-                        $search_input = $_POST['search_input'];
-                        if($search_input == ''){
-                            echo "Please try again!<br>";
-                        }
+                    if(isset($_GET['name'])){
+                        $tag = $_GET['name'];   
+                        if($tag == "C++"){
+                            $tag = "CONCAT('C', '++')";
+                        }            
                         else{
-                            $tag = "tag_name";
-                            
-                            
-                            $query = "SELECT * FROM ".TAGS." WHERE tag_name LIKE '%{$search_input}%';";
-                           
-                            $result = mysqli_query($connect, $query);
-                            if(!$result)
-                                die("Failed, Because ".mysqli_error($connect));
+                            $tag = "'{$tag}'";
+                        }             
+                        
+                        $query = "SELECT * FROM ".TAGS." WHERE tag_name = {$tag};";  
+                        // echo $query; 
+                        $result = mysqli_query($connect, $query);
 
-                            $row_count = mysqli_num_rows($result);
-                            
-                            if($row_count == 0){
-                                echo "<h2>No relative result</h2>";
-                            }
-                            else{
-                                if($row_count > 1){
-                                    $be_v = "are";
-                                }
-                                else{
-                                    $be_v = "is";
-                                }
-                                
+                        if(!$result){
+                            die("Failed, Because ".mysqli_error($connect));
+                        }                        
 
-                                echo"
-                                    <p class='lead author_post_h'>
-                                        We Found {$row_count} Search Result of  
-                                        <strong> \"{$search_input}\" </strong>
-                                        —          
-                                    </p>
-                                ";
-                            }
-                                
-                            while($r = mysqli_fetch_assoc($result)){
-                                $p_id = $r['post_id'];
+                        $row_count = mysqli_num_rows($result);
+                        
+                        if($row_count == 0){
+                            echo "<h2>No relative result</h2>";
+                        }
+                        else{                           
+                            echo"
+                                <p class='lead author_post_h'>
+                                    {$row_count} correspond post of  
+                                    <strong> # {$tag} </strong>                                     
+                                </p>
+                            ";                                                
+                            while($tag_result = mysqli_fetch_assoc($result)){
+                                $p_id = $tag_result['post_id'];
                                 $sql2 = "SELECT * FROM ".POSTS." WHERE post_id = '{$p_id}';";
                                 $r = mysqli_query($connect, $sql2);
                                 if($r && mysqli_num_rows($r)>0){
-                                while($row = mysqli_fetch_assoc($r)){ 
-                                    $post_id = $row['post_id'];
-                                    $post_title = $row['post_title'];
-                                    $post_author = $row['post_author'];
-                                    $post_date = $row['post_date'];
-                                    $post_image = $row['post_image'];
-                                    $post_comment_count = comment_count($connect, $post_id);                                $post_view_count = $row['post_view_count'];
-                                    $post_status = $row['post_status'];
-                                    $post_cater_id = $row['post_cater_id'];
-                                    $post_content = $row['post_content'];
+                                    
+                                    while($post = mysqli_fetch_assoc($r)){                                        
+                                        $post_id = $post['post_id'];
+                                        $post_title = $post['post_title'];
+                                        $post_author = $post['post_author'];
+                                        $post_date = $post['post_date'];
+                                        $post_image = $post['post_image'];
+                                        $post_comment_count = comment_count($connect, $post_id);                                
+                                        $post_view_count = $post['post_view_count'];
+                                        $post_status = $post['post_status'];
+                                        $post_cater_id = $post['post_cater_id'];
+                                        $post_content = $post['post_content'];
                 ?>
                                 
                 
@@ -95,7 +87,7 @@
 
                 <p style='font-family:Rockwell;'>
                     <strong>
-                        <?php fetch_tags($post_id, $connect) ?>
+                        <?php fetch_tags($post_id, $connect); ?>
                     </strong>
                 </p>
 
@@ -116,7 +108,11 @@
                                     Read More <span class="glyphicon glyphicon-chevron-right"></span>
                                 </a>
                                 <hr>
-                            <?php }
+                            <?php       }
+
+                                }
+                                else{
+                                    echo "Error";
                                 }
                             }
                         }

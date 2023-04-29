@@ -18,8 +18,8 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">            
-                <a class="navbar-brand" href="index.php" style="font-family: Open Sans, sans-serif; font-weight: bold;letter-spacing: 5px;"> 
-                    <span class="glyphicon glyphicon-home"></span> HOME 
+                <a class="navbar-brand" href="index.php" style="font-family: Consolas,Menlo,courier new,monospace; font-weight: bold;letter-spacing: 1px;"> 
+                    <span class="glyphicon glyphicon-home"></span> COCODING
                 </a>
             </div>
             

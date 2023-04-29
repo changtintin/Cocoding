@@ -41,21 +41,24 @@
 
             <?php 
                 query_msg_alert();
+                if(isset($_SESSION['user_id'])){
+                    $user_id = $_SESSION['user_id'];
+                }
+                else{
+                    $user_id = -1;
+                }
 
-                $user_count = fetch_row_count(USERS,'');
-                $post_count = fetch_row_count(POSTS,'');
-                $comment_count = fetch_row_count(COMMENTS,'');
-                $cater_count = fetch_row_count(CATER,'');
-
-                $published_post_count = fetch_row_count(POSTS," WHERE post_status='Published'");
-
-                $draft_post_count = fetch_row_count(POSTS," WHERE post_status='Draft'");
-
-                $approved_comment_count = fetch_row_count(COMMENTS," WHERE comment_status='Approved'");
-                $unapproved_comment_count = fetch_row_count(COMMENTS," WHERE comment_status='Unapproved'");
-
-                $admin_count = fetch_row_count(USERS," WHERE user_role='Admin'");
-                $subscriber_count = fetch_row_count(USERS," WHERE user_role='Subscriber'");
+                if(isset($_SESSION['username'])){
+                    $user_n = $_SESSION['username'];
+                }
+                else{
+                    $user_n = " ";
+                }
+                
+                $published_post_count = fetch_row_count(POSTS," WHERE post_status='Published' AND post_author_id='{$user_id}'");
+                $draft_post_count = fetch_row_count(POSTS," WHERE post_status='Draft' AND post_author_id='{$user_id}'");
+                $approved_comment_count = fetch_row_count(COMMENTS," WHERE comment_status='Approved' AND comment_author = '{$user_n}'");
+                $unapproved_comment_count = fetch_row_count(COMMENTS," WHERE comment_status='Unapproved' AND comment_author = '{$user_n}'");
             ?>    
 
             <div class="container-fluid">
@@ -80,7 +83,7 @@
                 <div class="row">
                 
                     <!-- Post -->
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="panel panel-secondary">
                             <div class="panel-heading">
                                 <div class="row">
@@ -89,13 +92,13 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class='huge'>
-                                            <?php echo $post_count; ?>
+                                            <?php echo $published_post_count + $draft_post_count; ?>
                                         </div>
                                         <div>Posts</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="admin_posts.php">
+                            <a href="user_posts.php">
                                 <div class="panel-footer">
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
 
@@ -106,7 +109,7 @@
                     </div>
 
                     <!-- Comment -->
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="panel panel-secondary">
                             <div class="panel-heading">
                                 <div class="row">
@@ -115,13 +118,13 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                     <div class='huge'>
-                                        <?php echo $comment_count; ?>
+                                        <?php echo $approved_comment_count + $unapproved_comment_count; ?>
                                     </div>
                                     <div>Comments</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="admin_comments.php">
+                            <a href="user_comments.php">
                                 <div class="panel-footer">
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
@@ -130,56 +133,9 @@
                         </div>
                     </div>
 
-                    <!-- User -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-secondary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-user fa-4x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                    <div class='huge'>
-                                        <?php echo $user_count; ?>
-                                    </div>
-                                        <div> Users</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="admin_users.php">
-                                <div class="panel-footer">
-                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                   
 
-                    <!-- Catergories -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-dark">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-list fa-4x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class='huge'>
-                                            <?php echo $cater_count; ?>
-                                        </div>
-                                        <div>Categories</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="admin_cater.php">
-                                <div class="panel-footer">
-                                    
-                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                   
                 </div>
                 <!-- /.row -->
 
@@ -194,8 +150,8 @@
                                 ['Title', 'Count'],
                                 
                                 <?php
-                                    $title = ['Active Posts','Draft Posts','Catergories','Approved Comments','Unapproved Comments','Admin','Subscriber'];
-                                    $count = [$published_post_count, $draft_post_count, $cater_count, $approved_comment_count, $unapproved_comment_count, $admin_count, $subscriber_count];
+                                    $title = ['Active Posts','Draft Posts','Approved Comments','Unapproved Comments'];
+                                    $count = [$published_post_count, $draft_post_count, $approved_comment_count, $unapproved_comment_count];
 
                                     for($i = 0; $i < count($title); $i++){
                                         echo "['{$title[$i]}', {$count[$i]}],";
@@ -206,7 +162,7 @@
                             var options = {
                                 chart: {
                                     title: 'Admin Info',
-                                    subtitle: 'Counts of posts, categories, users, comments.',
+                                    subtitle: 'Counts of posts, users, comments.',
                                 }
                                 
                             };

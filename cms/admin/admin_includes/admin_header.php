@@ -28,7 +28,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CMB Admin - Bootstrap Admin Template</title>
+    <title>COCODING - My Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="./css/bootstrap.main.css" rel="stylesheet">

@@ -44,12 +44,6 @@ h4 {
 }
 
 
-.page-header{
-    font-family: Consolas,Menlo,"courier new",monospace;
-    font-size: 30px;
-    font-weight: 600;
-}
-
 .h2 {
     font-size: 20px;
     color: #6c6a71;
@@ -57,15 +51,18 @@ h4 {
 }
 
 .jumbotron h2 {
-    font-size: 20px;
+    font-size: 25px;
     color: #808080;
     font-family: 'Rockwell';
 }
 
+
+
 .post_header {
-    color: #ad9f95;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 35px;
+    color:#91c2c9;
+    font-family: "Consolas","Menlo","courier new",monospace;
+    font-size: 40px;
+    font-weight: 600;
     padding-bottom: 30px;
     padding-top: 30px;
     font-weight: bolder;
@@ -154,6 +151,13 @@ p{
     width:80%;
 }
 
+.banner-header {
+    font-size: 15px;
+    color: #6c6a71;
+    font-family: 'Rockwell';
+    font-style: italic;
+}
+
 .banner_content{
     margin: 0;
     position: relative; 
@@ -165,6 +169,7 @@ p{
 .banner_img{
     background-image: url('../image/cover.png');
     position:relative;
+    height: 500px;
 }
 
 .response_title{
@@ -187,7 +192,6 @@ p{
     margin-bottom: -1px;
     background-color: #fff;
     border: 1px solid #ddd;
-    
     font-weight: 300;
 }
 
@@ -195,3 +199,53 @@ p{
     padding-top:50px;
     font-family: 'Open Sans', sans-serif;
 }
+
+.navbar-inverse{
+    background-color: #f2f0ed;
+    border-color: #f2f0ed;
+
+}
+
+.ad_window{
+    position:fixed;  
+    bottom: 25px; 
+    right:0px; 
+    z-index:100;
+}
+
+.sidebar_content{
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.post_body{
+    background-color:#fffefb;
+    
+}
+
+.post-container{
+    padding-top: 40px;
+}
+
+.post-author{
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 1.4
+}
+
+.page-header {
+    margin: 35px 0 15px;
+    font-family: "Consolas","Menlo","courier new",monospace;
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    font-weight: bolder;
+}
+
+.footer-header{
+    font-size: 15px;
+    font-weight: 800;
+}
+

@@ -30,17 +30,20 @@
                             if($result){
                                 if(mysqli_num_rows($result) > 0){
                                     $num = mysqli_num_rows($result);
+
                                     if($num > 1){
                                         $be_v = "are";
                                     }
                                     else{
                                         $be_v = "is";
                                     }
+                                    
                                     echo"
                                         <p class='lead author_post_h'>
                                             Here {$be_v} {$num} articles written by {$author} —            
                                         </p>
                                     ";
+
                                     while($row = mysqli_fetch_assoc($result)){
                                         
                                         $post_id = $row['post_id'];
@@ -48,8 +51,7 @@
                                         $post_author = $row['post_author'];
                                         $post_date = $row['post_date'];
                                         $post_image = $row['post_image'];
-                                        $post_tags = $row['post_tags'];
-                                        $post_comment_count = $row['post_comment_count'];
+                                        $post_comment_count = comment_count($connect, $post_id);
                                         $post_view_count = $row['post_view_count'];
                                         $post_status = $row['post_status'];
                                         $post_cater_id = $row['post_cater_id'];
@@ -75,7 +77,7 @@
                                         </p>
                                         <p>
                                             <strong>
-                                                <?php echo "# {$post_tags}"; ?>
+                                                <?php fetch_tags($post_id, $connect);; ?>
                                             </strong>
                                         </p>
 

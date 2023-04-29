@@ -34,6 +34,17 @@
 
                     setInterval(like, 2000);
                     setInterval(dislike, 2000);
+
+
+                    function roleChange() {
+                        var checkBox = document.getElementById("roleCheck");
+                        var text = document.getElementById("text");
+                        if (checkBox.checked == true){
+                            text.style.display = "block";
+                        } else {
+                            text.style.display = "none";
+                        }
+                    }
                 </script>
                 
                 
@@ -62,38 +73,44 @@
                 </div>
                 
                
-                <!-- Comments Form -->
-            
+                <!-- Comments Form -->                                
+                    
                     <!-- enctype= Sending Different Form Data -->
                     
                     <form action="" method="post" enctype="multipart/form-data">
+                        
                         <div class="form-group row">
                             <div class="col-sm-10 text-muted" > 
                                 <h3 class="response_title">Leave a comment?</h3>
                             </div>
                         </div>
-                       
+
+                        <div class="form-group row">
+                            <label class="col-sm-9 col-form-label pt-0" for="myCheck">Use other username: <i>you can't trace this comment afterward</i></label>
+                            <div class="col-sm-3">
+                                <input class="form-check-input" type="checkbox" id="roleCheck" onclick="roleChange()">
+                            </div>
+                        </div> 
+
+                        <div class="form-group row " id="text" style="display:none">
+                            <label for="author" class="col-sm-2 col-form-label">Author</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="author">
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label  pt-0">Comment</label>
                             <div class="col-sm-10">
                                 <textarea class="form-control" rows="3" name="comment_content"></textarea>
                             </div>
                         </div> 
+                        
+                        
+                        <?php                            
+                            $post_comment_count = comment_count($connect, $post_id);
 
-                        <?php
-                            if(isset($_SESSION['user_id'])){
-                                $author_val = $_SESSION['username'];
-                            }
-                            else{
-                                $author_val = " ";
-                            }
                         ?>
-                        <div class="form-group row">
-                            <label for="author" class="col-sm-2 col-form-label">Author</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="author" value="<?php echo $author_val; ?>">
-                            </div>
-                        </div>
 
                         <div class="form-group row">
                             <label for="email" class="col-sm-2 col-form-label">Email</label>

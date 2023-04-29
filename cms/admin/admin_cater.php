@@ -40,8 +40,7 @@
                         edit_cater();
                         insert_cater();
                     ?>
-                    <div class="col-sm-6">
-                        
+                    <div class="col-sm-6">                        
                         <!-- Add Catergory -->
                         <form action="admin_cater.php" method="post">
                             <div class="form-group row">
@@ -113,8 +112,7 @@
                                                 Edit
                                             </a>
                                         </td>
-                                    </tr> 
-                                    
+                                    </tr>                                     
                                         <?php                                    
                                         }
                                     }

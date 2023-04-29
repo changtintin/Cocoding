@@ -3,16 +3,15 @@
     include "includes/header.php";
 ?>
 
-<body style="background-color:#fffefb;">
+<body class="post_body">
     <!-- Navigation -->
     <?php
         include "includes/nav.php";
     ?>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container post-container">
         <div class="row">
-
             <!-- Blog Entries Column -->
             <div class="col-md-8">
                     <script>
@@ -55,8 +54,8 @@
                                         $post_author = $row['post_author'];
                                         $post_date = $row['post_date'];
                                         $post_image = $row['post_image'];
-                                        $post_tags = $row['post_tags'];
-                                        $post_comment_count = $row['post_comment_count'];
+                                        
+                                        $post_comment_count = comment_count($connect, $post_id);
                                         $post_view_count = $row['post_view_count'];
                                         $post_status = $row['post_status'];
                                         $post_cater_id = $row['post_cater_id'];
@@ -71,7 +70,7 @@
                                                     {$post_title}              
                                                 </div>
 
-                                                <p class='lead'>
+                                                <p class='post-author'>
                                                     by 
                                                     <a href='author_post.php?author={$post_author}'>
                                                         {$post_author}
@@ -89,7 +88,10 @@
 
                                                 <p style='font-family:Rockwell;'>
                                                     <strong>
-                                                    # {$post_tags}
+                                                ";    
+                                                fetch_tags($post_id, $connect);
+                                                
+                                                echo"
                                                     </strong>
                                                 </p>
 
@@ -104,6 +106,7 @@
                                         echo
                                         "
                                         <div style='padding-top: 50px'> 
+                                            
                                         ";
                                         include "comment.php";
                                         echo "    
@@ -114,7 +117,7 @@
                                 }
                                 else{
                                     echo "
-                                            <h1 class='page-header'>
+                                            <h1 class='post-header'>
                                                Error
                                             </h1>
                                             <hr>
@@ -129,8 +132,7 @@
                         Read More <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
                 </div>
-                
-                
+
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
@@ -139,7 +141,6 @@
             ?>
         <!-- /.row -->
 
-        
         <?php
             include "includes/footer.php";
         ?>

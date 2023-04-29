@@ -195,7 +195,7 @@
             
                             <label for="password" class="col-sm-2 col-form-label">Password</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="password" id = "password" value = "<?php echo $user_password; ?>" disabled>
+                                <input autocomplete="off" type="text" class="form-control" name="password" id = "password" value = "<?php echo $user_password; ?>" disabled>
                             </div>
                         </div>
                     </fieldset>

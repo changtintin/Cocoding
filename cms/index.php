@@ -7,26 +7,13 @@
     <!-- Navigation -->
     <?php
         include "includes/nav.php";
+        include "includes/banner.php";
     ?>
-        <div class="jumbotron text-center banner_img"> 
-            <div class="banner_content">           
-                <h2 class="h2">Another way to learn</h2>
-                <p style="font-size: small;">Subscribe our newsletter</p>
-                <form class="form-inline">
-                    <div class="input-group">
-                        <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-                        <div class="input-group-btn ">
-                            <button type="button" class="btn btn-primary" style="font-size: small;">Subscribe</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    <!-- Page Content -->
-    <div class="container">
         
-        <div class="row">
-            
+    <!-- Page Content -->
+<div class="container">
+    
+    
             <script>
                 function close_alert_edit(field_name) {
                     switch(field_name){
@@ -99,8 +86,7 @@
                             $post_author = $row['post_author'];
                             $post_date = $row['post_date'];
                             $post_image = $row['post_image'];
-                            $post_tags = $row['post_tags'];
-                            $post_comment_count = $row['post_comment_count'];
+                            $post_comment_count = comment_count($connect, $post_id);
                             $post_view_count = $row['post_view_count'];
                             $post_status = $row['post_status'];
                             $post_cater_id = $row['post_cater_id'];
@@ -132,9 +118,9 @@
                             </p>
 
                             <p style="font-family:'Rockwell';">
-                               
-                                    <?php echo "# {$post_tags}"; ?>
-                                
+                                <strong>                                
+                                    <?php fetch_tags($post_id, $connect); ?>
+                                </strong>
                             </p>
 
                             <div style='padding-bottom: 30px; padding-top: 10px;'>

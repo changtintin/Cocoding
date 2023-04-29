@@ -1,4 +1,6 @@
-
+<script>
+    document.getElementById("tags").href="#";
+</script>
 <form method="post">
     <div class="text-right" style="padding-bottom: 20px; padding-top: 20px;">
         
@@ -88,9 +90,7 @@
                                     
                                     
                                     $img = $row2['post_image'];
-                                    $tags = $row2['post_tags'];
-                                    $comment = $row2['post_comment_count'];
-                                    $view = $row2['post_view_count'];
+                                    $post_comment_count = comment_count($connect, $id);                                    $view = $row2['post_view_count'];
                                     $date = $row2['post_date'];
                                     $like = $row2['post_like'];
                                     $dislike = $row2['post_dislike'];
@@ -105,10 +105,9 @@
                             
                             <td><img class="media-object" src="../image/<?php echo $img;?>" alt="" style="width:100px;height:100px;"></td>
 
-                            <td><?php echo $tags;?></td>
+                            <td><?php fetch_tags($post_id, $connect);?></td>
         
-                            <td><?php echo $comment;?></td>
-
+                            <td><?php echo $post_comment_count;?></td>
                             <td><?php echo $view;?></td>
                         
                             <td><?php echo $date;?></td>

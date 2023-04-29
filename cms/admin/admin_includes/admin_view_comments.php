@@ -1,5 +1,3 @@
-
-
     <form method="post">
         <div class="text-right" style="padding-bottom: 20px;">
             
@@ -52,11 +50,16 @@
                 <tbody>
                     <?php
                         $ary_index = 0;
-                        $sql = "SELECT * FROM ".COMMENTS;
+                        
+                        $clause = " ";
+                        if(isset($_GET['pid'])){
+                            $clause = " WHERE comment_post_id = '{$_GET['pid']}' ";
+                        }
+                       
+                        $sql = "SELECT * FROM ".COMMENTS.$clause;
                         $query = mysqli_query($connect, $sql);
                         if(mysqli_num_rows($query) > 0){
                             while($row = mysqli_fetch_assoc($query)){
-                                
                                 $id = $row['comment_id'];
                                 $p_id = $row['comment_post_id'];
                                 $author = $row['comment_author'];
@@ -112,7 +115,6 @@
         if(isset($_POST['comment_setting'])){
             if($_POST['comment_setting']=='Delete'){
                 foreach($_POST['select_ary'] as $checkbox){
-                    decrease_comment_count($checkbox);
                     $sql = "DELETE FROM ".COMMENTS." WHERE comment_id = {$checkbox}";
                     $q = mysqli_query($connect, $sql);
                 }
