@@ -1,0 +1,19 @@
+● Session start:
+    nav.php
+    login.php
+    admin_header.php
+
+● the "Go to Admin" button in nav.php, only appear after the Admin login
+
+● base64_encode() -> Save html code to database
+● base64_decode() -> Show the content in html tags
+
+● Preview the article?
+    1. Use strpos() find the start and len of preview content
+        I. Set "<div id = "preview"></div>";
+        II. Find the text and tag ahead of </div>  ---> Not Dynamic
+        III. Check the style ---> No boxsizing etc.
+        VI. substr() show the content
+    
+    2. preg_match
+    

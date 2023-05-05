@@ -1,9 +1,9 @@
 
 <?php
-    
+    session_start();
     include "../includes/function.php";
     ob_start(); //buffering our request
-    session_start();
+    
     
     if(isset($_SESSION['user_role'])){
         if($_SESSION['user_role'] !== "Admin"){

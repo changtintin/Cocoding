@@ -1,9 +1,9 @@
 <?php
-    include "../includes/function.php";
+    
 
     ob_start(); //buffering our request
     session_start();
-    
+    include "../includes/function.php";
     if(isset($_SESSION['user_role'])){
         header("index.php");
     }

@@ -1,5 +1,5 @@
 <?php
-    //db.php
+    
     define('CATER', "categories");
     define('POSTS', "posts");
     define('COMMENTS', "comments");
@@ -15,6 +15,8 @@
 
     
     $connect = mysqli_connect(HOST, USER, PASSWORD, DB_NAME);
+
+    
 
     if(!$connect){
         echo "Connection Failed";
@@ -439,7 +441,8 @@
         if(isset($_POST['create_comment'])){
             
             $email = esc($_POST['email'], $connect);
-            $comment_content = esc($_POST['comment_content'], $connect);
+            $comment_content = base64_encode($_POST['comment_content']);
+            
 
             if(empty($_POST['author'])&&isset($_SESSION['username'])){
                 $author = $_SESSION['username'];
@@ -747,7 +750,7 @@
                    
                 if(mysqli_num_rows($q) > 0){
                     // user has been here
-                    $sql2 = "UPDATE users_online(session, time) SET time = '{$time}' WHERE session = '{$session}'; ";
+                    $sql2 = "UPDATE users_online SET time = '{$time}' WHERE session = '{$session}'; ";
                     mysqli_query($connect, $sql2);
                 }   
                 else{
@@ -844,5 +847,76 @@
         return mysqli_real_escape_string($connect, trim($str));
     }
 
-    
+    function isHTML($string){
+        if($string != strip_tags($string)){
+         // is HTML
+         return true;
+        }
+        else{
+         // not HTML
+         return false;
+        }
+    }
+
+    function show_content($content){
+        $content_decode = base64_decode($content);
+        if(isHTML($content_decode)){
+            echo $content_decode;
+        }   
+        else{
+            echo $content; 
+        }    
+    }
+
+    function contact_email($connect){
+        if(isset($_POST['contact_submit'])){
+            $name = esc($_POST['name'], $connect);
+            $from_email = $_POST['mail'];
+            $message = $_POST['content'];
+            $to_email = "tin871001@gmail.com";
+            $subject = esc($_POST['subject'], $connect);
+            $headers = "MIME-Version: 1.0" . "\r\n"; 
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            
+            $headers .= "From:" . $from_email . "\r\n";
+
+            $message = wordwrap($message, 70, "\r\n");
+            $message = "
+                <!DOCTYPE html>
+                <html>
+                <head>
+                </head>
+                <body>
+                <table rules='all' border='1' style='border-color: #666;' cellpadding='10'>
+                <tr style='background: #eee;'><td colspan='2'><strong>COCODING --> User Report</strong> </td></tr>
+                <tr>
+                    <td><strong>From:</strong></td>
+                    <td>".$name."</td>
+                </tr>
+                <tr>
+                    <td><strong>Email:</strong></td>
+                    <td>".$from_email."</td>
+                </tr>
+                <tr>
+                    <td><strong>Subject:</strong></td>
+                    <td>".$subject."</td>
+                </tr>
+               
+                <tr>
+                    <td><strong>Message:</strong></td>
+                    <td>".$message."</td>
+                </tr>
+                </table>
+                </body>
+                </html>
+            ";
+            if(mail($to_email, $subject, $message, $headers)){
+                echo "OK";
+            }
+            else{
+                echo "Error";
+            }
+        }
+    }
+
 ?>

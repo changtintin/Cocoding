@@ -1,9 +1,9 @@
 <?php 
-    
+    session_start();
     include "function.php";
     
     // Send a variable across the pages
-    session_start();
+    
     
     if(isset($_POST['login_submit'])){
 

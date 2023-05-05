@@ -11,9 +11,7 @@
     ?>
         
     <!-- Page Content -->
-<div class="container">
-    
-    
+    <div class="container">
             <script>
                 function close_alert_edit(field_name) {
                     switch(field_name){
