@@ -1,18 +1,10 @@
 
-<?php
-    // if(isset($_SESSION['user_role'])){
-    //     if($_SESSION['user_role'] !== "Admin"){
-    //         $msg = "You can't access the admin";
-    //         header("Location: ../index.php?confirm_msg={$msg}");
-    //     }
-    // }
-    
-    
-    if(!isset($_SESSION)){
-        session_start();
+<?php    
+    if(isset($_SESSION['user_role']) && $_SESSION['user_role'] != "Admin"){
+        $msg = "You can't access the admin";
+        header("Location: ../index.php?confirm_msg={$msg}");
     }
-        
-    
+
     include "../includes/function.php";
 ?>
 <!DOCTYPE html>
@@ -58,7 +50,17 @@
     <!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/summernote.css">
     
-    <script src="js/scripts.js"></script>
+    
+    <!-- jQuery -->
+    <script src="./js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./js/bootstrap.min.js"></script>
+
+
+    <script src ="./js/summernote.min.js"></script>
+
+
+    <script src="./js/scripts.js"></script>
 
 </head>
 

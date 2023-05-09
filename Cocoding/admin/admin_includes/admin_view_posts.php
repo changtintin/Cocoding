@@ -1,5 +1,6 @@
 <form method="post">
-    <div id = "order_field" class="text-right" style="display:none;">
+    <h1 id = "test"></h1>
+    <div id = "sortFilter" class="text-right" style="display:none;">
         <div class="btn-group dropup mr-3" style="padding-bottom: 10px;">
             <div class="btn-group mr-3" role="group">
                 <select class="btn-group form-control" name="col">
@@ -22,7 +23,7 @@
                 </select>
             </div>
             <div class="btn-group mr-3" role="group">
-                <button type="submit" class="btn btn-primary" name="sort_submit" onclick="hide_sort()">
+                <button type="submit" class="btn btn-primary" name="sortSubmit">
                     Go
                 </button>
             </div>
@@ -30,11 +31,11 @@
     </div>
 </form>
         
-<form method="post" name = "postStatus">
+<form method="post" name = "postStatus" class = "postStatus">
     <div class="text-right" style="padding-bottom: 20px;">
         <div class="btn-group dropup mr-3">
             <div class="btn-group mr-3" role="group">
-                <select class="btn-group form-control" id="select" name = "post_setting">
+                <select class="btn-group form-control" id="postSetOption" name = "postSetOption">
                     <option selected disabled >Setting</option>
                     <option value = "Spam">Spam</option>
                     <option value = "Draft">Draft</option>
@@ -45,47 +46,27 @@
                 </select>
             </div>
             <div class="btn-group mr-3" role="group">
-                <button type="submit" class="btn btn-primary" name="post_setting_submit" id="post_setting">
+                <button type="submit" class="btn btn-primary" name="postSetSubmit" id="postSetSubmit">
                     Apply
                 </button>
             </div>
         </div>
             
         <div class="btn-group mr-3 " role="group">
-            <div class="btn-group mr-3" role="group">
-                <button class="btn btn-primary" id="del_button" onclick = "del_confirm()">
-                    <i style = "font-weight:600; color: #ffffb5;">
-                        DELETE                                            
-                    </i>
-                </button>
-            </div>
             
-            <div class="btn-group mr-3" role="group">
-                <a class="btn btn-primary" id="sorting_button" href="#">
-                    <i style = "font-weight:600; color: #ffffb5;">
-                        SORT                                            
-                    </i>
-                </a>
-            </div>
-            <div class="btn-group mr-3" role="group">
-                <a href="admin_posts.php?source=admin_add_posts" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-edit"></span>
-                    New post
-                </a>
-            </div>
-            <div class="btn-group mr-3" role="group" >
-                <button type="submit" class="btn btn-primary float-right" name ="select_all">
-                    Select All
-                </button>
-            </div>
-
-            <div class="btn-group mr-3" role="group">
-                <button type="submit" class="btn btn-primary float-right" name ="cancel_all">
-                    Cancel!
-                </button>
-            </div>
+            <button class="btn btn-primary" id="showSorting"  type = "button">
+                <i style = "font-weight:600; color: #ffffb5;">
+                    SORT                                            
+                </i>
+            </button>
+           
+            <a href="admin_posts.php?source=admin_add_posts" class="btn btn-primary">
+                <span class="glyphicon glyphicon-edit"></span>
+                New post
+            </a>            
         </div> 
     </div>
+    
 
     <table class="table table-bordered table-hover" id = "posts_table">
         <thead>
@@ -102,7 +83,7 @@
                 <th scope = "col">Date</th>
                 <th scope = "col">Like</th>
                 <th scope = "col">Dislike</th>
-                <th scope = "col">Select</th>
+                <th scope = "col"><input type="checkbox" id = "selectAll" ></th>
             </tr>
         </thead>
             
@@ -111,7 +92,7 @@
                     $order = "";
 
                     //ORDER BY `posts`.`post_id` ASC
-                    if(isset($_POST['sort_submit'])){
+                    if(isset($_POST['sortSubmit'])){
                         $order = " ORDER BY ".$_POST['col']." ".$_POST['order'];
                     }
 
@@ -157,15 +138,14 @@
                                     </a>                                    
                                 </td>
 
-                                <td><?php echo $view;?></td>
-                            
+                                <td><?php echo $view;?></td>                            
                                 <td><?php echo $date;?></td>
                                 <td><?php echo $like;?></td>
                                 <td><?php echo $dislike;?></td>
 
                                 <td>                        
                                     <div class="form-check checkbox-lg">
-                                        <input type="checkbox" class="form-check-input" name="select_ary[]" value = "<?php echo  $id;?>" <?php select_all(); ?>>                                                  
+                                        <input type="checkbox" class="form-check-input" name="select_ary[]" value = "<?php echo  $id;?>" <?php //select_all(); ?>>                                                  
                                     </div>                        
                                 </td>
 
@@ -184,47 +164,54 @@
 </form>
 
 
-<script>
-    document.getElementById("sorting_button").onclick = function() {
-        let order_field = document.getElementById('order_field');
+<script>    
+    $(document).ready(function(){
 
-        if(order_field.style.display != 'none'){
-            order_field.style.display = 'none';
-            document.getElementById("sorting_button").style.color="#bd9592";
-        }
-        else {
-            order_field.style.display = 'block';
-            document.getElementById("sorting_button").style.color="#85b292";
-        }
-    }
+        $("#showSorting").click(function(){
+            console.log("click");
+            if($("#sortFilter").css("display") != "none"){
+                console.log("block");
+                $("#sortFilter").css('display','none');
+            }
+            else{
+                console.log("none");
+                $("#sortFilter").css('display','block');
+            }            
+        });
 
-    function hide_sort(){
-        let order_field = document.getElementById('order_field');
-        order_field.style.display = 'none';
-    }
-    
-    // function del_confirm(){
-    //     if(confirm("Press a button!") == true){
-    //         const xhr = new XMLHttpRequest();
-    //         var v = document.getElementById('numIn').innerText;
-    //         console.log(v);
-    //         xhr.open('GET', '../includes/function.php?formData='+v);
-    //         xhr.send();  
-            
-    //         xhr.onload = function(){
-    //             console.log(xhr.status); // 200
-    //             document.getElementById("numIn").innerHTML = xhr.responseText;
-    //         }         
-    //     }
-    //     else{
-    //         document.getElementById("numIn").innerHTML="<h1>Cancel</h1>";
-    //     }
-    // }
+
+        $("#sortSubmit").click(function(){
+            $("#sortFilter").css('display','none');
+        });
+
+        $("#selectAll").click(function(){
+            if($("#selectAll").prop("checked")){
+                console.log("check");                
+                $("input[name='select_ary[]']").prop("checked", true);
+            }
+            else{
+                $("input[name='select_ary[]']").prop("checked", false);
+            }
+        });
+        
+        $("#postSetSubmit").click(function(){
+            if($("#postSetOption").val() == "Delete"){
+                if(confirm("Really?")== true){
+                    $.post("../../includes/function.php",$("#postStatus"),function(data, status){
+                        $("#test").html(data);
+                        console.log("delete");
+                    });
+                    
+                    
+                }
+                else{
+                    console.log("Don't delete");
+                }
+            }
+            else{
+                console.log("Edit Status");
+            }
+        });
+    });
+
 </script>
-
-
-<?php
-    if(isset($_POST['post_setting_submit'])) {
-       edit_post_status();
-    }  
-?>

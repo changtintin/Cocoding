@@ -11,7 +11,4 @@
         $msg = "User Logout";
         header("Location: ../index.php?confirm_msg={$msg}");
     }
-   
-
-    
 ?>

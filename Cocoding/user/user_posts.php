@@ -15,6 +15,15 @@
 
         <div id="page-wrapper">
             <div class="container-fluid">
+                
+                <div class="row">
+                    <div class="col-lg-12" style="padding-top: 30px;">
+                        <h1 class="page-header">
+                            Posts
+                            <small>Author</small>
+                        </h1>
+                    </div>
+                </div>
 
                 <?php
                     // Query Confirm massenge alert
@@ -79,24 +88,6 @@
         }
     }
     
-    document.getElementById("sorting_button").onclick = function() {
-        let order_field = document.getElementById('order_field');
-
-        if(order_field.style.display != 'none'){
-            order_field.style.display = 'none';
-            document.getElementById("sorting_button").style.color="#bd9592";
-        }
-        else {
-            order_field.style.display = 'block';
-            document.getElementById("sorting_button").style.color="#85b292";
-        }
-    }
-
-    
-    function hide_sort(){
-        let order_field = document.getElementById('order_field');
-        order_field.style.display = 'none';
-    }
 </script>
 
 

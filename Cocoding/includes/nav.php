@@ -1,19 +1,27 @@
 <?php
-    if(!headers_sent()){
+    if(!isset($_SESSION) && !headers_sent()){
         session_start();
     }
+
     include "function.php";
     
-    
+    $id = " "; 
     if(isset($_GET['p_id'])){
-        if(isset($_SESSION['user_id'])){
-            $role = "Member";
-        }
-        else{
-            $role = "Visitor";
-        }
-        add_comment($_GET['p_id'], $role);
+        $id = $_GET['p_id'];
+    }    
+    else{
+        $id = -1;
     }
+
+    $role = " ";    
+    if(!empty($_POST['author'])){
+        $role = "Visitor";
+    }
+    else if(isset($_SESSION['user_id'])){
+        $role = "Subscriber";
+    }
+    
+    add_comment($id, $role, $connect);      
     register();
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -29,9 +37,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 
                 <ul class="nav navbar-nav">  
-                    <?php   
-                        
-                        
+                    <?php                                                   
                         if(!isset($_SESSION['username'])){
                             echo"
                                 <li>
@@ -80,25 +86,68 @@
                                         </a>
                                     </li>";
                             }
-
-                            if(isset($_GET['p_id'])){
-                                echo"
-                                    <li>
-                                        <a href='./user/user_posts.php?request=user_edit_posts&edit_id=".$_GET['p_id']."' style = 'font-weight:bold; font-size: small; color:#91c2c9;'>
-                                            <span class='glyphicon glyphicon-edit'></span> 
-                                            Edit this Post 
-                                        </a>
-                                    </li>
-                                ";
-                            }
-                        }
-                        fetch_partof_cater();
+                            
+                            $sql = "SELECT * FROM ".POSTS." WHERE post_author = '{$_SESSION['username']}' AND  post_id = '{$id}';";
+                            $r = mysqli_query($connect, $sql);
+                            if($r){
+                                if(mysqli_num_rows($r) == 1){
+                                    echo"
+                                        <li>
+                                            <a href='./user/user_posts.php?request=user_edit_posts&edit_id=".$_GET['p_id']."' style = 'font-weight:bold; font-size: small; color:#91c2c9;'>
+                                                <span class='glyphicon glyphicon-edit'></span> 
+                                                Edit this Post 
+                                            </a>
+                                        </li>
+                                    ";
+                                }                                
+                            }                            
+                        }                        
                     ?>
+                    
                 </ul>
-                
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <div class="dropdown">
+                            <div class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="nav-drop" id = "drop">
+                                    <span class="glyphicon glyphicon-triangle-right" id = "drop_icon"></span>
+                                    Category
+                                    <?php 
+                                        if(isset($_GET['cat'])){
+                                            $sql = "SELECT cat_title FROM ".CATER. " WHERE cat_id = '{$_GET['cat']}'";
+                                            $q = mysqli_query($connect, $sql);
+                                            if($q){
+                                                if(mysqli_num_rows($q)>0){
+                                                    $row = mysqli_fetch_assoc($q);
+                                                    echo ": ".$row['cat_title'];
+                                                }
+                                            }
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                            <ul class="dropdown-menu" aria-labelledby="category">
+                                <?php                                                                                               
+                                    fetch_nav_cater();
+                                ?>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
+<script>
+    document.getElementById("drop").onclick = function(){
+        var caret = document.getElementById("drop_icon");
+        if(caret.className == "glyphicon glyphicon-triangle-right"){
+            caret.className="glyphicon glyphicon-triangle-bottom";
+        }
+        else{
+            caret.className="glyphicon glyphicon-triangle-right";
+        }
+    }
+</script>
     

@@ -3923,7 +3923,7 @@ fieldset[disabled] .btn-default:hover {
 .btn-primary {
     color: #ffff;
     background-color: #817a6d;
-    border-color: #746954
+    border-color: #817a6d
 }
 
 .btn-primary.active,
@@ -3963,7 +3963,7 @@ fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary:hover {
     color: #ffff;
     background-color: #817a6d;
-    border-color: #746954
+    border-color: #817a6d
 }
 
 .btn-primary .badge {

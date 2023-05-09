@@ -252,6 +252,15 @@ p{
     font-weight: 800;
 }
 
-.nav_itm: visited{
-    color: pink;
+
+
+.nav-drop{
+    font-weight:bold; 
+    font-size: small;
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+    padding-left: 10px;
+    position: relative; 
+    display: block;
+    color: #9d9d9d;
 }

@@ -1,10 +1,10 @@
 <h4>Login</h4>
 <div class = "form-group form-group-sm">                
-    <input type = "text" class="form-control" name = "username" placeholder="" autocomplete="off">                    
+    <input type = "text" class="form-control" name = "username_login" placeholder="" autocomplete="off">                    
 </div>
 
 <div class = "input-group input-group-sm">                
-    <input type = "password" class="form-control" name = "password" placeholder="" autocomplete="off" id = "password_in">   
+    <input type = "password" class="form-control" name = "password_login" placeholder="" autocomplete="off" id = "password_in">   
     <span class = "input-group-btn">
         <button class = "btn btn-success" id = "show_password" type = "button" >
             <span class ="glyphicon glyphicon-eye-close" id = "show_icon"></span>
@@ -40,18 +40,15 @@
             }
             
         }
-    
-    
+
 </script>
 <?php 
-    // Send a variable across the pages
-    session_start();
     
     if(isset($_POST['login_submit'])){
 
         // Prevent SQL Injection
-        $username =  mysqli_real_escape_string ($connect, $_POST['username']);
-        $password_input =  mysqli_real_escape_string ($connect, $_POST['password']);
+        $username =  mysqli_real_escape_string ($connect, $_POST['username_login']);
+        $password_input =  mysqli_real_escape_string ($connect, $_POST['password_login']);
         $sql = "SELECT * FROM ".USERS." WHERE username = '{$username}';";
         $q = mysqli_query($connect, $sql);
 

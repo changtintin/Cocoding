@@ -64,5 +64,5 @@
     <!-- /#wrapper -->
 
 <?php 
-    include "admin_includes/admin_footer.php";
+    include "./admin_includes/admin_footer.php";
 ?>

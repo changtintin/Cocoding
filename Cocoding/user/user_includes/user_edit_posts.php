@@ -13,10 +13,14 @@
     }
 </script>
 <div class="row">
-    <div class="col-lg-12">
-        <div class="useradmin-header">Edit Post</div>
+    <div class="col-lg-12" style="padding-top: 10px;">
+        <h1>
+            Edit Posts            
+        </h1>
     </div>
-
+</div>
+<div class="row">
+    
     <div class='col-lg-12'>
         <!-- enctype= Sending Different Form Data -->
         <form method="post" enctype="multipart/form-data">

@@ -5,12 +5,12 @@
     define('USERS', "users");
     define('LIKES', "post_likes");
     define('ONLINE', "users_online");
-    define('TAGS', "tags");
+    define('TAGS', "tags");    
 
     define('HOST', "localhost");
     define('USER', "root");
     define('PASSWORD', "root");
-    define('DB_NAME', "cms");
+    define('DB_NAME', "vbjfjrmy_cocoding");
 
     
     $connect = mysqli_connect(HOST, USER, PASSWORD, DB_NAME);
@@ -18,8 +18,6 @@
     if(!$connect){
         echo "Connection Failed";
     }
-    
-    
     
     function insert_cater(){
         global $connect;
@@ -67,7 +65,9 @@
             }
             else{
                 $r = "\"ok\"";
-                echo "<div id = 'alert_edit'>
+
+                echo "
+                    <div id = 'alert_edit'>
                         <div class='alert' >
                             <span class='closebtn' onclick='close_alert_edit({$r})'>&times;</span>
                             This Field should not be empty!!!!
@@ -112,7 +112,7 @@
         }
     }
 
-    function fetch_partof_cater(){
+    function fetch_nav_cater(){
         global $connect;
         
         $c_id = -1;
@@ -126,8 +126,8 @@
             $i = 0;
             if(mysqli_num_rows($select_cater_sidebar) > 0){
                 while($fetch_row = mysqli_fetch_assoc($select_cater_sidebar)){
-                    if($i > 8)
-                        break;
+                    // if($i > 8)
+                    //     break;
                         
                     $active = "";
                     $title = $fetch_row['cat_title'];
@@ -163,10 +163,11 @@
         if(isset($_GET['confirm_msg'])){
             $m = $_GET['confirm_msg'];
             $sim = similar_text($m, 'ERROR', $perc);
+            $sim1 = similar_text($m, 'Error', $perc);
             $sim2 = similar_text($m, 'Wrong', $perc);
             $sim3 = similar_text($m, "You can't", $perc);
             $r = "\"ok\"";
-            if($sim >= 5 ||  $sim2 >= 5 || $sim3 >= 7){
+            if($sim >= 5 ||$sim1 >= 5 ||  $sim2 >= 5 || $sim3 >= 7){
                 $m = "<span class='glyphicon glyphicon-remove'></span> ".$m;
             }
             else{
@@ -353,15 +354,16 @@
     function edit_post_status(){
         global $connect;
         
-        if(isset($_POST['post_setting'])){
-            $status = esc($_POST['post_setting'], $connect);
+        if(isset($_POST['postSetOption'])){
+            $status = esc($_POST['postSetOption'], $connect);
+
             switch($status){
-                case "Spam":case "Published";case"Draft":
+
+                case "Spam": case "Published"; case"Draft":
                     foreach($_POST['select_ary'] as $checkbox){
                         $sql = "UPDATE ".POSTS." SET post_status = '{$status}' WHERE post_id = {$checkbox}";
                         $q = mysqli_query($connect, $sql);
                     }
-                    $msg = query_confirm($q);     
                     break;
                 
                 case "Delete":
@@ -369,7 +371,7 @@
                         $sql = "DELETE FROM ".POSTS." WHERE post_id = '{$checkbox}' ";
                         $q = mysqli_query($connect, $sql);
                     }
-                    $msg = query_confirm($q);     
+                     
                     break;
                 
                 case "Duplicate":
@@ -392,13 +394,11 @@
 
                                     $query2 = "INSERT INTO posts(post_title, post_author, post_date, post_status, post_cater_id, post_content, post_image)";
                                     $query2 .= " VALUES('{$post_title}','{$post_author}','{$post_date}','{$post_status}',{$post_cater_id},'{$post_content}','$post_image');";
-                                    $result2 = mysqli_query($connect, $query2);
+                                    $result2 = mysqli_query($connect, $query2);                                    
                                 }
                             }
                         }
-                    }
-            
-                    $msg = query_confirm($result2);     
+                    }                                
                     break;
                 
                 case "ResetViews":
@@ -406,15 +406,11 @@
                         $sql = "UPDATE ".POSTS." SET post_view_count = '0' WHERE post_id = {$checkbox}";
                         $q = mysqli_query($connect, $sql);
                     }
-                    $msg = query_confirm($q);     
                     break;
                     
-                default:
-                    $msg = "Error Please try again!";
+                default: 
                     break;
             }
-            header("Location: ./admin_posts.php?confirm_msg={$msg}", TRUE, 301);
-            exit(); 
         }
     }
 
@@ -438,29 +434,30 @@
         }
     }
 
-    function add_comment($p_id, $role){
-        global $connect;
+    function add_comment($p_id, $role, $connect){
         if(isset($_POST['create_comment'])){
             
             $email = esc($_POST['email'], $connect);
-            $comment_content = base64_encode($_POST['comment_content']);
-            
+            $comment_content = base64_encode($_POST['comment_content']);            
 
-            if(empty($_POST['author'])&&isset($_SESSION['username'])){
+            if($role == "Subscriber"){
                 $author = $_SESSION['username'];
-
             }
-            else{
+            else if($role == "Visitor"){
                 $author = $_POST['author'];
             }
+            else{
+                $msg = "ERROR, Please enter author name";     
+                header("Location: ./post.php?p_id={$p_id}&confirm_msg={$msg}", TRUE, 301);
+                exit(); 
+            }
 
-            if(!empty($author) && !empty($email) && !empty($comment_content)){
+            if(!empty($email) && !empty($comment_content)){
                 $sql = "INSERT INTO ".COMMENTS."(comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date) ";
-                $sql .= "VALUE('{$p_id}', '{$author}', '{$email}', '{$comment_content}', 'Unapproved', now())";
-                
-                $q = mysqli_query($connect, $sql);
-                $msg = query_confirm($q);
-                
+                $sql .= "VALUE('{$p_id}', '{$author}', '{$email}', '{$comment_content}', 'Unapproved', '".date('Y-m-d')."')";
+                echo $sql."<br>";
+                $q = mysqli_query($connect, $sql);            
+                $msg = query_confirm($q);                
                 header("Location:./post.php?p_id={$p_id}&confirm_msg={$msg}", TRUE, 301);
                 exit();   
             }
@@ -472,15 +469,7 @@
         }
     }
     
-    function select_all(){
-        if(isset($_POST['select_all'])){
-           echo "checked"; 
-        }
-        else if(isset($_POST['cancel_all'])){
-            echo " ";
-        }
-    }
-
+    
     function add_user(){
         if(isset($_POST['add_user'])){
             global $connect;
@@ -599,13 +588,62 @@
         return -1;
     }
 
+    function user_name_exists($connect){
+        if(isset($_POST['username'])){
+            if(empty($_POST['username'])){
+                echo "<h6 style='color:red;'>Please enter the username!</h6>";
+            }
+            else{        
+                $username = $_POST['username'];  
+                if(strlen($username) < 6){
+                    echo "<h6 style='color:red;'>The username should be more than 6 characters</h6>";
+                }  
+                else{
+                    $sql = "SELECT * FROM ".USERS." WHERE username = '{$username}'";            
+                    $q = mysqli_query($connect, $sql);
+                    if($q){
+                        if(mysqli_num_rows($q)>0){
+                            echo "<h6 style='color:red;'>The username has already been used</h6>";
+                        }
+                        else if (mysqli_num_rows($q) == 0){
+                            echo "<h6 style='color:green;'>You can use this username</h6>";
+                        }
+                    }   
+                }  
+            }     
+        }        
+    }
+    
+    function email_exists($connect){
+        
+        $email = $_POST['email'];
+        $sql = "SELECT * FROM ".USERS." WHERE user_email = '{$email}'";            
+        $q = mysqli_query($connect, $sql);
+        if($q){
+            if(mysqli_num_rows($q) > 0){
+                return true;
+            }
+            else if (mysqli_num_rows($q) == 0){
+                return false;
+            }
+        }            
+        return true;        
+    }
+
     function register(){
         global $connect;
 
-        if(isset($_POST['submit'])){
-            $username = mysqli_escape_string($connect,$_POST['username']);
-            $email = mysqli_escape_string($connect,$_POST['email']);
-            $password = mysqli_escape_string($connect,$_POST['password']);
+        if(isset($_POST['username'])){
+            if(empty($_POST['password']) || empty($_POST['email']) || empty($_POST['username']) || email_exists($connect)){
+                $msg = "ERROR, the field shouldn't be empty <br> or the email have already been used!";
+                $msg .= "<br> <a href = './index.php'>Login with your account</a>";
+                header("Location: ./registration.php?confirm_msg={$msg}", TRUE, 301);
+                exit();
+            }
+
+            $username = esc($_POST['username'], $connect);
+            $email = esc($_POST['email'], $connect);
+            $password = esc($_POST['password'], $connect);
             
             $role = "Subscriber";
             $sql = "INSERT INTO ".USERS."(username, user_email, user_password, user_role) VALUE('{$username}', '{$email}', '{$password}', '{$role}')";
@@ -840,7 +878,6 @@
         }
     }
     
-
     function save_tag($post_id, $connect){
         if(isset($_POST['select_ary']) && $_POST['select_ary'] != null){
             foreach($_POST['select_ary'] as $checkbox){
@@ -931,8 +968,13 @@
             exit();
         }
     }
+
+    // online user amount
     users_online($connect);
     fecth_likes($connect);
     add_new_tag();
 
+    //registration
+    user_name_exists($connect);
+    edit_post_status();
 ?>

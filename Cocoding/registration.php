@@ -2,6 +2,7 @@
         include "includes/header.php"; 
         include "includes/nav.php"; 
     ?>
+    
     <div class="jumbotron text-center banner_img"> 
         <div class="banner_content"> 
             <div class="banner-header"></div>          
@@ -26,36 +27,114 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-6 col-xs-offset-3">
+                        <?php
+                            query_msg_alert();
+                        ?>
                         <div class="form-wrap">
-                            <h1 style="color:#756961; padding-bottom:20px;">Register</h1>
+                            <h1 style="color:#756961; padding-bottom:20px;">Sign Up</h1>
                             
-                            <form role="form" action="registration.php" method="post" id="login-form" autocomplete="off">
+                            <form role="form" action="registration.php" method="post" id="regist-form" autocomplete="off">
                                 <div class="form-group">
-                                    <label for="username" class="sr-only">username</label>
-                                    <input type="text" name="username" id="username" class="form-control" placeholder="Enter Desired Username">
+                                    <label for="Username" class="form-label">Username</label>
+                                    <div class="input-group">                                        
+                                        <input type="text" name="username" id="username" class="form-control" placeholder="Enter Desired Username">    
+
+                                        <span class = "input-group-btn">
+
+                                            <button class = "btn btn-primary" type = "button" id = "username_check" data-toggle="tooltip" title="Check for username">                                                
+                                                <span class="glyphicon glyphicon-remove-circle"></span>                                                
+                                            </button>
+
+                                            <button class = "btn" type = "button" id = "refresh_username" data-toggle="tooltip" title="Reset the username" required>                                                
+                                                <span class="glyphicon glyphicon-refresh"></span>                                                
+                                            </button>
+                                        </span>
+                                    </div>                                                                            
+                                    <span id = "check_alert"></span>
                                 </div>
+
+                                <!-- Email Input -->
+                                <div class="form-group">                                    
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com" >                                                                    
+                                    
+                                </div>
+
+                                <!-- Password Input -->
                                 <div class="form-group">
-                                    <label for="email" class="sr-only">Email</label>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" >
                                 </div>
-                                <div class="form-group">
-                                    <label for="password" class="sr-only">Password</label>
-                                    <input type="password" name="password" id="key" class="form-control" placeholder="Password">
-                                </div>
-                        
-                                <input type="submit" name="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Go">
+                               
+                                <!-- Submit Button -->
+                                <input type="button" name="register_submit" id="register_submit" class="btn btn-custom btn-lg btn-block" value="Go">
                             </form>
                         
-                        </div>
-                    
-
-                    </div> <!-- /.col-xs-12 -->
+                        </div>                    
+                    </div> <!-- /.col-xs-6 col-xs-offset-3 -->
                 </div> <!-- /.row -->
             </div> <!-- /.container -->
         </section>
+        
+        <script>
+                              
+            function close_alert_edit(field_name) {
+                switch(field_name){
+                    case "ad":
+                        document.getElementById("ad_window").innerHTML = " ";
+                    break;
 
+                    case "social":
+                        document.getElementById("social_window").innerHTML = " ";
+                    break;
 
-        <hr>
+                    case "notice":
+                        document.getElementById("notice_window").innerHTML = " ";
+                    break;
+
+                    default:
+                        document.getElementById("alert_edit").innerHTML = " ";
+                    break;
+                }
+            }
+            
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();
+
+                $("#refresh_username").click(function(){
+                    $("#username").attr('disabled', false);
+                    $("#username_check").html("<span class = 'glyphicon glyphicon-remove-circle'></span>");
+                    $("#check_alert").text(" ");
+                    $("#register_submit").attr('type', 'button');
+                });
+
+                $("#register_submit").click(function(){
+                    $("#username").attr('disabled', false);
+                    $("#username").val(string(username));
+                });
+
+                $("#username_check").click(function(){
+                    // data: response data
+                    // status: 200/404/...
+                    $.post( "./includes/function.php", $("#username"),function(data, status){
+                        $("#check_alert").html(data);
+                        console.log(status);                     
+                        var okIcon = "<span class='glyphicon glyphicon-ok-circle'></span>";
+                        var banIcon = "<span class='glyphicon glyphicon-ban-circle'></span>";
+
+                        if($("#check_alert").text() == "You can use this username"){
+                            $("#username_check").html(okIcon);
+                            $("#username").attr('disabled', true);
+                            $("#register_submit").attr('type', 'submit');
+                        }
+                        else{
+                            $("#username_check").html(banIcon);
+                        }                    
+                    });
+                });
+            });
+            
+        </script>   
 
 <?php include "includes/footer.php";?>
 

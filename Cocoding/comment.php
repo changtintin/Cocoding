@@ -35,11 +35,10 @@
                     setInterval(like, 2000);
                     setInterval(dislike, 2000);
 
-
                     function roleChange() {
                         var checkBox = document.getElementById("roleCheck");
                         var text = document.getElementById("text");
-                        if (checkBox.checked == true){
+                        if (checkBox.checked == false){
                             text.style.display = "block";
                         } else {
                             text.style.display = "none";
@@ -85,14 +84,23 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label class="col-sm-9 col-form-label pt-0" for="myCheck">Use other username: <i>you can't trace this comment afterward</i></label>
-                            <div class="col-sm-3">
-                                <input class="form-check-input" type="checkbox" id="roleCheck" onclick="roleChange()">
-                            </div>
-                        </div> 
+                        <?php
+                            if(isset($_SESSION['user_id'])){
+                                echo '
+                                    <div class="form-group row">
+                                        <label class="col-sm-9 col-form-label pt-0" for="myCheck">
+                                            Use my username instead                                            
+                                        <div class="col-sm-3">
+                                            <input class="form-check-input" type="checkbox" id="roleCheck" onclick="roleChange()">
+                                        </div>
+                                    </div> 
+                                ';
+                            }
+                            
+                        ?>
+                        
 
-                        <div class="form-group row " id="text" style="display:none">
+                        <div class="form-group row " id="text" style="display:block">
                             <label for="author" class="col-sm-2 col-form-label">Author</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" name="author">
@@ -105,6 +113,7 @@
                                 <textarea class="form-control" rows="40" name="comment_content"  id="summernote"></textarea>
                             </div>
                         </div>
+
                         <?php                            
                             $post_comment_count = comment_count($connect, $post_id);
                         ?>
