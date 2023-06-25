@@ -6,17 +6,17 @@
         }
 
         function addTag(){ 
-        const xhr = new XMLHttpRequest();
-        let newTag = document.getElementById("newTag").value;        
-        xhr.open('GET', '../includes/function.php?add_tags=ok&tag_name='+newTag);
-        xhr.onload = function(){
-            console.log(xhr.status); // 200
-            const place = document.createElement("span");
-            place.innerHTML= xhr.responseText;
-            document.getElementById("add_confirm").appendChild(place);
-        }         
-        xhr.send();                                            
-    }
+            const xhr = new XMLHttpRequest();
+            let newTag = document.getElementById("newTag").value;        
+            xhr.open('GET', '../includes/function.php?add_tags=ok&tag_name='+newTag);
+            xhr.onload = function(){
+                console.log(xhr.status); // 200
+                const place = document.createElement("span");
+                place.innerHTML= xhr.responseText;
+                document.getElementById("add_confirm").appendChild(place);
+            }         
+            xhr.send();                                            
+        }
     </script>
     <div class="form-group row">
         <div class="col-sm-2">
@@ -64,21 +64,21 @@
             <select multiple class="form-control" name = "cater_n">
                 <?php
                     
-                    if($connect){
-                        $sql = "SELECT * FROM ".CATER;
-                        $query = mysqli_query($connect, $sql);
-                        if(mysqli_num_rows($query) > 0){
-                            while($row = mysqli_fetch_assoc($query)){
-                                $cat_id = $row['cat_id'];
-                                $name = $row['cat_title'];
+                        if($connect){
+                            $sql = "SELECT * FROM ".CATER;
+                            $query = mysqli_query($connect, $sql);
+                            if(mysqli_num_rows($query) > 0){
+                                while($row = mysqli_fetch_assoc($query)){
+                                    $cat_id = $row['cat_id'];
+                                    $name = $row['cat_title'];
                 ?>
-                        <option <?php if($cat_id == $cater_id){echo "selected = 'selected'"; }?>>
-                            <?php echo $name; ?>
-                        </option>    
+                            <option <?php if($cat_id == $cater_id){echo "selected = 'selected'"; }?>>
+                                <?php echo $name; ?>
+                            </option>    
                 <?php                
+                                }
                             }
                         }
-                    }
                 ?>                
             </select>
         </div>
@@ -172,11 +172,10 @@
     
 
     <?php           
-                    edit_post($result['post_image'], $id);
-        
-                }   
+                        edit_post($result['post_image'], $id);        
+                    }   
+                }
             }
-        };
     ?>      
 
   

@@ -6,7 +6,7 @@
         <div class="banner_content"> 
             <div class="banner-header"></div>          
             
-            <img src="image/cocoding_logo-removebg.png" alt="logo" >
+            <img src="/Cocoding/image/cocoding_logo-removebg.png" alt="logo" >
             <h4>Contact Us anytime </h4>
             <p style="font-size: small;">
                Got a coding problem you can't solve?<br> 
@@ -25,8 +25,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <?php query_msg_alert(); ?>
-                        <h1 style="color:#756961; padding-bottom:20px; text-align:center;">Contact Us</h1>
+
+                        <?php
+                            query_msg_alert(); 
+                        ?>
+
+                        <h2 class="text-center" style="padding-bottom:20px;">Contact Us</h2>
 
                         <div class="form-wrap">
                             <form role="form" action="contact.php" method="post" id="login-form" autocomplete="off">
@@ -55,11 +59,11 @@
                                 <div class="form-group row">
                                     <label for="summernote" class="col-sm-2 col-form-label">Message</label>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" rows="40" name="content"  id="summernote"></textarea>
+                                    <textarea class="form-control" rows="40" name="content"  id="summernote"></textarea>
                                     </div>
                                 </div>
                         
-                                <input type="submit" name="contact_submit" id="contact_submit" class="btn btn-custom btn-lg btn-block" value="Send">
+                                <input type="submit" name="contact_submit" id="contact_submit" class="btn btn-primary btn-lg btn-block" value="Send">
                             </form>
                         
                         </div>
@@ -69,12 +73,11 @@
                 </div> <!-- /.row -->
             </div> <!-- /.container -->
         </section>
-
-
         <hr>
 
-<?php 
-    contact_email($connect);
+<?php    
+    // contact_email($connect);
+    include "includes/vendor/send_mail.php";
     include "includes/footer.php";
 ?>
 
@@ -99,3 +102,4 @@
         }
     }
 </script>   
+

@@ -7,14 +7,14 @@
     <meta name="author" content="">
 
     <title>COCODING - Code Learning Blog</title>
-    <link rel="icon" type="image/ico" href="../image/cocoding.ico">
+    <link rel="icon" type="image/ico" href="/Cocoding/image/cocoding.ico">
+
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.main_cms.css" rel="stylesheet">
+    <link href="/Cocoding/css/bootstrap.main_cms.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/blog-home.css" rel="stylesheet">
-
-    <link href="admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/Cocoding/css/blog-home.css" rel="stylesheet">
+    <link href="/Cocoding/admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,8 +24,17 @@
     <![endif]-->
 
     <!-- include summernote css/js -->
-    <link rel="stylesheet" href="admin/css/summernote.css">
+    <link rel="stylesheet" href="/Cocoding/admin/css/summernote.css">
 
-    <script src="js/scripts.js"></script>
+    <script src="/Cocoding/js/scripts.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="/Cocoding/admin/js/jquery.js"></script>
+    
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/Cocoding/admin/js/bootstrap.min.js"></script>
+
+    <script src ="/Cocoding/admin/js/summernote.min.js"></script>
+    <script src="/Cocoding/admin/js/scripts.js"></script>
 </head>

@@ -3,10 +3,9 @@
     // Protect from user access from url
     if(!isset($_SESSION) || empty($_SESSION['user_role'])){
         $msg = "ERROR, Please sign up for further access to user admin, ";
-        $msg .= "<a href = './registration.php'><strong>register now</strong></a>";
+        $msg .= "<a href = '/Cocoding/registration'><strong>register now</strong></a>";
         header("Location: ../index.php?confirm_msg={$msg}", true, 301);
     }
-
 ?>
 <body >
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -17,7 +16,6 @@
 
         <!-- Navigation -->
         <?php 
-            
             include "user_nav.php"; 
         ?>
 
@@ -130,7 +128,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="user_comments.php">
+                            <a href="user_comments">
                                 <div class="panel-footer">
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>

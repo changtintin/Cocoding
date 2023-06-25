@@ -1,14 +1,9 @@
 
-<?php
-    if( empty(session_id()) && !headers_sent()){
-        session_start();
-    }
-?>
 <div class="jumbotron text-center banner_img"> 
     <div class="banner_content"> 
         <div class="banner-header"></div>          
         
-        <img src="image/cocoding_logo-removebg.png" alt="logo" >
+        <img src="/Cocoding/image/cocoding_logo-removebg.png" alt="logo" >
 
         <p style="font-size: small;">
             Cocoding — Coding  Together 

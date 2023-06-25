@@ -22,9 +22,7 @@
                             echo "Please try again!<br>";
                         }
                         else{
-                            $tag = "tag_name";
-                            
-                            
+                                                       
                             $query = "SELECT * FROM ".TAGS." WHERE tag_name LIKE '%{$search_input}%';";
                            
                             $result = mysqli_query($connect, $query);
@@ -77,12 +75,12 @@
                                 
                 
                 <h1 class="page-header">
-                    <a href = "post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title; ?></a>                    
+                    <a href = "/Cocoding/post/<?php echo $post_id; ?>/"><?php echo $post_title; ?></a>                    
                 </h1>
 
                 <p class="lead">
                     by 
-                    <a href="author_post.php?author=<?php echo $post_author; ?>">
+                    <a href="/Cocoding/author_post/<?php echo $post_author; ?>">
                         <?php echo $post_author; ?>
                     </a>
                 </p>
@@ -97,7 +95,7 @@
                     <h5>
                         Catergory:  
                         <span class='badge badge-secondary'>
-                            <a href = 'category.php?cat=<?php echo $cat_id; ?>' style = 'color:white;'>
+                            <a href = '/Cocoding/category/<?php echo $cat_id; ?>' style = 'color:white;'>
                                 <?php echo $cat_title; ?>
                             </a>
                         </span>
@@ -110,13 +108,13 @@
 
                 <p style='font-family:Rockwell;'>
                     <strong>
-                        <?php fetch_tags($post_id, $connect, "post") ?>
+                        <?php fetch_tags($post_id, $connect) ?>
                     </strong>
                 </p>
 
 
                 <div style='padding-bottom: 50px;'>
-                    <img class = "img-responsive" src = "image/<?php echo $post_image;?>" alt="<?php echo $post_image;?>">
+                    <img class = "img-responsive" src = "/Cocoding/image/<?php echo $post_image;?>" alt="<?php echo $post_image;?>">
                 </div>
                                 <p>
                                     <div style="overflow:hidden; white-space: nowrap; text-overflow: ellipsis; height: 200px; margin-bottom:10px;">
@@ -127,7 +125,7 @@
                                     </div>
                                 </p>
                 
-                                <a class = "btn btn-primary" href = "post.php?p_id=<?php echo $post_id; ?>">
+                                <a class = "btn btn-primary" href = "/Cocoding/post/<?php echo $post_id; ?>/">
                                     Read More <span class="glyphicon glyphicon-chevron-right"></span>
                                 </a>
                                 <hr>

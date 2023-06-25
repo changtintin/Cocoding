@@ -87,14 +87,14 @@
                         <tr>
                             <th scope="row"><?php echo $id;?></th>                
                             <td>
-                                <a href="../post.php?p_id=<?php echo $id; ?>"> 
+                                <a href="/Cocoding/post.php?p_id=<?php echo $id; ?>"> 
                                     <?php echo $title;?>
                                 </a>
                             </td>       
                             
                             <td><img class="media-object" src="../image/<?php echo $img;?>" alt="" style="width:100px;height:100px;"></td>
 
-                            <td><?php fetch_tags($id, $connect, "user");?></td>
+                            <td><?php fetch_tags($id, $connect);?></td>
                             <td><?php echo $post_comment_count;?></td>
                             <td><?php echo $view;?></td>
                             <td><?php echo $date;?></td>
@@ -103,7 +103,7 @@
 
                             <td>                        
                                 <div class="form-check checkbox-lg">
-                                    <input type="checkbox" class="form-check-input" name="select_ary[]" value = "<?php echo  $id;?>" <?php select_all(); ?>>                                                  
+                                    <input type="checkbox" class="form-check-input" name="select_ary[]" value = "<?php echo  $id;?>" >                                                  
                                 </div>                        
                             </td>
                         </tr>

@@ -4,7 +4,7 @@
             <ul class="nav navbar-right top-nav">
                 
                 <li>
-                    <a href = "../index.php" ><span class="glyphicon glyphicon-home"></span> Home </a>
+                    <a href = "/Cocoding/index.php" ><span class="glyphicon glyphicon-home"></span> Home </a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Hello, <?php echo $_SESSION['username'];?> ! </a>
@@ -14,8 +14,15 @@
                         </li>                       
                         <li class="divider"></li>
                         <li>
-                            <a href="../includes/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="/Cocoding/index.php?logout=1"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
+                        <?php
+                            if(isset($_GET['logout'])){
+                                $sid = session_id();
+                                logout($connect, $sid);
+                            }
+
+                        ?>
                     </ul>
                 </li>
             </ul>
@@ -36,10 +43,10 @@
 
                         <ul id="demo1" class="collapse">
                             <li>
-                                <a href="./admin_posts.php">View All Posts</a>
+                                <a href="./admin_posts">View All Posts</a>
                             </li>
                             <li>
-                                <a href="./admin_posts.php?source=admin_add_posts">Add Posts</a>
+                                <a href="./admin_posts/admin_add_posts">Add Posts</a>
                             </li>
                         </ul>
                     </li>
@@ -67,7 +74,7 @@
 
                         <ul id="demo2" class="collapse">
                             <li>
-                                <a href="./admin_users.php">View All Users</a>
+                                <a href="./admin_users">View All Users</a>
                             </li>
                             <li>
                                 <a href="admin_users.php?source=admin_add_users">Add Users</a>

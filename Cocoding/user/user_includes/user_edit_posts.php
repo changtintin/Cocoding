@@ -158,16 +158,18 @@
 
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary" name="edit_post">Submit</button>
+                    <button type="submit" class="btn btn-primary" name="user_edit_post_submit">Submit</button>
                 </div>
+                
             </div>
         </form>
     <?php           
-                    user_edit_post($result['post_image'], $id);
+                
         
                 }   
             }
         };
+        user_edit_post($result['post_image'], $id);
     ?>      
     </div>
 </div>

@@ -2,7 +2,7 @@
 <?php    
     if(isset($_SESSION['user_role']) && $_SESSION['user_role'] != "Admin"){
         $msg = "You can't access the admin";
-        header("Location: ../index.php?confirm_msg={$msg}");
+        header("Location: ../index/confirm_msg={$msg}");
     }
 
     include "../includes/function.php";

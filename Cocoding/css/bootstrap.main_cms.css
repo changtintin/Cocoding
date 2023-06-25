@@ -3923,7 +3923,6 @@ fieldset[disabled] .btn-default:hover {
 .btn-primary {
     color: #ffff;
     background-color: #817a6d;
-    border-color: #817a6d
 }
 
 .btn-primary.active,
@@ -4219,7 +4218,6 @@ fieldset[disabled] .btn-link:hover {
     line-height: 1.3333333;
     border-radius: 6px;
     background-color: #a19d95;
-    color: #363536;
 }
 
 .btn-group-sm>.btn,

@@ -18,6 +18,49 @@
     if(!$connect){
         echo "Connection Failed";
     }
+
+    function login($connect){
+        if(isset($_POST['login_submit'])){
+            // Prevent SQL Injection
+            $username =  mysqli_real_escape_string ($connect, $_POST['username_login']);
+            $password_input =  mysqli_real_escape_string ($connect, $_POST['password_login']);
+            $sql = "SELECT * FROM ".USERS." WHERE username = '{$username}';";
+            $q = mysqli_query($connect, $sql);
+    
+            if($q){
+                if(mysqli_num_rows($q) > 0){
+                    if($row = mysqli_fetch_assoc($q)){                    
+                        $algo = PASSWORD_BCRYPT;
+                        $hash = password_hash($password_input, $algo);
+                        $password = $row['user_password'];
+                        if(password_verify($password, $hash)){
+                            $_SESSION['username'] = $row['username'];
+                            $_SESSION['user_password'] = $row['user_password'];
+                            $_SESSION['user_firstname'] = $row['user_firstname'];
+                            $_SESSION['user_lastname'] = $row['user_lastname'];
+                            $_SESSION['user_role'] = $row['user_role'];
+                            $_SESSION['user_id'] = $row['user_id'];
+                            $_SESSION['user_email'] = $row['user_email'];
+                            $_SESSION['user_image'] = $row['user_image'];                            
+                            $msg = "Login Successful";
+                            header("Location: /Cocoding/index/{$msg}", true, 301);
+                            exit();
+                        }
+                        else{
+                            $msg = "ERROR Please enter a valid Password";
+                            header("Location: /Cocoding/index/{$msg}", true, 301);
+                            exit();
+                        }
+                    }
+                }
+                else{
+                    $msg = "Something went wrong, Please try again";
+                    header("Location: /Cocoding/index/{$msg}", true, 301);
+                    exit();
+                }
+            }        
+        }
+    }
     
     function insert_cater(){
         global $connect;
@@ -90,7 +133,7 @@
                 echo "Error";
             }
             $msg = query_confirm($delete_cater);   
-            header("Location: ./admin_cater.php?confirm_msg={$msg}", TRUE, 301);
+            header("Location: /Cocoding/admin/admin_cater.php?confirm_msg={$msg}", TRUE, 301);
             exit();
         }  
     }
@@ -104,7 +147,7 @@
                 $title = $fetch_row['cat_title'];
                 $id = $fetch_row['cat_id'];
                 echo "<li>
-                    <a href='category.php?cat={$id}' target='_blank' rel='noopener noreferrer'> 
+                    <a href='/Cocoding/category/{$id}' target='_blank' rel='noopener noreferrer'> 
                         {$title} 
                     </a>
                 </li>";
@@ -126,9 +169,7 @@
             $i = 0;
             if(mysqli_num_rows($select_cater_sidebar) > 0){
                 while($fetch_row = mysqli_fetch_assoc($select_cater_sidebar)){
-                    // if($i > 8)
-                    //     break;
-                        
+                    
                     $active = "";
                     $title = $fetch_row['cat_title'];
                     $id = $fetch_row['cat_id'];
@@ -137,9 +178,8 @@
                     }
                     
                     echo "<li {$active}>
-                        <a href='category.php?cat={$id}' style='font-family: Open Sans, sans-serif; font-size: smaller;'> {$title} </a>
+                        <a href='/Cocoding/category/{$id}' style='font-family: Open Sans, sans-serif; font-size: smaller;'> {$title} </a>
                     </li>";
-                    
                     $i++;
                 }
             }
@@ -154,7 +194,7 @@
             return die("ERROR<br>".mysqli_error($connect));
         }
         else{
-            return "Request Success";
+            return "Request_Success";
         }
     }
 
@@ -166,22 +206,26 @@
             $sim1 = similar_text($m, 'Error', $perc);
             $sim2 = similar_text($m, 'Wrong', $perc);
             $sim3 = similar_text($m, "You can't", $perc);
+            $sim4 = similar_text($m, "Please", $perc);
             $r = "\"ok\"";
-            if($sim >= 5 ||$sim1 >= 5 ||  $sim2 >= 5 || $sim3 >= 7){
-                $m = "<span class='glyphicon glyphicon-remove'></span> ".$m;
-            }
-            else{
-                $m = "<span class='glyphicon glyphicon-ok'></span> ".$m;
-            }
+            if(!empty($m)){
+                if($sim >= 5 ||$sim1 >= 5 ||  $sim2 >= 5 || $sim3 >= 7 || $sim4 >= 6){
+                    $m = "<span class='glyphicon glyphicon-remove'></span> ".$m;
+                }
+                else{
+                    $m = "<span class='glyphicon glyphicon-ok'></span> ".$m;
+                }
 
-            echo "
-                <div id = 'alert_edit'>
-                    <div class='alert' >
-                        <span class='closebtn' onclick='close_alert_edit({$r})'>&times;</span>".$m
-                        ."
-                    </div> 
-                </div>
-            ";
+                
+                echo "
+                    <div id = 'alert_edit'>
+                        <div class='alert' >
+                            <span class='closebtn' onclick='close_alert_edit({$r})'>&times;</span>".$m
+                            ."
+                        </div> 
+                    </div>
+                ";
+            }
         }
     }
 
@@ -242,9 +286,7 @@
     }
 
     function delete_post_comment($table, $id_name){
-        global $connect;
-        
-        
+        global $connect;                
         // $_POST['select_posts'] is an array
         foreach($_POST['select_ary'] as $checkbox){
             $sql = "DELETE FROM ".$table." WHERE {$id_name} = '{$checkbox}' ";
@@ -279,28 +321,36 @@
             if(mysqli_num_rows($q) > 0){
                 $result =  mysqli_fetch_assoc($q);
                 $cater_id = $result['cat_id'];
+                $sql2 = "UPDATE ".POSTS." SET  post_title = '{$title}', post_author = '{$author}',";
+                $sql2 .= " post_date = '{$date}', post_image = '{$img}',";
+                $sql2 .= " post_status = '{$status}', post_cater_id = '{$cater_id}', post_content = '{$post_content}'";
+                $sql2 .= " WHERE post_id = '{$id}';";  
+                
+                $sql3 = "DELETE FROM ".TAGS. " WHERE post_id = '{$id}';";
+                $query3 = mysqli_query($connect, $sql3); 
+                if($query3){
+                    save_tag($id, $connect);
+                    $query2 = mysqli_query($connect, $sql2);                        
+                    
+                    if($query2){
+                        $msg = 'Post Edited, <a href="/Cocoding/post/'.$id.'/"> View Post </a>';
+                        header("Location: ./admin_posts.php?confirm_msg={$msg}", TRUE, 301);
+                    } 
+                    else{
+                        die(mysqli_error($connect));
+                    } 
+                }
+                else{
+                    die(mysqli_error($connect));
+                }
+                
             }
-
-            $sql2 = "UPDATE ".POSTS." SET  post_title = '{$title}', post_author = '{$author}',";
-            $sql2 .= " post_date = '{$date}', post_image = '{$img}',";
-            $sql2 .= " post_status = '{$status}', post_cater_id = '{$cater_id}', post_content = '{$post_content}'";
-            $sql2 .= " WHERE post_id = '{$id}';";                        
-            save_tag($id, $connect);
-            $query2 = mysqli_query($connect, $sql2);                        
-            
-            if($query2){
-                $msg = ' Post Edited, <a href="../post.php?p_id='.$id.'"> View Post </a>';
-                header("Location: ./admin_posts.php?confirm_msg={$msg}", TRUE, 301);
-            } 
-            else{
-                echo "False";
-            } 
         }
     }
 
     function user_edit_post($result_img, $id){        
         global $connect;
-        if(isset($_POST['edit_post'])){
+        if(isset($_POST['user_edit_post_submit'])){
             $title = esc($_POST['title'], $connect);                    
             $date = esc($_POST['date'], $connect);
             $post_content = $_POST['post_content'];
@@ -325,13 +375,20 @@
             $sql2 .= " post_date = '{$date}', post_image = '{$img}',";
             $sql2 .= " post_cater_id = '{$cater_id}', post_content = '{$post_content}'";
             $sql2 .= " WHERE post_id = '{$id}';";
+
+            $sql3 = "DELETE FROM ".TAGS." WHERE post_id = '{$id}';";
+            $query3 = mysqli_query($connect, $sql3); 
+
             save_tag($id, $connect);
             $query2 = mysqli_query($connect, $sql2);                        
             
-            if($query2){
-                $msg = ' Post Edited, <a href="../post.php?p_id='.$id.'"> View Post </a>';
+            if($query2 && $query3){
+                $msg = ' Post Edited, <a href="/Cocoding/post/'.$id.'/"> View Post </a>';
                 header("Location: ./user_posts.php?confirm_msg={$msg}", TRUE, 301);
             }   
+            else{
+                die(mysqli_error($connect));
+            }
         }
     }
     
@@ -447,28 +504,27 @@
                 $author = $_POST['author'];
             }
             else{
-                $msg = "ERROR, Please enter author name";     
-                header("Location: ./post.php?p_id={$p_id}&confirm_msg={$msg}", TRUE, 301);
+                $msg = "ERROR Please enter author name";     
+                header("Location: ./post/{$p_id}?confirm_msg={$msg}", TRUE, 301);
                 exit(); 
             }
 
             if(!empty($email) && !empty($comment_content)){
                 $sql = "INSERT INTO ".COMMENTS."(comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date) ";
-                $sql .= "VALUE('{$p_id}', '{$author}', '{$email}', '{$comment_content}', 'Unapproved', '".date('Y-m-d')."')";
+                $sql .= "VALUES('{$p_id}', '{$author}', '{$email}', '{$comment_content}', 'Unapproved', '".date('Y-m-d')."')";
                 echo $sql."<br>";
                 $q = mysqli_query($connect, $sql);            
                 $msg = query_confirm($q);                
-                header("Location:./post.php?p_id={$p_id}&confirm_msg={$msg}", TRUE, 301);
+                $msg = "Comment Successful";
+                header("Location: ./post/{$p_id}?confirm_msg={$msg}", TRUE, 301);
                 exit();   
             }
             else{
-                $msg = "ERROR, This field should not be empty";     
-                header("Location: ./post.php?p_id={$p_id}&confirm_msg={$msg}", TRUE, 301);
-                exit(); 
+                $msg = "ERROR This field should not be empty";     
+                header("Location: ./post/{$p_id}?confirm_msg={$msg}", TRUE, 301);
             }
         }
-    }
-    
+    }   
     
     function add_user(){
         if(isset($_POST['add_user'])){
@@ -568,9 +624,7 @@
             $msg = query_confirm($query2);     
             header("Location: ./user_profile.php?confirm_msg={$msg}", TRUE, 301);
         }
-    }
-
-    
+    } 
 
     function fetch_row_count($table, $condition){
         global $connect;
@@ -615,34 +669,51 @@
     }
     
     function email_exists($connect){
+        if(isset($_POST['forgot_email_submit'])){
+            $email = $_POST['forgot_email_submit'];
+        }
+        else if(isset($_POST['register_email'])){
+            $email = $_POST['register_email'];
+        }
         
-        $email = $_POST['email'];
-        $sql = "SELECT * FROM ".USERS." WHERE user_email = '{$email}'";            
-        $q = mysqli_query($connect, $sql);
-        if($q){
-            if(mysqli_num_rows($q) > 0){
+        $check_mail = "SELECT * FROM ".USERS." WHERE user_email = '{$email}';";            
+        $result = mysqli_query($connect, $check_mail);
+        
+        if($result){
+            if(mysqli_num_rows($result) > 0){
                 return true;
             }
-            else if (mysqli_num_rows($q) == 0){
+            else if (mysqli_num_rows($result) == 0){
                 return false;
             }
-        }            
-        return true;        
+        }       
+        else{
+            echo "Request ERROR";
+            return true;            
+        }
+        return true;  
     }
 
     function register(){
         global $connect;
 
         if(isset($_POST['username'])){
-            if(empty($_POST['password']) || empty($_POST['email']) || empty($_POST['username']) || email_exists($connect)){
+            if(email_exists($connect)){
+                $msg = "ERROR This email have already been used!";
+                $msg .= "<br> <a href = '/Cocoding/index'>Login with your account</a>";
+                header("Location: ./registration.php?confirm_msg={$msg}", TRUE, 301);
+                exit();
+            }
+
+            if(empty($_POST['password']) || empty($_POST['register_email']) || empty($_POST['username'])){
                 $msg = "ERROR, the field shouldn't be empty <br> or the email have already been used!";
-                $msg .= "<br> <a href = './index.php'>Login with your account</a>";
+                $msg .= "<br> <a href = '/Cocoding/index'>Login with your account</a>";
                 header("Location: ./registration.php?confirm_msg={$msg}", TRUE, 301);
                 exit();
             }
 
             $username = esc($_POST['username'], $connect);
-            $email = esc($_POST['email'], $connect);
+            $email = esc($_POST['register_email'], $connect);
             $password = esc($_POST['password'], $connect);
             
             $role = "Subscriber";
@@ -650,7 +721,7 @@
             $q = mysqli_query($connect, $sql);
             if($q){
                 $msg = "Congrats! You are our subscriber from now on.";
-                header("Location: index.php?confirm_msg={$msg}", TRUE, 301);
+                header("Location: ./index.php?confirm_msg={$msg}", TRUE, 301);
                 exit();
             }
         }
@@ -722,7 +793,9 @@
             }            
         }
         else{
-            echo "Plz login !!!!!";
+            $msg = "ERROR, Please login first";     
+            header("Location: ./post/{$p_id}?confirm_msg={$msg}", TRUE, 301);            
+            exit(); 
         }
     }
 
@@ -763,7 +836,7 @@
                             $t = mysqli_fetch_assoc($q2);
                             $title = $t['post_title'];
                             echo '
-                                <a href="#" class="list-group-item">'.$title.'</a>
+                                <a href="/Cocoding/post/'.$result['post_id'].'/" class="list-group-item">'.$title.'</a>
                             ';
                         }
                     }
@@ -782,7 +855,6 @@
             $time_out_sec = 60;
             $time_out = $time + $time_out_sec;                       
             if(!empty($session)){
-                // echo $session;
                 $sql = "SELECT * FROM users_online WHERE session = '{$session}'";
                 $q = mysqli_query($connect, $sql);
                 if(!$q){
@@ -824,36 +896,44 @@
         return 0;
     }
 
-    function fetch_tags($p_id, $connect, $source){
+    function fetch_tags($p_id, $connect){
         
         $sql = "SELECT * FROM ".TAGS." WHERE post_id = ".$p_id;
         $r = mysqli_query($connect, $sql);
         if($r){
             if(mysqli_num_rows($r)>0){
-                if($source == "post"){
-                    $link = "tag.php?name=";
-                }
-                else{
-                    $link = "../tag.php?name=";
-                }
+
                 while($row = mysqli_fetch_assoc($r)){
-                    echo "<a href ='{$link}{$row['tag_name']}' style='color:#a8a3a3;'>#".$row['tag_name']."</a> ";
+                    echo "<a href ='/Cocoding/tag/{$row['tag_name']}' style='color:#a8a3a3;'>#".$row['tag_name']."</a> ";
                 }
             }
         }
     }
 
-    function checkbox_tags($connect){
+    function checkbox_tags($connect){        
         $sql = "SELECT DISTINCT tag_name FROM ".TAGS;
         $r = mysqli_query($connect, $sql);
         if($r){
             if(mysqli_num_rows($r)>0){
                 $i = 0;
                 while($row = mysqli_fetch_assoc($r)){
+                    $checked = "";
+                    $tag_name = $row['tag_name'];
+                    if(isset($_GET['edit_id'])){
+                        $edit_post = $_GET['edit_id'];
+                        $sql2 = "SELECT DISTINCT tag_name FROM ".TAGS." WHERE post_id = {$edit_post} AND tag_name = '{$tag_name}'";
+                        $find_tags = mysqli_query($connect, $sql2);
+                        if($find_tags){
+                            if(mysqli_num_rows($find_tags) > 0){
+                                $checked = "checked";
+                            }
+                        }
+
+                    }                   
                     echo "
                         <span class='badge badge-danger' style='margin:2px;'>
-                            <input type='checkbox' class='form-check-input' id ='{$row['tag_name']}' name='select_ary[]' value = '{$row['tag_name']}'>   
-                            <label for='{$row['tag_name']}' class = 'select-tag'> {$row['tag_name']} </label>
+                            <input type='checkbox' class='form-check-input' id ='{$tag_name}' name='select_ary[]' value = '{$tag_name}' ".$checked.">   
+                            <label for='{$tag_name}' class = 'select-tag'> {$tag_name} </label>
                         </span>
                     ";
                     $i++;
@@ -884,7 +964,7 @@
                 $sql2 = "INSERT INTO ".TAGS."(post_id, tag_name) VALUES('{$post_id}','{$checkbox}')";
                 $q2 = mysqli_query($connect, $sql2);
                 if(!$q2){
-                    die("F").mysqli_error($connect, $q2);
+                    echo mysqli_error($connect);
                 }
             }
         }
@@ -921,7 +1001,7 @@
             $name = esc($_POST['name'], $connect);
             $from_email = $_POST['mail'];
             $message = $_POST['content'];
-            $to_email = "tin871001@gmail.com";
+            $to_email = "cocoding@tatianachang.com";
             $subject = esc($_POST['subject'], $connect);
             
             $headers = "MIME-Version: 1.0" . "\r\n"; 
@@ -935,26 +1015,26 @@
                 <head>
                 </head>
                 <body>
-                <table rules='all' border='1' style='border-color: #666;' cellpadding='10'>
-                <tr style='background: #eee;'><td colspan='2'><strong>COCODING - User Report</strong> </td></tr>
-                <tr>
-                    <td><strong>From:</strong></td>
-                    <td>".$name."</td>
-                </tr>
-                <tr>
-                    <td><strong>Email:</strong></td>
-                    <td>".$from_email."</td>
-                </tr>
-                <tr>
-                    <td><strong>Subject:</strong></td>
-                    <td>".$subject."</td>
-                </tr>
-               
-                <tr>
-                    <td><strong>Message:</strong></td>
-                    <td>".$message."</td>
-                </tr>
-                </table>
+                    <table rules='all' border='1' style='border-color: #666;' cellpadding='10'>
+                        <tr style='background: #eee;'><td colspan='2'><strong>COCODING - User Report</strong> </td></tr>
+                        <tr>
+                            <td><strong>From:</strong></td>
+                            <td>".$name."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email:</strong></td>
+                            <td>".$from_email."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subject:</strong></td>
+                            <td>".$subject."</td>
+                        </tr>
+                    
+                        <tr>
+                            <td><strong>Message:</strong></td>
+                            <td>".$message."</td>
+                        </tr>
+                    </table>
                 </body>
                 </html>
             ";
@@ -966,6 +1046,20 @@
             
             header("Location:./contact.php?confirm_msg={$msg}", TRUE, 301);
             exit();
+        }
+    }
+    
+    function logout($connect, $sid){
+        $sql = "DELETE FROM ".ONLINE." WHERE session = '{$sid}'";
+        $result = mysqli_query($connect, $sql);
+        if($result){
+            session_unset();
+            $msg = "Logout Successful";
+            header("Location: ./index/{$msg}", TRUE, 301);
+        }
+        else{
+            $msg = "Logout Failed";
+            header("Location: ./index/{$msg}",TRUE, 301);
         }
     }
 

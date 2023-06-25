@@ -1,20 +1,9 @@
-                <?php                     
-                    if(isset($_POST['like_btn'])){
-                        $like_dis = 'like';
-                        user_feel($connect, $p_id, $like_dis);
-                        
-                    }
-                    if(isset($_POST['dislike_btn'])){
-                        $like_dis = 'dislike';
-                        user_feel($connect, $p_id, $like_dis);
-                    }                    
-                ?>
                 <script>
                     var post_id = <?php echo $p_id; ?>;
 
                     function like(){ 
                         const xhr = new XMLHttpRequest();
-                        xhr.open('GET', 'includes/function.php?fetch_likes=ok&p_id='+post_id);
+                        xhr.open('GET', '/Cocoding/includes/function.php?fetch_likes=ok&p_id='+post_id);
                         xhr.onload = function(){
                             console.log(xhr.status); // 200
                             document.getElementById("user_like").innerHTML =  xhr.responseText;
@@ -24,7 +13,7 @@
 
                     function dislike(){ 
                         const xhr = new XMLHttpRequest();
-                        xhr.open('GET', 'includes/function.php?fetch_dislikes=ok&p_id='+post_id);
+                        xhr.open('GET', '/Cocoding/includes/function.php?fetch_dislikes=ok&p_id='+post_id);
                         xhr.onload = function(){
                             console.log(xhr.status); // 200
                             document.getElementById("user_dislike").innerHTML =  xhr.responseText;
@@ -70,20 +59,15 @@
                         </div>
                     </form>
                 </div>
-                
-               
-                <!-- Comments Form -->                                
-                    
-                    <!-- enctype= Sending Different Form Data -->
-                    
-                    <form action="" method="post" enctype="multipart/form-data">
-                        
+                               
+                <!-- Comments Form -->                                                    
+                    <!-- enctype= Sending Different Form Data -->                    
+                    <form action="" method="post" enctype="multipart/form-data">                        
                         <div class="form-group row">
                             <div class="col-sm-10 text-muted" > 
                                 <h3 class="response_title">Leave a comment?</h3>
                             </div>
                         </div>
-
                         <?php
                             if(isset($_SESSION['user_id'])){
                                 echo '
@@ -97,22 +81,21 @@
                                 ';
                             }
                             
-                        ?>
-                        
-
+                        ?>                        
                         <div class="form-group row " id="text" style="display:block">
                             <label for="author" class="col-sm-2 col-form-label">Author</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" name="author">
                             </div>
                         </div>
-
+                        
                         <div class="form-group row">
                             <label for="summernote" class="col-sm-2 col-form-label">Content</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" rows="40" name="comment_content"  id="summernote"></textarea>
+                                <textarea class="form-control" rows="5" name="comment_content"  id="summernote"></textarea>
                             </div>
                         </div>
+                        
 
                         <?php                            
                             $post_comment_count = comment_count($connect, $post_id);

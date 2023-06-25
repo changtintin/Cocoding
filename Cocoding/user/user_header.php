@@ -16,16 +16,16 @@
     <title>COCODING - User Admin</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../admin/css/bootstrap.main.css" rel="stylesheet">
+    <link href="/Cocoding/admin/css/bootstrap.main.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../admin/css/admin.css" rel="stylesheet">
+    <link href="/Cocoding/admin/css/admin.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/Cocoding/admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Loader CSS -->
-    <link href="../admin/css/loader.css" rel="stylesheet">
+    <link href="/Cocoding/admin/css/loader.css" rel="stylesheet">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -44,8 +44,9 @@
     <!-- include summernote css/js -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="../admin/css/summernote.css">
-    
+
     <script src="../admin/js/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 </head>
 

@@ -1,7 +1,7 @@
     <script>
         function request(){ 
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'includes/function.php?fetch_online=ok');
+            xhr.open('GET', '/Cocoding/includes/function.php?fetch_online=ok');
             xhr.onload = function(){
                 console.log(xhr.status); // 200
                 document.getElementById("online_user").innerHTML =  xhr.responseText;
@@ -12,8 +12,8 @@
     </script>
    
     <div class="col-md-4">
-        
-        <!-- Blog Search Well -->
+
+        <!-- Online User & Social media -->
         <div id = 'social_window'>
             <div id="float_window" style = "color:white; font-size:medium; ";>
                 <div class="card"  id="float_content">     
@@ -64,14 +64,15 @@
             <div class="card"  style="width:170px; height:400px; ">                                    
                 <div class="card-body">
                     <span class='closebtn' onclick='close_alert_edit("ad")'>&times;</span>  
-                    <img src="./image/ad.jpeg"  style="width:150px; height:380px;">                                    
+                    <img src="/Cocoding/image/ad.jpeg"  style="width:150px; height:380px;">                                    
                 </div>                       
             </div>
         </div>
 
+         <!-- Blog Search Well -->
         <div class="well">
             <h4 id = "blog">Blog Search</h4>
-            <form action="./search.php" method="post">
+            <form action="/Cocoding/search" method="post">
                 <div class = "input-group input-group-sm">                
                     <input type = "text" class="form-control" name = "search_input" placeholder="keywords, author, topic......">                    
                     <span class = "input-group-btn">
@@ -86,17 +87,17 @@
 
         <!-- Login Well -->
         <div class="well">
-            
             <form method="post">
                 <?php
-                    
                     if(!isset($_SESSION['user_id'])){
                         include "login.php";
+                        login($connect);
                     }
                     else{
                         $sql = "SELECT * FROM ".ONLINE." WHERE session = '".session_id()."'";
                         $q = mysqli_query($connect, $sql);
                         $unix = "0";
+
                         if(!$q){
                             die("Error").mysqli_error($connect, $q);
                         }
@@ -109,18 +110,23 @@
                         
                         if($unix != "0"){
                             $dt = new DateTime($unix);
-                            $dt->setTimeZone(new DateTimeZone('America/Chicago'));
-                            $login_time = "(Today) ". $dt->format('F j, Y, g:i a');
+                            $dt -> setTimeZone(new DateTimeZone('Asia/Taipei'));
+                            $login_time = $dt -> format('F j, Y, g:i a');
                         }
                         echo'
                             <h4>Welcome, '.$_SESSION["username"].' !</h4>
                             <h5>Login time: '.$login_time.'</h5>
                             <div style="padding-top: 10px;"> 
                                 <div class = "form-group text-left">  
-                                    <a href="./includes/logout.php" style="font-size: small;">Log out,<br> create another account</a>
+                                    <a href="/Cocoding/index.php?logout=1" style="font-size: small;">Log out,<br> create another account</a>
                                 </div>
                             </div>
                         ';
+                        
+                        if(isset($_GET['logout'])){
+                            $sid = session_id();
+                            logout($connect, $sid);
+                        }
                     }
                 ?>
             </form>
@@ -156,6 +162,7 @@
         <?php
             }
         ?>
+
         <!-- Side Widget Well -->
         <div class="well">
            

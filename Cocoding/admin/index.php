@@ -1,10 +1,9 @@
-
 <?php
     include "admin_includes/admin_header.php";
     
     if(!isset($_SESSION) ||  $_SESSION['user_role']!="Admin"){
         $msg = "ERROR, Please sign up for further access to user admin, ";
-        $msg .= "<a href = './registration.php'><strong>register now</strong></a>";
+        $msg .= "<a href = '/Cocoding/registration'><strong>register now</strong></a>";
         header("Location: ../index.php?confirm_msg={$msg}", true, 301);
     }
 ?>

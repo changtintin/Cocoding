@@ -15,23 +15,13 @@
                     Apply
                 </button>
             </div>
-        </div>
-                
-        <div class="btn-group mr-3 " role="group">
-            
-            <div class="btn-group mr-3" role="group" >
-                <button type="submit" class="btn btn-primary float-right" name ="select_all">
-                    Select All
-                </button>
-            </div>
-
             <div class="btn-group mr-3" role="group">
                 <button type="submit" class="btn btn-primary float-right" name ="cancel_all">
                     Cancel
                 </button>
             </div>
-            
         </div>
+                
     </div>
 
     <table class="table table-bordered table-hover" id = "posts_table">
@@ -43,7 +33,7 @@
                 <th scope="col">Lastname</th>
                 <th scope="col">Email</th>
                 <th scope="col">Role</th>
-                <th scope = "col" style="background-color: #dad8d8;">Select</th>
+                <th scope = "col"><input type="checkbox" id = "selectAll" ></th>
             </tr>
         </thead>
 
@@ -94,7 +84,7 @@
 
                             <td style="background-color: #dad8d8;">                        
                                 <div class="form-check checkbox-lg">
-                                    <input type="checkbox" class="form-check-input" name="select_ary[]" value = "<?php echo  $user_id;?>" <?php select_all(); ?>>                                                  
+                                    <input type="checkbox" class="form-check-input" name="select_ary[]" value = "<?php echo  $user_id;?>">                                                  
                                 </div>                        
                             </td>
 
@@ -126,6 +116,16 @@
             switch_user_role($_POST['user_setting']);
         }
     }
-   
-    
+
 ?>
+<script>
+    $("#selectAll").click(function(){
+        if($("#selectAll").prop("checked")){
+            console.log("check");                
+            $("input[name='select_ary[]']").prop("checked", true);
+        }
+        else{
+            $("input[name='select_ary[]']").prop("checked", false);
+        }
+    });
+</script>

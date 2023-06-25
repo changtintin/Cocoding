@@ -95,7 +95,6 @@
                     if(isset($_POST['sortSubmit'])){
                         $order = " ORDER BY ".$_POST['col']." ".$_POST['order'];
                     }
-
                     $sql = "SELECT * FROM(SELECT P.*, C.* FROM posts AS P LEFT JOIN categories AS C ";
                     $sql .="ON P.post_cater_id = C.cat_id )AS T".$order;
                     $query = mysqli_query($connect, $sql);
@@ -130,7 +129,7 @@
                             
                                 <td><img class="media-object" src="../image/<?php echo $img;?>" alt="" style="width:100px;height:100px;"></td>
                             
-                                <td><?php fetch_tags($id, $connect, "admin"); ?></td>
+                                <td><?php fetch_tags($id, $connect); ?></td>
                             
                                 <td>
                                     <a href="admin_comments.php?pid=<?php echo $id; ?>">
@@ -162,8 +161,6 @@
             </tbody>
     </table>
 </form>
-
-
 <script>    
     $(document).ready(function(){
 
@@ -201,8 +198,6 @@
                         $("#test").html(data);
                         console.log("delete");
                     });
-                    
-                    
                 }
                 else{
                     console.log("Don't delete");

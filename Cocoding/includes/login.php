@@ -1,10 +1,10 @@
 <h4>Login</h4>
 <div class = "form-group form-group-sm">                
-    <input type = "text" class="form-control" name = "username_login" placeholder="" autocomplete="off">                    
+    <input type = "text" class="form-control" name = "username_login" placeholder="Username" autocomplete="off">                    
 </div>
 
 <div class = "input-group input-group-sm">                
-    <input type = "password" class="form-control" name = "password_login" placeholder="" autocomplete="off" id = "password_in">   
+    <input type = "password" class="form-control" name = "password_login" placeholder="Password" autocomplete="off" id = "password_in">   
     <span class = "input-group-btn">
         <button class = "btn btn-success" id = "show_password" type = "button" >
             <span class ="glyphicon glyphicon-eye-close" id = "show_icon"></span>
@@ -16,15 +16,20 @@
     </span> 
 </div>
 
-<div class = "col col-pt-3">  
-    
-</div>
-
 <div style="padding-top: 10px;"> 
     <div class = "form-group text-right">  
-        <a href="./registration.php" style="font-size: small;">Create an account</a>
+        <a href="/Cocoding/registration" style="font-size: small;">
+            Create an account
+            <span class="glyphicon glyphicon-registration-mark"></span>
+        </a>
+    </div>
+    <div class = "form-group text-right">  
+        <a href="/Cocoding/forgot.php?forgot=1" style="font-size: small;">
+           <u> Forgot your password?</u>
+        </a>
     </div>
 </div>
+
 <script>
         var show = document.getElementById("password_in");
         var icon = document.getElementById("show_icon");
@@ -38,49 +43,7 @@
                 show.type="text";
                 icon.className="glyphicon glyphicon-eye-open";
             }
-            
         }
 
 </script>
-<?php 
-    
-    if(isset($_POST['login_submit'])){
 
-        // Prevent SQL Injection
-        $username =  mysqli_real_escape_string ($connect, $_POST['username_login']);
-        $password_input =  mysqli_real_escape_string ($connect, $_POST['password_login']);
-        $sql = "SELECT * FROM ".USERS." WHERE username = '{$username}';";
-        $q = mysqli_query($connect, $sql);
-
-        if($q){
-            if(mysqli_num_rows($q) > 0){
-                if($row = mysqli_fetch_assoc($q)){                    
-                    $algo = PASSWORD_BCRYPT;
-                    $hash = password_hash($password_input, $algo);
-                    $password = $row['user_password'];
-                    if(password_verify($password, $hash)){
-                        $_SESSION['username'] = $row['username'];
-                        $_SESSION['user_password'] = $row['user_password'];
-                        $_SESSION['user_firstname'] = $row['user_firstname'];
-                        $_SESSION['user_lastname'] = $row['user_lastname'];
-                        $_SESSION['user_role'] = $row['user_role'];
-                        $_SESSION['user_id'] = $row['user_id'];
-                        $_SESSION['user_email'] = $row['user_email'];
-                        $_SESSION['user_image'] = $row['user_image'];
-                        
-                        $msg = "Welcome back here";
-                        header("Location: ./index.php?confirm_msg={$msg}", true, 301);
-                    }
-                    else{
-                        $msg = "Wrong Password";
-                        header("Location: ./index.php?confirm_msg={$msg}", true, 301);
-                    }
-                }
-            }
-            else{
-                $msg = "Wrong Username";
-                header("Location: ./index.php?confirm_msg={$msg}", true, 301);
-            }
-        }        
-    }
-?>

@@ -1,4 +1,3 @@
-
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-white text-muted" style="padding-top:100px ;">
 
@@ -89,17 +88,6 @@
     <a class="text-reset fw-bold" href="#">COCODING.com</a>
   </div>
   <!-- Copyright -->
-
-
-    <!-- jQuery -->
-    <script src="admin/js/jquery.js"></script>
-    
-    <!-- Bootstrap Core JavaScript -->
-    <script src="admin/js/bootstrap.min.js"></script>
-
-    <script src ="admin/js/summernote.min.js"></script>
-    <script src="admin/js/scripts.js"></script>
-
 </footer>
 
 <!-- Footer -->

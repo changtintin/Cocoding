@@ -65,12 +65,12 @@
                                 
                 
                 <h1 class="page-header">
-                    <a href = "post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title; ?></a>                    
+                    <a href = "/Cocoding/post/<?php echo $post_id; ?>/"><?php echo $post_title; ?></a>                    
                 </h1>
 
                 <p class="lead">
                     by 
-                    <a href="author_post.php?author=<?php echo $post_author; ?>">
+                    <a href="/Cocoding/author_post/<?php echo $post_author; ?>">
                         <?php echo $post_author; ?>
                     </a>
                 </p>
@@ -87,13 +87,13 @@
 
                 <p style='font-family:Rockwell;'>
                     <strong>
-                        <?php fetch_tags($post_id, $connect, "post"); ?>
+                        <?php fetch_tags($post_id, $connect); ?>
                     </strong>
                 </p>
 
 
                 <div style='padding-bottom: 50px;'>
-                    <img class = "img-responsive" src = "image/<?php echo $post_image;?>" alt="<?php echo $post_image;?>">
+                    <img class = "img-responsive" src = "/Cocoding/image/<?php echo $post_image;?>" alt="<?php echo $post_image;?>">
                 </div>
                                 <p>
                                     <div style="overflow:hidden; white-space: nowrap; text-overflow: ellipsis; height: 200px; margin-bottom:10px;">
@@ -104,7 +104,7 @@
                                     </div>
                                 </p>
                 
-                                <a class = "btn btn-primary" href = "post.php?p_id=<?php echo $post_id; ?>">
+                                <a class = "btn btn-primary" href = "/Cocoding/post/<?php echo $post_id; ?>/">
                                     Read More <span class="glyphicon glyphicon-chevron-right"></span>
                                 </a>
                                 <hr>
@@ -134,3 +134,24 @@
 </body>
 
 </html>
+<script>
+    function close_alert_edit(field_name) {
+        switch(field_name){
+            case "ad":
+                document.getElementById("ad_window").innerHTML = " ";
+            break;
+
+            case "social":
+                document.getElementById("social_window").innerHTML = " ";
+            break;
+
+            case "notice":
+                document.getElementById("notice_window").innerHTML = " ";
+            break;
+
+            default:
+                document.getElementById("alert_edit").innerHTML = " ";
+            break;
+        }
+    }
+</script>    

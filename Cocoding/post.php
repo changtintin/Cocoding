@@ -74,7 +74,7 @@
 
                                                 <p class='post-author'>
                                                     by 
-                                                    <a href='author_post.php?author={$post_author}'>
+                                                    <a href='/Cocoding/author_post/{$post_author}'>
                                                         {$post_author}
                                                     </a>
                                                 </p>
@@ -88,7 +88,7 @@
                                                     <h5>
                                                         Catergory:  
                                                         <span class='badge badge-secondary'>
-                                                            <a href = 'category.php?cat={$cat_id}' style = 'color:white;'>
+                                                            <a href = '/Cocoding/category/{$cat_id}' style = 'color:white;'>
                                                                 {$cate_title}
                                                             </a>
                                                         </span>
@@ -102,14 +102,14 @@
                                                 <p style='font-family:Rockwell;'>
                                                     <strong>
                                                 ";    
-                                                fetch_tags($post_id, $connect, "post");
+                                                fetch_tags($post_id, $connect);
                                                 
                                                 echo"
                                                     </strong>
                                                 </p>
 
                                                 <div style='padding-bottom: 50px; padding-top: 40px;'>
-                                                    <img class = 'img-responsive' src = 'image/{$post_image}' alt='{$post_image}'>
+                                                    <img class = 'img-responsive' src = '/Cocoding/image/{$post_image}' alt='{$post_image}'>
                                                 </div>
                                             ";
                    
@@ -118,8 +118,7 @@
 
                                         echo
                                         "
-                                        <div style='padding-top: 50px'> 
-                                            
+                                            <div style='padding-top: 50px'>                                             
                                         ";
                                         include "comment.php";
                                         echo "    

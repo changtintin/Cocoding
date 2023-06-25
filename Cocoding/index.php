@@ -11,7 +11,7 @@
     ?>
         
     <!-- Page Content -->
-<div class="container">
+    <div class="container">
         <script>
             function close_alert_edit(field_name) {
                 switch(field_name){
@@ -31,8 +31,7 @@
                         document.getElementById("alert_edit").innerHTML = " ";
                     break;
                 }
-            }
-            
+            }            
         </script>            
 
         <!-- Blog Entries Column -->
@@ -95,13 +94,13 @@
                     <div>                        
 
                         <h1 class="page-header">
-                            <a href="post.php?p_id=<?php echo $post_id; ?>" ><?php echo $post_title; ?></a>
+                            <a href="/Cocoding/post/<?php echo $post_id; ?>/" ><?php echo $post_title; ?></a>
                         </h1>
                         
 
                         <p class="lead" style="font-size: large;">
-                            by 
-                            <a href="author_post.php?author=<?php echo $post_author; ?>" >
+                            by
+                            <a href="/Cocoding/author_post/<?php echo $post_author; ?>" >
                                 <?php echo $post_author; ?>
                             </a>
                         </p>
@@ -116,7 +115,7 @@
                             <h5>
                                 Catergory:  
                                 <span class='badge badge-secondary'>
-                                    <a href = 'category.php?cat=<?php echo $cat_id; ?>' style = 'color:white;'>
+                                    <a href = '/Cocoding/category/<?php echo $cat_id; ?>' style = 'color:white;'>
                                         <?php echo $cat_title; ?>
                                     </a>
                                 </span>
@@ -129,13 +128,13 @@
 
                         <p style="font-family:'Rockwell';">
                             <strong>                                
-                                <?php fetch_tags($post_id, $connect, "post"); ?>
+                                <?php fetch_tags($post_id, $connect); ?>
                             </strong>
                         </p>
 
                         <div style='padding-bottom: 30px; padding-top: 10px;'>
-                            <a href="post.php?p_id=<?php echo $post_id; ?>">
-                                <img class="img-responsive" src="image/<?php echo $post_image; ?>" alt="<?php echo $post_image; ?>">
+                            <a href="/Cocoding/post/<?php echo $post_id; ?>/">
+                                <img class="img-responsive" src="/Cocoding/image/<?php echo $post_image; ?>" alt="<?php echo $post_image; ?>">
                             </a>
                         </div>
                         
@@ -147,7 +146,7 @@
                         </div>
                         
                         <div class="mt-5">
-                            <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">
+                            <a class="btn btn-primary" href="/Cocoding/post/<?php echo $post_id; ?>/">
                                 Read More <span class="glyphicon glyphicon-chevron-right"></span>
                             </a>
                         </div>
@@ -168,7 +167,7 @@
                             if($post_start > 0){
                                 echo '
                                     <li>
-                                        <a href="index.php?cur_page='.($cur_page - 1).'">
+                                        <a href="/Cocoding/index_p/'.($cur_page - 1).'">
                                             <span class = "glyphicon glyphicon-arrow-left"></span>
                                         </a>
                                     </li>
@@ -178,7 +177,7 @@
                             for($i = 0; $i < $num_of_page - 1; $i++){
                                 echo '
                                 <li>
-                                    <a href="index.php?cur_page='.$i.'">'.($i + 1).'</a>
+                                    <a href="/Cocoding/index_p/'.$i.'">'.($i + 1).'</a>
                                 </li>
                                 ';
                             }
@@ -186,7 +185,7 @@
                             if($cur_page + 2 < $num_of_page){
                                 echo '
                                     <li>
-                                        <a href="index.php?cur_page='.($cur_page + 1).'">
+                                        <a href="/Cocoding/index_p/'.($cur_page + 1).'">
                                             <span class = "glyphicon glyphicon-arrow-right"></span>
                                         </a>
                                     </li>

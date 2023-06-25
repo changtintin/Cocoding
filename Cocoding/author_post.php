@@ -15,11 +15,27 @@
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">
-                    <script>
-                        function close_alert_edit(){
-                            document.getElementById("alert_edit").innerHTML=" ";
-                        }
-                    </script>
+            <script>
+                function close_alert_edit(field_name) {
+                    switch(field_name){
+                        case "ad":
+                            document.getElementById("ad_window").innerHTML = " ";
+                        break;
+
+                        case "social":
+                            document.getElementById("social_window").innerHTML = " ";
+                        break;
+
+                        case "notice":
+                            document.getElementById("notice_window").innerHTML = " ";
+                        break;
+
+                        default:
+                            document.getElementById("alert_edit").innerHTML = " ";
+                        break;
+                    }
+                }                
+            </script>    
 
                     <?php
                         query_msg_alert();
@@ -63,7 +79,7 @@
 
                     ?>
                                         <h1 class="page-header">
-                                            <a href = "post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title; ?></a>                    
+                                            <a href = "/Cocoding/post/<?php echo $post_id; ?>//"><?php echo $post_title; ?></a>                    
                                         </h1>
 
                                         <p class="lead">
@@ -78,13 +94,13 @@
                                         
                                         <p>
                                             <?php echo $post_view_count ?> views
-                                        </p
+                                        </p>
                                         
                                          <p>
                                             <h5>
                                                 Catergory:  
                                                 <span class='badge badge-secondary'>
-                                                    <a href = 'category.php?cat=<?php echo $cat_id; ?>' style = 'color:white;'>
+                                                    <a href = '/Cocoding/category/<?php echo $cat_id; ?>' style = 'color:white;'>
                                                         <?php echo $cat_title; ?>
                                                     </a>
                                                 </span>
@@ -92,12 +108,12 @@
                                         </p>
                                         <p>
                                             <strong>
-                                                <?php fetch_tags($post_id, $connect, "post");; ?>
+                                                <?php fetch_tags($post_id, $connect); ?>
                                             </strong>
                                         </p>
 
                                         <p>
-                                            <img class = "img-responsive" src = "image/<?php echo $post_image;?>" alt="<?php echo $post_image;?>">
+                                            <img class = "img-responsive" src = "/Cocoding/image/<?php echo $post_image;?>" alt="<?php echo $post_image;?>">
                                         </p>
                                         
                                         <div style="overflow:hidden; white-space: nowrap; text-overflow: ellipsis; height: 200px; margin-bottom:10px;">
@@ -108,7 +124,7 @@
                                         </div>
                                                         
                                         <div class="mt-4">
-                                            <a class = "btn btn-primary" href = "post.php?p_id=<?php echo $post_id; ?>">
+                                            <a class = "btn btn-primary" href = "/Cocoding/post/<?php echo $post_id; ?>//">
                                                 Read More <span class="glyphicon glyphicon-chevron-right"></span>
                                             </a>
                                         </div> 

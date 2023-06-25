@@ -7,7 +7,7 @@
         <div class="banner_content"> 
             <div class="banner-header"></div>          
             
-            <img src="image/cocoding_logo-removebg.png" alt="logo" >
+            <img src="/Cocoding/image/cocoding_logo-removebg.png" alt="logo" >
             <h4>Welcome to CoCoding! </h4>
             <p style="font-size: small;">
                
@@ -56,7 +56,7 @@
                                 <!-- Email Input -->
                                 <div class="form-group">                                    
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com" >                                                                    
+                                    <input type="email" name="register_email" id="register_email" class="form-control" placeholder="somebody@example.com" >                                                                    
                                     
                                 </div>
 

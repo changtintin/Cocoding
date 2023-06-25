@@ -62,7 +62,7 @@
                 </i>
             </button>
            
-            <a href="admin_posts.php?source=admin_add_posts" class="btn btn-primary">
+            <a href="/Cocoding/user/user_posts.php?request=user_add_posts" class="btn btn-primary">
                 <span class="glyphicon glyphicon-edit"></span>
                 New post
             </a>            
@@ -124,7 +124,7 @@
                             <tr>
                                 <th scope="row"><?php echo $id;?></th>                                                            
                             
-                                <td><a href="../post.php?p_id=<?php echo $id;?>" ><?php echo $title;?></a></td>
+                                <td><a href="/Cocoding/post/<?php echo $id;?>/" ><?php echo $title;?></a></td>
                                 
                                 <td><?php echo $cater;?></td>
                             
@@ -132,12 +132,10 @@
                             
                                 <td><img class="media-object" src="../image/<?php echo $img;?>" alt="" style="width:100px;height:100px;"></td>
                             
-                                <td><?php fetch_tags($id, $connect, "admin"); ?></td>
+                                <td><?php fetch_tags($id, $connect); ?></td>
                             
-                                <td>
-                                    <a href="admin_comments.php?pid=<?php echo $id; ?>">
-                                        <?php echo $comment;?>
-                                    </a>                                    
+                                <td>                                    
+                                    <?php echo $comment;?>                                               
                                 </td>
 
                                 <td><?php echo $view;?></td>                            
@@ -152,7 +150,7 @@
                                 </td>
 
                                 <td>                        
-                                    <a href="./user_posts.php?request=user_edit_posts&edit_id=<?php echo  $id;?>">
+                                    <a href="/Cocoding/user/user_posts.php?request=user_edit_posts&edit_id=<?php echo $id;?>">
                                         Edit
                                     </a>                   
                                 </td>
@@ -164,7 +162,6 @@
             </tbody>
     </table>
 </form>
-
 
 <script>    
     $(document).ready(function(){

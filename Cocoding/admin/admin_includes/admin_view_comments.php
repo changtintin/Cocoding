@@ -19,12 +19,6 @@
                     
             <div class="btn-group mr-3 " role="group">
                 
-                <div class="btn-group mr-3" role="group" >
-                    <button type="submit" class="btn btn-primary float-right" name ="select_all">
-                        Select All
-                    </button>
-                </div>
-
                 <div class="btn-group mr-3" role="group">
                     <button type="submit" class="btn btn-primary float-right" name ="cancel_all">
                         Cancel
@@ -44,7 +38,11 @@
                     <th scope="col">Post Title</th>
                     <th scope="col">Status</th>
                     <th scope="col">Date</th>
-                    <th scope="col">Select</th>
+                    <td>                        
+                        <div class="form-check checkbox-lg">
+                            <input type="checkbox" class="form-check-input" name="select_ary[]" id = "selectAll">                                                  
+                        </div>                        
+                    </td>
                 </tr>
             </thead>
                 <tbody>
@@ -84,7 +82,7 @@
 
                                 <td>                        
                                     <div class="form-check checkbox-lg">
-                                        <input type="checkbox" class="form-check-input" name="select_ary[]" value = "<?php echo  $id;?>" <?php select_all(); ?>>                                                  
+                                        <input type="checkbox" class="form-check-input" name="select_ary[]" value = "<?php echo  $id;?>">                                                  
                                     </div>                        
                                 </td>
 
@@ -107,6 +105,18 @@
     function close_alert_edit(){
         document.getElementById("alert_edit").innerHTML=" ";
     }
+    $(document).ready(function(){
+        $("#selectAll").click(function(){
+            if($("#selectAll").prop("checked")){
+                console.log("check");                
+                $("input[name='select_ary[]']").prop("checked", true);
+            }
+            else{
+                $("input[name='select_ary[]']").prop("checked", false);
+            }
+        });
+    });
+    
 </script>
 
 <?php

@@ -275,3 +275,60 @@ Stack trace:
 #0 /home3/vbjfjrmy/public_html/Cocoding/category.php(43): mysqli_query(Object(mysqli), 'SELECT * FROM p...')
 #1 {main}
   thrown in /home3/vbjfjrmy/public_html/Cocoding/category.php on line 43
+[28-May-2023 01:10:41 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:16
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/includes/function.php(16): mysqli_connect('localhost', 'root', Object(SensitiveParameterValue), 'vbjfjrmy_cocodi...')
+#1 /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php(2): include('/home3/vbjfjrmy...')
+#2 /home3/vbjfjrmy/public_html/Cocoding/index.php(9): include('/home3/vbjfjrmy...')
+#3 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 16
+[28-May-2023 01:12:12 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:16
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/includes/function.php(16): mysqli_connect('localhost', 'root', Object(SensitiveParameterValue), 'vbjfjrmy_cocodi...')
+#1 /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php(2): include('/home3/vbjfjrmy...')
+#2 /home3/vbjfjrmy/public_html/Cocoding/index.php(9): include('/home3/vbjfjrmy...')
+#3 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 16
+[28-May-2023 01:35:51 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 01:35:51 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 01:57:38 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 01:57:38 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 01:59:12 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 01:59:12 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 02:04:24 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 02:04:24 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 02:06:07 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 02:06:07 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 02:26:02 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 02:26:02 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 02:40:42 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 02:40:42 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 02:44:43 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 02:44:43 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 02:45:50 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 02:45:50 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 03:56:28 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 03:56:28 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 04:00:51 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 04:00:51 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 04:36:26 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 04:36:26 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 04:46:41 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:180) in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 48
+[28-May-2023 04:51:10 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 04:51:10 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 04:51:33 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:180) in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 48
+[28-May-2023 04:53:54 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 04:53:54 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 04:56:23 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 04:56:23 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 04:57:50 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:180) in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 58
+[28-May-2023 04:58:01 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:180) in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 58
+[28-May-2023 05:03:15 America/Boise] PHP Warning:  Undefined array key "user_role" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 76
+[28-May-2023 05:03:15 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/includes/nav.php on line 100
+[28-May-2023 05:03:44 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:179) in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 57
+[28-May-2023 05:04:27 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:179) in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 57
+[28-May-2023 05:04:58 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:179) in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 57
+[28-May-2023 05:04:58 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:179) in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 57
+[28-May-2023 05:17:28 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:179) in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 57
+[28-May-2023 05:17:53 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:179) in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 57
+[28-May-2023 05:39:50 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:179) in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 57

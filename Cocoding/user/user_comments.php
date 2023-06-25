@@ -74,9 +74,8 @@
                                     <div class="btn-group mr-3" role="group">
                                         <select class="btn-group form-control" id="exampleFormControlSelect1" name = "comment_setting">
                                             <option selected disabled >Setting</option>
-                                            <option value="Approved">Approved</option>
-                                            <option value="Unapproved">Unapproved</option>
-                                            <option value="Delete"> Delete</option>
+                                            
+                                            <option value="Report"> Report (Testing)</option>
                                         </select>
                                     </div>
                                     <div class="btn-group mr-3" role="group">
@@ -149,7 +148,7 @@
                                                     </td>
 
                                                     <td>
-                                                        <a href="../post.php?p_id=<?php echo $p_id; ?>"> 
+                                                        <a href="/Cocoding/post.php?p_id=<?php echo $p_id; ?>"> 
                                                             <?php echo fetch_commented_post($p_id);?>
                                                         </a>
                                                     </td>
@@ -159,15 +158,9 @@
 
                                                     <td>                        
                                                         <div class="form-check checkbox-lg">
-                                                            <input type="checkbox" class="form-check-input" name="select_ary[]" value = "<?php echo  $id;?>" <?php select_all(); ?>>                                                  
+                                                            <input type="checkbox" class="form-check-input" name="select_ary[]" value = "<?php echo  $id;?>" id = "selectAll">                                                  
                                                         </div>                        
-                                                    </td>
-
-                                                    <td>                        
-                                                        <a href="./admin_posts.php?source=admin_edit_posts&edit_id=<?php echo  $id;?>">
-                                                            Edit
-                                                        </a>                   
-                                                    </td>
+                                                    </td>                                                    
                                                 </tr>
                                         <?php
                                                 }
@@ -212,25 +205,17 @@
             break;
         }
     }
-</script>
 
-<?php
-
-    if(isset($_POST['comment_setting_submit'])){
-        if(isset($_POST['comment_setting'])){
-            if($_POST['comment_setting']=='Delete'){
-                foreach($_POST['select_ary'] as $checkbox){
-                    $sql = "DELETE FROM ".COMMENTS." WHERE comment_id = {$checkbox}";
-                    $q = mysqli_query($connect, $sql);
-                }
-                $msg = query_confirm($q);     
-                
-                header("Location: http://localhost:8888/cms/user/user_comments.php?confirm_msg={$msg}", TRUE, 301);
-                exit(); 
+    $(document).ready(function(){
+        $("#selectAll").click(function(){
+            if($("#selectAll").prop("checked")){
+                console.log("check");                
+                $("input[name='select_ary[]']").prop("checked", true);
             }
             else{
-                approve_comments($_POST['comment_setting']);
+                $("input[name='select_ary[]']").prop("checked", false);
             }
-        }
-    }
-?>
+        });
+    });
+</script>
+
