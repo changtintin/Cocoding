@@ -1,5 +1,5 @@
 <?php
-    include "user_header.php";
+    include "user_includes/user_header.php";
 ?>
 <body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -9,7 +9,7 @@
 
         <!-- Navigation -->
         <?php 
-            include "user_nav.php"; 
+            include "user_includes/user_nav.php"; 
         ?>
 
         <div id="page-wrapper">
@@ -45,10 +45,7 @@
                     
                     <div class="col-lg-12" style="padding-bottom: 20px;padding-top: 20px;">
                         <h1>
-                            Like/Dislike History
-                            <small>
-                                <?php echo $_SESSION['username'];?>
-                            </small>
+                            <?php echo  _HISTORY;?>                         
                         </h1>
                     </div>
                 </div>
@@ -57,13 +54,19 @@
                 <div class="row" style="padding-top: 15px;">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a data-toggle="tab" href="#all" style="color:#9999f5;">All Posts</a>
+                            <a data-toggle="tab" href="#all" style="color:#678cc1;">
+                                <?php echo  _ALL_HISTORY;?>    
+                            </a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#like_post" style="color:#9999f5;">Like Post</a>
+                            <a data-toggle="tab" href="#like_post" style="color:#678cc1;">
+                                <?php echo _LIKE_BTN; ?>
+                            </a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#dis_post" style="color:#9999f5;">Dislike Post</a>
+                            <a data-toggle="tab" href="#dis_post" style="color:#678cc1;">
+                                <?php echo _DISLIKE_BTN; ?>
+                            </a>
                         </li>
                     </ul>
                 </div>  
@@ -107,7 +110,7 @@
     <!-- /#wrapper -->
     
     <?php 
-        include "user_footer.php";
+        include "user_includes/user_footer.php";
     ?>
 
 <script>

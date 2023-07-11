@@ -1,9 +1,5 @@
-<div class="row">
-    <div class="col-lg-12" style="padding-top: 10px;">
-        <h1>
-            View all Posts            
-        </h1>
-    </div>
+<div class="col-lg-12" style="padding-top: 10px;">
+    
 </div>
 <form method="post">
     <h1 id = "test"></h1>
@@ -11,27 +7,51 @@
         <div class="btn-group dropup mr-3" style="padding-bottom: 10px;">
             <div class="btn-group mr-3" role="group">
                 <select class="btn-group form-control" name="col">
-                    <option selected disabled >Sort by</option>
-                    <option value = "post_id">ID</option>
-                    <option value = "post_author">Author</option>
-                    <option value = "post_title">Title</option>
-                    <option value = "post_cater_id">Category</option>
-                    <option value = "post_view_count">View count</option>
-                    <option value = "post_date">Date</option>       
-                    <option value = "post_like">Like</option>
-                    <option value = "post_dislike">Dislike</option>     
+                    <option selected disabled >
+                        <?php echo _SORT_BY_BTN;?>
+                    </option>
+                    <option value = "post_id">
+                        <?php echo _ID;?>
+                    </option>
+                    <option value = "post_author">
+                        <?php echo _AUTHOR_POST; ?>
+                    </option>
+                    <option value = "post_title">
+                        <?php echo _POST_TITLE;?>
+                    </option>
+                    <option value = "post_cater_id">
+                        <?php echo _CATER_WELL;?>
+                    </option>
+                    <option value = "post_view_count">
+                        <?php echo _VIEW; ?>
+                    </option>
+                    <option value = "post_date">
+                        <?php echo _DATE; ?>
+                    </option>       
+                    <option value = "post_like">
+                        <?php echo _LIKE_BTN; ?> 
+                    </option>
+                    <option value = "post_dislike">
+                        <?php echo _DISLIKE_BTN; ?>
+                    </option>     
                 </select>
             </div>
             <div class="btn-group mr-3" role="group">
                 <select class="btn-group form-control" name="order">
-                    <option selected disabled >In</option>
-                    <option value = "ASC">Ascending</option>
-                    <option value = "DESC">Descending</option>       
+                    <option selected disabled >
+                        <?php echo _SORT_WAY;?>
+                    </option>
+                    <option value = "ASC">
+                        <?php echo _ASC;?>
+                    </option>
+                    <option value = "DESC">
+                        <?php echo _DEC;?>
+                    </option>       
                 </select>
             </div>
             <div class="btn-group mr-3" role="group">
                 <button type="submit" class="btn btn-primary" name="sortSubmit">
-                    Go
+                    <?php echo _SUBMIT_BTN;?>
                 </button>
             </div>
         </div>
@@ -40,16 +60,21 @@
         
 <form method="post" name = "postStatus" class = "postStatus">
     <div class="text-right" style="padding-bottom: 20px;">
+        
         <div class="btn-group dropup mr-3">
             <div class="btn-group mr-3" role="group">
                 <select class="btn-group form-control" id="postSetOption" name = "postSetOption">
-                    <option selected disabled >Setting</option>                    
-                    <option value = "Delete">Delete</option>                   
+                    <option selected disabled >
+                        <?php echo _SETTING; ?>
+                    </option>                    
+                    <option value = "Delete">
+                        <?php echo _DEL; ?>
+                    </option>                   
                 </select>
             </div>
             <div class="btn-group mr-3" role="group">
                 <button type="submit" class="btn btn-primary" name="postSetSubmit" id="postSetSubmit">
-                    Apply
+                    <?php echo _APPLY;?>
                 </button>
             </div>
         </div>
@@ -58,13 +83,13 @@
             
             <button class="btn btn-primary" id="showSorting"  type = "button">
                 <i style = "font-weight:600; color: #ffffb5;">
-                    SORT                                            
+                <?php echo _SORT;?>                                            
                 </i>
             </button>
            
-            <a href="/Cocoding/user/user_posts.php?request=user_add_posts" class="btn btn-primary">
+            <a href="/Cocoding/user/user_posts.php?request=user_add_posts&lang=<?php echo $_SESSION['lang']; ?>" class="btn btn-primary">
                 <span class="glyphicon glyphicon-edit"></span>
-                New post
+                <?php echo _ADD_POST; ?>
             </a>            
         </div> 
     </div>
@@ -73,17 +98,39 @@
     <table class="table table-bordered table-hover" id = "posts_table">
         <thead>
             <tr>
-                <th scope = "col">ID</th>                
-                <th scope = "col">Title</th>
-                <th scope = "col">Catergory</th>
-                <th scope = "col">Status </th>
-                <th scope = "col">Image</th>
-                <th scope = "col">Tags</th>
-                <th scope = "col">Comments</th>
-                <th scope = "col">Views</th>
-                <th scope = "col">Date</th>
-                <th scope = "col">Like</th>
-                <th scope = "col">Dislike</th>
+                <th scope = "col">
+                    <?php echo _ID; ?>
+                </th>               
+                <th scope = "col">
+                    <?php echo _POST_TITLE; ?>
+                </th>
+                <th scope = "col">
+                    <?php echo _CATER_WELL;?>
+                </th>
+                <th scope = "col">
+                    <?php echo _STATUS; ?>
+                </th>
+                <th scope = "col">
+                    <?php echo _IMG; ?>
+                </th>
+                <th scope = "col">
+                    <?php echo _TAG;?>
+                </th>
+                <th scope = "col">
+                    <?php echo _COMM_COUNT;?>
+                </th>
+                <th scope = "col">
+                    <?php echo _VIEW;?>
+                </th>
+                <th scope = "col">
+                    <?php echo _DATE; ?>
+                </th>
+                <th scope = "col">
+                    <?php echo _LIKE_BTN; ?>
+                </th>
+                <th scope = "col">
+                    <?php echo _DISLIKE_BTN; ?>
+                </th>
                 <th scope = "col"><input type="checkbox" id = "selectAll" ></th>
             </tr>
         </thead>
@@ -124,7 +171,7 @@
                             <tr>
                                 <th scope="row"><?php echo $id;?></th>                                                            
                             
-                                <td><a href="/Cocoding/post/<?php echo $id;?>/" ><?php echo $title;?></a></td>
+                                <td><a href="/Cocoding/post.php?p_id=<?php echo $id;?>&lang=<?php echo $_SESSION['lang'];?>" ><?php echo $title;?></a></td>
                                 
                                 <td><?php echo $cater;?></td>
                             
@@ -134,8 +181,10 @@
                             
                                 <td><?php fetch_tags($id, $connect); ?></td>
                             
-                                <td>                                    
-                                    <?php echo $comment;?>                                               
+                                <td>
+                                    <a href="user_comments.php?pid=<?php echo $id; ?>&lang=<?php echo $_SESSION['lang'];?>">
+                                        <?php echo $comment;?>
+                                    </a>                                    
                                 </td>
 
                                 <td><?php echo $view;?></td>                            
@@ -150,8 +199,8 @@
                                 </td>
 
                                 <td>                        
-                                    <a href="/Cocoding/user/user_posts.php?request=user_edit_posts&edit_id=<?php echo $id;?>">
-                                        Edit
+                                    <a href="/Cocoding/user/user_posts.php?request=user_edit_posts&edit_id=<?php echo $id;?>&lang=<?php echo $_SESSION['lang']; ?>">
+                                        <?php echo _EDIT_POST;?>
                                     </a>                   
                                 </td>
                             </tr>

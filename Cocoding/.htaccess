@@ -5,8 +5,6 @@ RewriteRule ^admin/(\w+)$ admin/$1.php [NC,L]
 RewriteRule ^admin_posts/(.+)$ admin_posts.php?source=$1 [NC,L]
 
 RewriteRule ^user/(\w+)$ user/$1.php [NC,L]
-RewriteRule ^index_p/(\d+)$ index.php?cur_page=$1 [NC,L]
-RewriteRule ^index/(.+)$ index.php?confirm_msg=$1 [NC,L]
 
 RewriteRule ^post/(\d+)/(.+)?$ post.php?p_id=$1&confirm_msg=$2 [NC,L,QSA,NE]
 

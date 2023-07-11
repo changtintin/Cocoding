@@ -52,18 +52,11 @@
                         $r = mysqli_query($connect, $sql2);
 
                         if($r){
-                            if(mysqli_num_rows($r)>0){
-                                if($num > 1){
-                                    $be_v = "are";
-                                }
-                                else{
-                                    $be_v = "is";
-                                }
+                            if(mysqli_num_rows($r)>0){                                
                                 $name = mysqli_fetch_row($r);
-
                                 echo"
                                     <p class='lead author_post_h'>
-                                        Here {$be_v} {$num} articles in Category 
+                                        {$num} "._CATE_RESULT."
                                         <strong> \"{$name[1]}\" </strong>
                                         —          
                                     </p>
@@ -74,14 +67,16 @@
             ?>
             <!-- Blog Entries Column -->
             <div class="col-md-8">
-                <?php
-                    
+                <?php                    
                             while($row = mysqli_fetch_assoc($result)){
                                 $post_id = $row['post_id'];
                                 $post_title = $row['post_title'];
                                 $post_author = $row['post_author'];
                                 $post_date = $row['post_date'];
                                 $post_image = $row['post_image'];
+                                if($post_image == ""){
+                                    $post_image = "img_not_availible.png";
+                                }
                                 $post_comment_count = comment_count($connect, $post_id);
                                 $post_view_count = $row['post_view_count'];
                                 $post_status = $row['post_status'];
@@ -90,24 +85,25 @@
                 ?>
                 
                 <h1 class="page-header">
-                    <a href = "/Cocoding/post/<?php echo $post_id; ?>//"><?php echo $post_title; ?></a>                    
+                    <a href = "/Cocoding/post.php?p_id=<?php echo $post_id; ?>&lang=<?php echo $_SESSION['lang']; ?>">
+                        <?php echo $post_title; ?>
+                    </a>                    
                 </h1>
 
-                <p class="lead">
-                    by 
-                    <a href="/Cocoding/author_post/<?php echo $post_author; ?>">
+                <p class="h4">
+                    <?php echo _AUTHOR_POST; ?> 
+                    <a href="/Cocoding/author_post.php?author=<?php echo $post_author; ?>&lang=<?php echo $_SESSION['lang']; ?>">
                         <?php echo $post_author; ?>
                     </a>
                 </p>
 
                 <p>
-                    <span class = "glyphicon glyphicon-time"></span> 
-                    Posted on 
-                    <?php echo "{$post_date}"; ?>
+                    <span class = "glyphicon glyphicon-time"></span>                     
+                    <?php echo _DATE_POST.": {$post_date}"; ?>
                 </p>
                 
                 <p style='font-family:Rockwell;'>
-                    <?php echo $post_view_count ?> views
+                    <?php echo $post_view_count." "._VIEW_POST; ?> 
                 </p>
 
                 <p style='font-family:Rockwell;'>
@@ -118,8 +114,8 @@
 
 
                 <div style='padding-bottom: 50px; padding-top: 40px;'>
-                    <a href="/Cocoding/post/<?php echo $post_id; ?>/">
-                        <img class = "img-responsive" src = "/Cocoding/image/<?php echo $post_image;?>" alt="<?php echo $post_image;?>">
+                    <a href="/Cocoding/post.php?p_id=<?php echo $post_id; ?>&lang=<?php echo $_SESSION['lang']; ?>">
+                        <img class = "img-responsive" src = "/Cocoding/image/<?php echo $post_image;?>" alt="<?php echo $post_image;?>" height="200">
                     </a>
                 </div>
 
@@ -132,8 +128,9 @@
                         </div>
                                 
                         <div class="mt-4">
-                            <a class = "btn btn-primary" href = "/Cocoding/post/<?php echo $post_id; ?>/">
-                                Read More <span class="glyphicon glyphicon-chevron-right"></span>
+                            <a class = "btn btn-primary" href = "/Cocoding/post.php?p_id=<?php echo $post_id; ?>&lang=<?php echo $_SESSION['lang']; ?>">
+                                <?php echo _READ_POST_BTN; ?>
+                                <span class="glyphicon glyphicon-chevron-right"></span>
                             </a>
                         </div> 
                         <hr>
@@ -160,7 +157,7 @@
                                     $id = $fetch_row['cat_id'];
                                     echo "
                                         <li class='list-group-item'>
-                                            <a href='/Cocoding/category/{$id}'> {$title} </a>
+                                            <a href='/Cocoding/category.php?cat={$id}&lang=".$_SESSION['lang']."'> {$title} </a>
                                         </li>
                                     ";
                                 }
@@ -186,7 +183,7 @@
             <?php
                 include "includes/sidebar.php";
             ?>
-    
+        </div>
         <!-- /.row -->
 
     <?php

@@ -4,7 +4,6 @@
         if(!isset($_GET['forgot'])){
             header("Location: index", TRUE, 301);
         }
-
         include "includes/nav.php"; 
     ?>
     

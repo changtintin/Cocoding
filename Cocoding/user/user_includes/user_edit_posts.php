@@ -13,13 +13,6 @@
     }
 </script>
 <div class="row">
-    <div class="col-lg-12" style="padding-top: 10px;">
-        <h1>
-            Edit Posts            
-        </h1>
-    </div>
-</div>
-<div class="row">
     
     <div class='col-lg-12'>
         <!-- enctype= Sending Different Form Data -->
@@ -53,21 +46,27 @@
 
             <div class="form-group row ">
                 
-                <label for="title" class="col-sm-2 col-form-label">Post Title</label>
+                <label for="title" class="col-sm-2 col-form-label">
+                    <?php echo _POST_TITLE;?>
+                </label>
                 <div class="col-sm-10">                    
                     <input type="text" class="form-control" name="title" id ="title" value = "<?php echo $result['post_title'];?>">
                 </div>
             </div>
 
             <div class="form-group row ">
-                <label for="author" class="col-sm-2 col-form-label">Post Author</label>
+                <label for="author" class="col-sm-2 col-form-label">
+                    <?php echo  _AUTHOR_POST; ?>
+                </label>
                 <div class="col-sm-10">                    
                     <input type="text" class="form-control" name="author" id ="author" value = "<?php echo $result['post_author']; ?>" disabled="disabled">
                 </div>
             </div>            
             
             <div class="form-group row">
-                <label class=" col-sm-2 col-form-label  pt-0" for = "cater_n">Post Catergory ID</label>
+                <label class=" col-sm-2 col-form-label  pt-0" for = "cater_n">
+                    <?php echo _CATER_WELL; ?>
+                </label>
                 <div class="col-sm-10">
                     <select multiple class="form-control"name = "cater_n">
                         <?php
@@ -94,7 +93,9 @@
             </div>
 
             <div class="form-group row">
-                <label for="img" class="col-sm-2 col-form-label" for="img">Post Image</label>
+                <label for="img" class="col-sm-2 col-form-label" for="img">
+                    <?php echo _IMG; ?>
+                </label>
                 <div class="col-sm-10" >
                     <input type='file' class="form-control-file" accept='image/*' onchange='openFile(event)' name ="img" id = "img"><br>
                     <img class="media-object " id='output' style="width:600px; height:300px;">
@@ -115,7 +116,9 @@
             </div>                
 
             <div class="form-group row">
-                <label for="author" class="col-sm-2 col-form-label">Add new tag</label>
+                <label for="author" class="col-sm-2 col-form-label">
+                    <?php echo _ADD_TAG; ?>
+                </label>
                 <div class="col-sm-10">
                     <div class="input-group">
                         <input type="text" class="form-control" name="new_tag" id = "newTag">   
@@ -129,7 +132,9 @@
             </div>
 
             <div class="form-group row">
-                <label for="tag_checkbox" class="col-sm-2 col-form-label">Post Tags</label>
+                <label for="tag_checkbox" class="col-sm-2 col-form-label">
+                    <?php echo _TAG; ?>
+                </label>
                 <div class="form-check checkbox-lg" id = "tag_checkbox">
                     <div class="col-sm-10" >                
                         <?php
@@ -141,14 +146,18 @@
             </div>
             
             <div class="form-group row">    
-                <label for="date" class="col-sm-2 col-form-label">Post Date</label>
+                <label for="date" class="col-sm-2 col-form-label">
+                    <?php echo _DATE_POST; ?>
+                </label>
                 <div class="col-sm-10">                    
                     <input type="date" class="form-control" name="date" value = <?php echo $result['post_date']; ?>>
                 </div>
             </div>
 
             <div class="form-group row mt-5">
-                <label for="post_content" class="col-sm-2 col-form-label">Content</label>
+                <label for="post_content" class="col-sm-2 col-form-label">
+                    <?php echo _POST_CONTENT; ?>
+                </label>
                 <div class="col-sm-10">                    
                     <textarea class="form-control" rows="10" name="post_content" id="summernote">
                         <?php echo $content; ?>
@@ -158,7 +167,9 @@
 
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary" name="user_edit_post_submit">Submit</button>
+                    <button type="submit" class="btn btn-primary" name="user_edit_post_submit">
+                        <?php echo _APPLY; ?>
+                    </button>
                 </div>
                 
             </div>

@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header" style="padding-top: 30px;">
-                            All Comments
+                            Comments
                             <small>Authors</small>
                         </h1>
                     </div>

@@ -32,20 +32,13 @@
                             $row_count = mysqli_num_rows($result);
                             
                             if($row_count == 0){
-                                echo "<h2>No relative result</h2>";
+                                echo "<h2>"._NO_SEARCH."</h2>";
                             }
                             else{
-                                if($row_count > 1){
-                                    $be_v = "are";
-                                }
-                                else{
-                                    $be_v = "is";
-                                }
-                                
 
                                 echo"
                                     <p class='lead author_post_h'>
-                                        We Found {$row_count} Search Result of  
+                                        {$row_count} "._SEARCH_RESULT." 
                                         <strong> \"{$search_input}\" </strong>
                                         —          
                                     </p>
@@ -75,27 +68,28 @@
                                 
                 
                 <h1 class="page-header">
-                    <a href = "/Cocoding/post/<?php echo $post_id; ?>/"><?php echo $post_title; ?></a>                    
+                    <a href = "/Cocoding/post.php?p_id=<?php echo $post_id; ?>&lang=<?php echo $_SESSION['lang']; ?>">
+                    <?php echo $post_title; ?>
+                </a>                    
                 </h1>
 
                 <p class="lead">
-                    by 
-                    <a href="/Cocoding/author_post/<?php echo $post_author; ?>">
+                    <?php echo _AUTHOR_POST; ?>  
+                    <a href="/Cocoding/author_post.php?author=<?php echo $post_author; ?>&lang=<?php echo $_SESSION['lang']; ?>">
                         <?php echo $post_author; ?>
                     </a>
                 </p>
 
                 <p>
                     <span class = "glyphicon glyphicon-time"></span> 
-                    Posted on 
-                    <?php echo "{$post_date}"; ?>
+                    <?php echo _DATE_POST.": {$post_date}"; ?>
                 </p>
                 
                 <p>
                     <h5>
-                        Catergory:  
+                        <?php echo _CATER_WELL; ?>:  
                         <span class='badge badge-secondary'>
-                            <a href = '/Cocoding/category/<?php echo $cat_id; ?>' style = 'color:white;'>
+                            <a href = '/Cocoding/category.php?cat=<?php echo $cat_id; ?>&lang=<?php echo $_SESSION['lang']; ?>' style = 'color:white;'>
                                 <?php echo $cat_title; ?>
                             </a>
                         </span>
@@ -103,7 +97,7 @@
                 </p>
 
                 <p style='font-family:Rockwell;'>
-                    <?php echo $post_view_count ?> views
+                    <?php echo $post_view_count." "._VIEW_POST; ?> 
                 </p>
 
                 <p style='font-family:Rockwell;'>
@@ -125,8 +119,9 @@
                                     </div>
                                 </p>
                 
-                                <a class = "btn btn-primary" href = "/Cocoding/post/<?php echo $post_id; ?>/">
-                                    Read More <span class="glyphicon glyphicon-chevron-right"></span>
+                                <a class = "btn btn-primary" href = "/Cocoding/post.php?p_id=<?php echo $post_id; ?>&lang=<?php echo $_SESSION['lang']; ?>">
+                                    <?php echo _READ_POST_BTN; ?>
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
                                 </a>
                                 <hr>
                             <?php }

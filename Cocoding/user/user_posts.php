@@ -1,5 +1,5 @@
 <?php
-    include "user_header.php";
+    include "user_includes/user_header.php";
 ?>
 <body>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -10,7 +10,7 @@
 
         <!-- Navigation -->
         <?php 
-            include "user_nav.php"; 
+            include "user_includes/user_nav.php"; 
         ?>
 
         <div id="page-wrapper">
@@ -19,9 +19,32 @@
                 <div class="row">
                     <div class="col-lg-12" style="padding-top: 30px;">
                         <h1 class="page-header">
-                            Posts
-                            <small>Author</small>
-                        </h1>
+                            <?php echo _USER_POST;?>
+                            <small>
+                                <?php
+                                    if(isset($_GET['request'])){
+                                        $request = $_GET['request'];
+                                    }
+                                    else{
+                                        $request = '';
+                                    }
+                                    switch($request){
+                                        case 'user_add_posts':
+                                            echo _CREATE_POST;
+                                            break;
+                
+                                        case 'user_edit_posts':
+                                            echo _EDIT_POST;
+                                            break;
+                                            
+                                        default:    
+                                            echo _ALL_POST;
+                                            break;
+                                    }
+
+                                ?>
+                            </small>
+                        </h1>                        
                     </div>
                 </div>
 
@@ -29,13 +52,6 @@
                     // Query Confirm massenge alert
                     query_msg_alert();
 
-                    if(isset($_GET['request'])){
-                        $request = $_GET['request'];
-                    }
-                    else{
-                        $request = '';
-                    }
-                    
                     //different action
                     switch($request){
                         case 'user_add_posts':
@@ -63,7 +79,7 @@
 
 
     <?php 
-        include "user_footer.php";
+        include "user_includes/user_footer.php";
     ?>
 
 

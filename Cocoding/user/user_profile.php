@@ -1,5 +1,5 @@
 <?php
-    include "user_header.php";
+    include "user_includes/user_header.php";
 ?>
 <body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -10,7 +10,7 @@
 
         <!-- Navigation -->
         <?php 
-            include "user_nav.php"; 
+            include "user_includes/user_nav.php"; 
         ?>
 
         <div id="page-wrapper">
@@ -44,9 +44,9 @@
                     
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Profile
+                            <?php echo _PROFILE;?>
                             <small>
-                                <?php echo $_SESSION['username'];?>
+                                 <?php echo _USER." ".$_SESSION['username'];?>
                             </small>
                         </h1>
                         
@@ -81,13 +81,7 @@
                                 }
                             }
                         </script>
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                                <h2>My Profile</h2>
-                            </div>
-                            
-                        </div>
-
+                        
                         <div class="form-group row" id = "alert_edit" >
                             <script>
                                 function close_alert_edit(field_name) {
@@ -137,39 +131,47 @@
                         </div>
 
                         <div class="form-group row">
-                        <label for="id" class="col-sm-2 col-form-label">ID</label>
+                        <label for="id" class="col-sm-2 col-form-label">
+                            <?php echo _ID;?>
+                        </label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="fid" value = "<?php echo $user_id; ?>">
+                            <input type="text" class="form-control" name="fid" value = "<?php echo $user_id; ?>" disabled>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="first_n" class="col-sm-2 col-form-label">Firstname</label>
+                        <label for="first_n" class="col-sm-2 col-form-label">
+                            <?php echo _FIRST_N; ?>
+                        </label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="first_n" value = "<?php echo $user_firstname; ?>">
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="last_n" class="col-sm-2 col-form-label">Lastname</label>
+                        <label for="last_n" class="col-sm-2 col-form-label">
+                            <?php echo _LAST_N; ?>
+                        </label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="last_n" value = "<?php echo $user_lastname; ?>">
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label  pt-0">Role</label>
+                        <label class="col-sm-2 col-form-label  pt-0">
+                            <?php echo _ROLE; ?>
+                        </label>
                         <div class="col-sm-10">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="role" value="Subscriber" <?php if($user_role === "Subscriber"){echo "checked";}?>>
-                                <label class="form-check-label" for="exampleRadios1">
-                                    Subscriber
+                                <input class="form-check-input" type="radio" name="role" value="Subscriber" <?php if($user_role === "Subscriber"){echo "checked";}?> >
+                                <label class="form-check-label" for="exampleRadios1" >
+                                    <?php echo _SUBSCRIBER; ?>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="role" value="Admin" <?php if($user_role === "Admin"){echo "checked";}?>>
-                                <label class="form-check-label" for="exampleRadios1">
-                                    Admin
+                                <input class="form-check-input" type="radio" name="role" value="Admin" <?php if($user_role === "Admin"){echo "checked";}?> disabled>
+                                <label class="form-check-label" for="exampleRadios1" >
+                                    <?php echo _ADMIN;?>
                                 </label>
                             </div>
                         </div>
@@ -177,14 +179,18 @@
                     
                     
                     <div class="form-group row">
-                        <label for="username" class="col-sm-2 col-form-label">Username</label>
+                        <label for="username" class="col-sm-2 col-form-label">
+                            <?php echo _UN;?>
+                        </label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="username" value = "<?php echo $username; ?>">
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <label for="email" class="col-sm-2 col-form-label">
+                            <?php echo _COMMENT_MAIL;?>
+                        </label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="email" value = "<?php echo $user_email; ?>">
                         </div>
@@ -193,7 +199,9 @@
                     <fieldset disabled>
                         <div class="form-group row">
             
-                            <label for="password" class="col-sm-2 col-form-label">Password</label>
+                            <label for="password" class="col-sm-2 col-form-label">
+                                <?php echo _PASSWORD; ?>
+                            </label>
                             <div class="col-sm-10">
                                 <input autocomplete="off" type="text" class="form-control" name="password" id = "password" value = "<?php echo $user_password; ?>" disabled>
                             </div>
@@ -204,7 +212,7 @@
                         <div class="col-sm-10">
                             <button type="submit" class="btn btn-primary" name="edit_user">
                                 <span class="glyphicon glyphicon-save"></span> 
-                                Save
+                                <?php echo _SAVE; ?>
                             </button>
                         </div>
                     </div>
@@ -234,7 +242,7 @@
 
 
     <?php 
-        include "user_footer.php";
+        include "user_includes/user_footer.php";
     ?>
 
 <script>

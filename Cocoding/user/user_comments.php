@@ -1,5 +1,5 @@
 <?php
-    include "user_header.php";
+    include "user_includes/user_header.php";
 ?>
 <body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -10,7 +10,7 @@
 
         <!-- Navigation -->
         <?php 
-            include "user_nav.php"; 
+            include "user_includes/user_nav.php"; 
         ?>
 
         <div id="page-wrapper">
@@ -47,9 +47,14 @@
                     
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Comments
+                            <?php echo _USER_SELF_COMM; ?>
                             <small>
-                                <?php echo $_SESSION['username'];?>
+                                
+                                <?php
+                                    if(isset($_GET['pid'])){
+                                        echo _USER_POST." - ".fetch_commented_post($_GET['pid']);
+                                    }                                
+                                ?>
                             </small>
                         </h1>
                         
@@ -59,58 +64,50 @@
                        
                 <!-- /.row -->
                 <div class="row">
-                    <div class='col-lg-12'>
-                        <?php
-                            if(isset($_GET['pid'])){
-                                echo "";
-                                echo "<div class='useradmin-header'>Comments of ";
-                                echo fetch_commented_post($_GET['pid']). "</div>";
-                            }
-                        ?>
+                    <div class='col-lg-12'>                        
                         <form method="post">
                             <div class="text-right" style="padding-bottom: 20px;">
                                 
                                 <div class="btn-group dropup mr-3">
                                     <div class="btn-group mr-3" role="group">
                                         <select class="btn-group form-control" id="exampleFormControlSelect1" name = "comment_setting">
-                                            <option selected disabled >Setting</option>
-                                            
-                                            <option value="Report"> Report (Testing)</option>
+                                            <option selected disabled>
+                                                <?php echo _SETTING;?>
+                                            </option>                                            
+                                            <option value="Report" disabled> 
+                                                <?php echo _REPORT;?>
+                                            </option>
                                         </select>
                                     </div>
                                     <div class="btn-group mr-3" role="group">
                                         <button type="submit" class="btn btn-primary" name="comment_setting_submit">
-                                            Apply.
+                                            <?php echo _APPLY;?>
                                         </button>
                                     </div>
                                 </div>
                                         
-                                <div class="btn-group mr-3 " role="group">
-                                    
-                                    <div class="btn-group mr-3" role="group" >
-                                        <button type="submit" class="btn btn-primary float-right" name ="select_all">
-                                            Select All
-                                        </button>
-                                    </div>
-
-                                    <div class="btn-group mr-3" role="group">
-                                        <button type="submit" class="btn btn-primary float-right" name ="cancel_all">
-                                            Cancel
-                                        </button>
-                                    </div>
-                                    
-                                </div>
+                            
                             </div>
                             
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col">ID</th>                                    
-                                        <th scope="col">Comment</th>  
-                                        <th scope="col">Post title</th>          
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Date</th>
-                                        <th scope="col">Select</th>
+                                        <th scope="col">
+                                            <?php echo _ID;?>
+                                        </th>                                    
+                                        <th scope="col">
+                                            <?php echo _COMM_CONTENT;?>
+                                        </th>  
+                                        <th scope="col">
+                                            <?php echo _POST_TITLE;?>
+                                        </th>          
+                                        <th scope="col">
+                                            <?php echo _STATUS;?>
+                                        </th>
+                                        <th scope="col">
+                                            <?php echo _DATE;?>
+                                        </th>
+                                        <th scope = "col"><input type="checkbox" id = "selectAll" ></th>
                                     </tr>
                                 </thead>
                                     <tbody>
@@ -160,20 +157,20 @@
                                                         <div class="form-check checkbox-lg">
                                                             <input type="checkbox" class="form-check-input" name="select_ary[]" value = "<?php echo  $id;?>" id = "selectAll">                                                  
                                                         </div>                        
-                                                    </td>                                                    
-                                                </tr>
+                                                    </td>                                             
+                                                </tr> 
                                         <?php
                                                 }
-                                            }                        
-                                        ?>
-                                        
+                                            }                
+                                        ?>                                  
                                     </tbody>
                             </table>
                         </form>
                     </div>
+                                        
                 </div>
                 <!-- /.row -->
-
+               
             </div>
             <!-- /.container-fluid -->
 
@@ -186,7 +183,7 @@
 
 
     <?php 
-        include "user_footer.php";
+        include "user_includes/user_footer.php";
     ?>
 
 <script>

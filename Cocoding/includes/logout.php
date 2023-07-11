@@ -6,9 +6,10 @@
     $sql = "DELETE FROM ".ONLINE." WHERE session = '{$sid}'";
     $result = mysqli_query($connect, $sql);
     if($result){
-       session_unset();
-
+        $lang = $_SESSION['lang'];
+        session_unset();
+        $_SESSION['lang'] = $lang;
         $msg = "User Logout";
-        header("Location: ../index.php?confirm_msg={$msg}");
+        header("Location: ../index.php?confirm_msg={$msg}&lang={$_SESSION['lang']}");
     }
 ?>

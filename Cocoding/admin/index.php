@@ -4,7 +4,7 @@
     if(!isset($_SESSION) ||  $_SESSION['user_role']!="Admin"){
         $msg = "ERROR, Please sign up for further access to user admin, ";
         $msg .= "<a href = '/Cocoding/registration'><strong>register now</strong></a>";
-        header("Location: ../index.php?confirm_msg={$msg}", true, 301);
+        header("Location: ../index.php?confirm_msg={$msg}&lang={$_SESSION['lang']}", true, 301);
     }
 ?>
 <body >

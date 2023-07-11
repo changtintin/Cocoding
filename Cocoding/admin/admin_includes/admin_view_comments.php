@@ -1,3 +1,11 @@
+    <div class = "col-12" style="padding-top: 10px;">
+        <?php
+            if(isset($_GET['pid'])){
+                echo "<h3 style = 'color:#b6afaf;'> Comments of '  ".fetch_commented_post($_GET['pid'])."  '</h3>";
+            }
+            
+        ?>
+    </div>
     <form method="post">
         <div class="text-right" style="padding-bottom: 20px;">
             
@@ -46,17 +54,18 @@
                 </tr>
             </thead>
                 <tbody>
-                    <?php
-                        $ary_index = 0;
-                        
+                    
+                    <?php                       
+                        $ary_index = 0;                        
                         $clause = " ";
                         if(isset($_GET['pid'])){
-                            $clause = " WHERE comment_post_id = '{$_GET['pid']}' ";
+                            $clause = " WHERE comment_post_id = '{$_GET['pid']}' ";                           
                         }
-                       
+                        
                         $sql = "SELECT * FROM ".COMMENTS.$clause;
                         $query = mysqli_query($connect, $sql);
                         if(mysqli_num_rows($query) > 0){
+                            
                             while($row = mysqli_fetch_assoc($query)){
                                 $id = $row['comment_id'];
                                 $p_id = $row['comment_post_id'];

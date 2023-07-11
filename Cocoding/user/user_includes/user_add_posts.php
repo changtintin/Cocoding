@@ -13,23 +13,22 @@
     }
 </script>
 
-
-<div class="useradmin-header">
-    Add a New Post        
-</div>
-
 <!-- enctype= Sending Different Form Data -->
 <form method="post" enctype="multipart/form-data">
 
     <div class="form-group row">        
-        <label for="title" class="col-sm-2 col-form-label">Post Title</label>
+        <label for="title" class="col-sm-2 col-form-label">
+            <?php echo _POST_TITLE;?>
+        </label>
         <div class="col-sm-10">
             <input type="text" class="form-control" name="title">
         </div>
     </div>
 
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label  pt-0" for = "cater_id">Catergory</label>
+        <label class="col-sm-2 col-form-label  pt-0" for = "cater_id">
+            <?php echo _CATER_WELL; ?>
+        </label>
         <div class="col-sm-10">
             <select multiple class="form-control" name = "cater_id">
                 <?php
@@ -53,39 +52,55 @@
     
 
     <div class="form-group row">
-        <label for="author" class="col-sm-2 col-form-label">Author (Username)</label>
+        <label for="author" class="col-sm-2 col-form-label">
+            <?php echo _AUTHOR_POST; ?>
+        </label>
         <div class="col-sm-10">
             <input type="text" class="form-control" name="author" value = <?php echo $_SESSION['username']; ?> disabled="disabled">            
         </div>
     </div>
 
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label  pt-0" for = "status">Post Status</label>
+        <label class="col-sm-2 col-form-label  pt-0" for = "status">
+            <?php echo _STATUS;?>
+        </label>
         <div class="col-sm-10">
             <select multiple class="form-control" name = "status" id ="status">
-                <option value = "Draft" selected="selected">Draft</option>    
-                <option disabled="disabled">Published</option>    
-                <option disabled="disabled">Spam</option>   
+                <option value = "Draft" selected="selected">
+                    <?php echo _STATUS_DFT; ?>
+                </option>    
+                <option disabled="disabled">
+                    <?php echo _STATUS_PUB; ?>
+                </option>    
+                <option disabled="disabled">
+                    <?php echo _STATUS_SPM; ?>
+                </option>   
             </select>
         </div>
     </div>
 
     <div class="form-group row">
-        <label for="img" class="col-sm-2 col-form-label">Post Image</label>
+        <label for="img" class="col-sm-2 col-form-label">
+            <?php echo _IMG;?>
+        </label>
         <div class="col-sm-10" >
             <input type="file" class="form-control-file" name ="img">
         </div>
     </div>
     
     <div class="form-group row">
-        <label for="summernote" class="col-sm-2 col-form-label">Content</label>
+        <label for="summernote" class="col-sm-2 col-form-label">
+            <?php echo _POST_CONTENT; ?>
+        </label>
         <div class="col-sm-10">
             <textarea class="form-control" rows="40" name="post_content"  id="summernote"></textarea>
         </div>
     </div>
 
     <div class="form-group row">
-        <label for="author" class="col-sm-2 col-form-label">Add new tag</label>
+        <label for="author" class="col-sm-2 col-form-label">
+            <?php echo _ADD_TAG;?>
+        </label>
         <div class="col-sm-10">
             <div class="input-group">
                 <input type="text" class="form-control" name="new_tag" id = "newTag">   
@@ -99,7 +114,9 @@
     </div>
 
     <div class="form-group row">
-        <label for="tag_checkbox" class="col-sm-2 col-form-label">Post Tags</label>
+        <label for="tag_checkbox" class="col-sm-2 col-form-label">
+            <?php echo _TAG; ?>
+        </label>
         <div class="form-check checkbox-lg" id = "tag_checkbox">
             <div class="col-sm-10" >                
                 <?php
@@ -111,7 +128,9 @@
     </div>
 
     <div class="form-group row">
-        <label for="date" class="col-sm-2 col-form-label">Post Date</label>
+        <label for="date" class="col-sm-2 col-form-label">
+            <?php echo _DATE_POST; ?>
+        </label>
         <div class="col-sm-10">
             <input type="date" class="form-control" name="date">
         </div>
@@ -119,7 +138,9 @@
     
     <div class="form-group row">
         <div class="col-sm-10">
-            <button type="submit" class="btn btn-success" name="create_post">Pose a New Post</button>
+            <button type="submit" class="btn btn-success" name="create_post">
+                <?php echo _APPLY; ?>
+            </button>
         </div>
     </div>
 

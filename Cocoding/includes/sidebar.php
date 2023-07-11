@@ -14,6 +14,7 @@
     <div class="col-md-4">
 
         <!-- Online User & Social media -->
+        <!-- The Icons are from https://icons.getbootstrap.com/ -->
         <div id = 'social_window'>
             <div id="float_window" style = "color:white; font-size:medium; ";>
                 <div class="card"  id="float_content">     
@@ -21,7 +22,7 @@
                         <span class='closebtn' onclick='close_alert_edit("social")'>&times;</span> 
                                     
                         <h5 class="card-title">                                                        
-                            Online users:
+                            <?php echo _ONLINE_WINDOW; ?>:
                             <span id = "online_user"> 
                             </span>  
                         </h5>
@@ -50,14 +51,16 @@
                             </svg>
                         </a>
 
-                        <p class="card-text" id = "c_text" >Subscribe our email letter or meet at social media</p>
-                        
-                        <button href="#" class="btn btn-success btn-sm" onclick='close_alert_edit("social")'>No, Thanks</button>
+                        <p class="card-text" id = "c_text" >
+                            <?php echo _SOCIAL_WINDOW; ?>
+                        </p>                        
+                        <button href="#" class="btn btn-success btn-sm" onclick='close_alert_edit("social")'>
+                            <?php echo _SOCIAL_BTN;?>
+                        </button>
                     </div>                       
                 </div>
             </div>
         </div>
-        
         
         <!-- Ads -->
         <div  class="ad_window" id = 'ad_window'>
@@ -68,13 +71,13 @@
                 </div>                       
             </div>
         </div>
-
-         <!-- Blog Search Well -->
-        <div class="well">
-            <h4 id = "blog">Blog Search</h4>
-            <form action="/Cocoding/search" method="post">
+        
+        <!-- Blog Search Well -->
+        <div class="well">            
+            <h4 id = "blog"><?php echo _SEARCH_WELL; ?></h4>
+            <form action="/Cocoding/search.php?lang=<?php echo $_SESSION['lang']; ?>" method="post">
                 <div class = "input-group input-group-sm">                
-                    <input type = "text" class="form-control" name = "search_input" placeholder="keywords, author, topic......">                    
+                    <input type = "text" class="form-control" name = "search_input" placeholder="<?php echo _SEARCH_COL; ?>">                    
                     <span class = "input-group-btn">
                         <button class = "btn btn-primary" type = "submit" name = "search_submit">
                             <span class = "glyphicon glyphicon-search"></span>
@@ -114,11 +117,13 @@
                             $login_time = $dt -> format('F j, Y, g:i a');
                         }
                         echo'
-                            <h4>Welcome, '.$_SESSION["username"].' !</h4>
-                            <h5>Login time: '.$login_time.'</h5>
+                            <h4>'._WELCOME_WELL.', '.$_SESSION["username"].' !</h4>
+                            <h5>'._LOGIN_TIME_MSG.': '.$login_time.'</h5>
                             <div style="padding-top: 10px;"> 
                                 <div class = "form-group text-left">  
-                                    <a href="/Cocoding/index.php?logout=1" style="font-size: small;">Log out,<br> create another account</a>
+                                    <a href="/Cocoding/index.php?logout=1" style="font-size: small;">
+                                        '._LOGOUT_WELL.'
+                                    </a>
                                 </div>
                             </div>
                         ';
@@ -135,7 +140,9 @@
         
         <!-- Blog Categories Well -->
         <div class="well">
-            <h4>All Categories</h4>
+            <h4>
+                <?php echo _CATER_WELL; ?>
+            </h4>
             <div class="row">
                 <!-- /.col-lg-6 -->
                 <div class="col-lg-6">
@@ -152,9 +159,12 @@
         <?php
             if(isset($_SESSION['user_id'])){
         ?>    
+
+        <!-- Like post Well -->
         <div class="well">
-            <h4>Like Posts</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <h4>
+                <?php echo _LIKE_WELL; ?>
+            </h4>
             <ol class="list-group sidebar_well">
                 <?php fetch_like_posts($connect, $_SESSION['user_id']); ?>                
             </ol>
@@ -166,37 +176,18 @@
         <!-- Side Widget Well -->
         <div class="well">
            
-            <h4>Campaign</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <h4><?php echo _CAMPAIGN_WELL; ?></h4>
+            <?php echo _CAMP_DES;?>
 
             <ol class='list-group sidebar_well'>
+                
                 <li class='list-group-item cam'>
-                    <a href="#">
-                        Vote for 2022 American Influencer Awards   
-                    </a>     
-                </li>
-                <li class='list-group-item cam'>
-                    <a href="#">
-                        McDonald / BurgerKing: 2023 Free Coupons
-                    </a>
-                </li>
-                <li class='list-group-item cam'>
-                    <a href="#">
+                    <a href="https://www.shakebugs.com/blog/developer-experience-best-practices/">
                         Learn best practices from experienced developers
                     </a>
-                </li>
+                </li>                
                 <li class='list-group-item cam'>
-                    <a href="#">
-                        The rise of the K-drama heroine
-                    </a>
-                </li>
-                <li class='list-group-item cam'>
-                    <a href="#">
-                        Inside China's crackdown on tattoo culture   
-                    </a>
-                </li>
-                <li class='list-group-item cam'>
-                    <a href="#">
+                    <a href="https://thezbook.com/code-first-vs-product-first">
                         Be the first to know the new products and features
                     </a>
                 </li>
@@ -226,32 +217,12 @@
         </div>
         
         <div class="well">
-            <h4>About Us</h4>
+            <h4><?php echo _ABOUT_WELL; ?></h4>
             
             <div class="sidebar_content">
-                <p>
-                We aren't trying to be the first to break news stories; our aim is to be your first resource 
-                for thoughtful content to educate about the technologies affecting the marketplace.
-                </p>
+                <?php echo _INTRO; ?>
             </div>
-            <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/1OIIrbE_Vd4" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <div class="well">
-            <h4>How to Start Coding | Programming for Beginners</h4>
-            <div class="sidebar_content">
-                <p>
-                    In this video you will know how one can start coding and best programming languages 
-                    to learn in 2020 for Job in Google, Microsoft, 
-                    Infosys, TCS etc. Also you will know the top 5 programming languages to learn 
-                    in 2020 for a rewarding career.
-                </p>
-            </div>
-            <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/HIj8wU_rGIU" allowfullscreen></iframe>
-            </div>
+            
         </div>
     </div>
     </div>

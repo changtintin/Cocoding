@@ -7,47 +7,54 @@
         <div class="btn-group dropup mr-3">
             <div class="btn-group mr-3" role="group">
                 <select class="btn-group form-control" id="exampleFormControlSelect1" name = "comment_setting">
-                    <option selected disabled >Setting</option>                                        
-                    <option value="Delete"> Delete Record </option>
+                    <option selected disabled >
+                        <?php echo _SETTING;?>
+                    </option>                                        
+                    <option value="Delete">
+                        <?php echo _DEL;?>
+                    </option>
                 </select>
             </div>
             <div class="btn-group mr-3" role="group">
                 <button type="submit" class="btn btn-primary" name="comment_setting_submit">
-                    Apply
+                    <?php echo _APPLY;?>
                 </button>
             </div>
         </div>
                 
-        <div class="btn-group mr-3 " role="group">
-            
-            
-            <div class="btn-group mr-3" role="group" >
-                <button type="submit" class="btn btn-primary float-right" name ="select_all">
-                    Select All
-                </button>
-            </div>
-
-            <div class="btn-group mr-3" role="group">
-                <button type="submit" class="btn btn-primary float-right" name ="cancel_all">
-                    Cancel
-                </button>
-            </div>
-        </div> 
     </div>
 
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th scope = "col">ID</th>
-                <th scope = "col">Title</th>
-                <th scope = "col">Image</th>
-                <th scope = "col">Tags</th>
-                <th scope = "col">Comments</th>
-                <th scope = "col">Views</th>
-                <th scope = "col">Date</th>
-                <th scope = "col">Like</th>
-                <th scope = "col">Dislike</th>
-                <th scope = "col">Select</th>
+                <th scope = "col">
+                    <?php echo _ID; ?>
+                </th>
+                <th scope = "col">
+                    <?php echo _POST_TITLE; ?>
+                </th>
+                <th scope = "col">
+                    <?php echo _IMG; ?>
+                </th>
+                <th scope = "col">
+                    <?php echo _TAG;?>
+                </th>
+                <th scope = "col">
+                    <?php echo _COMM_COUNT;?>
+                </th>
+                <th scope = "col">
+                    <?php echo _VIEW;?>
+                </th>
+                <th scope = "col">
+                    <?php echo _DATE; ?>
+                </th>
+                <th scope = "col">
+                    <?php echo _LIKE_BTN; ?>
+                </th>
+                <th scope = "col">
+                    <?php echo _DISLIKE_BTN; ?>
+                </th>
+                <th scope = "col"><input type="checkbox" id = "selectAll" ></th>
             </tr>
         </thead>
             <tbody>
@@ -103,9 +110,9 @@
 
                             <td>                        
                                 <div class="form-check checkbox-lg">
-                                    <input type="checkbox" class="form-check-input" name="select_ary[]" value = "<?php echo  $id;?>" >                                                  
+                                    <input type="checkbox" class="form-check-input" name="select_ary[]" value = "<?php echo  $id;?>" id = "selectAll">                                                  
                                 </div>                        
-                            </td>
+                            </td>   
                         </tr>
                 <?php
                         }    
@@ -126,3 +133,14 @@
             </tbody>
     </table>
 </form>
+<script>
+    $("#selectAll").click(function(){
+        if($("#selectAll").prop("checked")){
+            console.log("check");                
+            $("input[name='select_ary[]']").prop("checked", true);
+        }
+        else{
+            $("input[name='select_ary[]']").prop("checked", false);
+        }
+    });
+</script>

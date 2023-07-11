@@ -1,8 +1,7 @@
-
 <?php    
     if(isset($_SESSION['user_role']) && $_SESSION['user_role'] != "Admin"){
         $msg = "You can't access the admin";
-        header("Location: ../index/confirm_msg={$msg}");
+        header("Location: ../index.php?confirm_msg={$msg}&lang={$_SESSION['lang']}");
     }
 
     include "../includes/function.php";
@@ -39,7 +38,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-   
+
     <!-- Latest compiled and minified Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
@@ -49,15 +48,15 @@
     <!-- include summernote css/js -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/summernote.css">
-    
-    
+
+
     <!-- jQuery -->
     <script src="./js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="./js/bootstrap.min.js"></script>
 
 
-    <script src ="./js/summernote.min.js"></script>
+    <script src="./js/summernote.min.js"></script>
 
 
     <script src="./js/scripts.js"></script>
@@ -65,92 +64,115 @@
 </head>
 
 <style>
-    .alert {
-        padding: 20px;
-        background-color:#f4edcd;
-        color: #616161;
-        font:bold;
-        font-family: 'Courier New', monospace;
-        margin-bottom: 15px;
+.alert {
+    padding: 20px;
+    background-color: #f4edcd;
+    color: #616161;
+    font: bold;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: #616161;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
+/* Loader */
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #cecaca;
+    border-radius: 50%;
+    border-top: 16px solid #757575;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
     }
 
-    /* The close button */
-    .closebtn {
-        margin-left: 15px;
-        color: #616161;
-        font-weight: bold;
-        float: right;
-        font-size: 22px;
-        line-height: 20px;
-        cursor: pointer;
-        transition: 0.3s;
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
     }
 
-    /* When moving the mouse over the close button */
-    .closebtn:hover {
-        color: black;
+    100% {
+        transform: rotate(360deg);
     }
-    
-    /* Loader */
-    #loader {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        z-index: 1;
-        width: 120px;
-        height: 120px;
-        margin: -76px 0 0 -76px;
-        border: 16px solid #cecaca;
-        border-radius: 50%;
-        border-top: 16px solid #757575;
-        -webkit-animation: spin 2s linear infinite;
-        animation: spin 2s linear infinite;
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 0.7s;
+    animation-name: animatebottom;
+    animation-duration: 0.7s
+}
+
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
     }
 
-    @-webkit-keyframes spin {
-        0% { -webkit-transform: rotate(0deg); }
-        100% { -webkit-transform: rotate(360deg); }
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
     }
 
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+    to {
+        bottom: 0;
+        opacity: 1
     }
+}
 
-    /* Add animation to "page content" */
-    .animate-bottom {
-        position: relative;
-        -webkit-animation-name: animatebottom;
-        -webkit-animation-duration: 0.7s;
-        animation-name: animatebottom;
-        animation-duration: 0.7s
-    }
-
-    @-webkit-keyframes animatebottom {
-        from { bottom:-100px; opacity:0 } 
-        to { bottom:0px; opacity:1 }
-    }
-
-    @keyframes animatebottom { 
-        from{ bottom:-100px; opacity:0 } 
-        to{ bottom:0; opacity:1 }
-    }
-
-    #myDiv {
-        display: none;
-    }
-
+#myDiv {
+    display: none;
+}
 </style>
 
 <script>
-    var myVar;
+var myVar;
 
-    function myFunction() {
-        myVar = setTimeout(showPage, 500);
-    }
+function myFunction() {
+    myVar = setTimeout(showPage, 500);
+}
 
-    function showPage() {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("myDiv").style.display = "block";
-    }
+function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+}
 </script>

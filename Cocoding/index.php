@@ -40,28 +40,38 @@
                 query_msg_alert();
                 
                 $post_per_page = 3;
-                $post_start = 0;
-                
+                $post_start = 0;                
 
-                $sql = "SELECT * FROM ".POSTS;
+                $sql = "SELECT * FROM ".POSTS." WHERE post_status = 'Published';";
                 $q = mysqli_query($connect, $sql);
                 
                 if(!$q){
                     echo mysqli_error($connect, $q);
                 }
+
                 if(mysqli_num_rows($q) > 0){
-                    $total_post = mysqli_num_rows($q);
+                    $total_published_post_num = mysqli_num_rows($q);
                 }
                 
-                $num_of_page = $total_post / $post_per_page;
-                
+                $total_page_num = ceil($total_published_post_num / $post_per_page);
 
                 if(isset($_GET['cur_page'])){
                     $cur_page = $_GET['cur_page'];  
                     $post_start = $cur_page * $post_per_page;  
 
-                    if($post_start < 0 || $post_start > $total_post - $post_per_page){
+                    if($post_start < 0 || $post_start > $total_published_post_num){
+                        $msg = "The page isn't exist!";
+                        $r = "\"ok\"";
+                        echo "
+                            <div id = 'alert_edit'>
+                                <div class='alert' >
+                                    <span class='closebtn' onclick='close_alert_edit({$r})'>&times;</span>".$msg
+                                    ."
+                                </div> 
+                            </div>
+                        ";
                         $post_start = 0;
+                        $cur_page = 0;
                     }
                 }
                 else{
@@ -82,6 +92,9 @@
                         $post_author = $row['post_author'];
                         $post_date = $row['post_date'];
                         $post_image = $row['post_image'];
+                        if($post_image == ""){
+                            $post_image = "img_not_availible.png";
+                        }
                         $post_comment_count = comment_count($connect, $post_id);
                         $post_view_count = $row['post_view_count'];
                         $post_status = $row['post_status'];
@@ -94,28 +107,27 @@
                     <div>                        
 
                         <h1 class="page-header">
-                            <a href="/Cocoding/post/<?php echo $post_id; ?>/" ><?php echo $post_title; ?></a>
-                        </h1>
-                        
+                            <a href="/Cocoding/post.php?p_id=<?php echo $post_id; ?>&lang=<?php echo $_SESSION['lang']; ?>" ><?php echo $post_title; ?></a>
+                        </h1>                        
 
-                        <p class="lead" style="font-size: large;">
-                            by
-                            <a href="/Cocoding/author_post/<?php echo $post_author; ?>" >
+                        <p class="h4">                            
+                            <?php echo _AUTHOR_POST; ?>
+                            <a href="/Cocoding/author_post.php?author=<?php echo $post_author; ?>&lang=<?php echo $_SESSION['lang']; ?>" >
                                 <?php echo $post_author; ?>
                             </a>
                         </p>
 
                         <p>
                             <span class="glyphicon glyphicon-time"></span>
-                            Posted on
-                            <?php echo "{$post_date}"; ?>
+                            
+                            <?php echo _DATE_POST.":  {$post_date}"; ?>
                         </p>
                         
                         <p>
                             <h5>
-                                Catergory:  
+                                <?php echo _CATER_WELL.": ";?>
                                 <span class='badge badge-secondary'>
-                                    <a href = '/Cocoding/category/<?php echo $cat_id; ?>' style = 'color:white;'>
+                                    <a href = '/Cocoding/category.php?cat=<?php echo $cat_id; ?>&lang=<?php echo $_SESSION['lang']; ?>' style = 'color:white;'>
                                         <?php echo $cat_title; ?>
                                     </a>
                                 </span>
@@ -123,7 +135,7 @@
                         </p>
 
                         <p style="font-family:'Rockwell';">
-                            <?php echo $post_view_count ?> views
+                            <?php echo $post_view_count." "._VIEW_POST; ?> 
                         </p>
 
                         <p style="font-family:'Rockwell';">
@@ -133,7 +145,7 @@
                         </p>
 
                         <div style='padding-bottom: 30px; padding-top: 10px;'>
-                            <a href="/Cocoding/post/<?php echo $post_id; ?>/">
+                            <a href="/Cocoding/post.php?p_id=<?php echo $post_id; ?>&lang=<?php echo $_SESSION['lang']; ?>">
                                 <img class="img-responsive" src="/Cocoding/image/<?php echo $post_image; ?>" alt="<?php echo $post_image; ?>">
                             </a>
                         </div>
@@ -146,11 +158,11 @@
                         </div>
                         
                         <div class="mt-5">
-                            <a class="btn btn-primary" href="/Cocoding/post/<?php echo $post_id; ?>/">
-                                Read More <span class="glyphicon glyphicon-chevron-right"></span>
+                            <a class="btn btn-primary" href="/Cocoding/post.php?p_id=<?php echo $post_id; ?>&lang=<?php echo $_SESSION['lang']; ?>">
+                                <?php echo _READ_POST_BTN; ?>
+                                <span class="glyphicon glyphicon-chevron-right"></span>
                             </a>
                         </div>
-
                         <hr class="homepage_hr">
                     </div>
 
@@ -162,30 +174,40 @@
 
 
             <ul class = "pager">                    
-                    <?php                         
-                        if($num_of_page != 0){                                                                                    
+                    <?php                                              
+                        if($total_page_num != 0){                                                                                    
                             if($post_start > 0){
                                 echo '
                                     <li>
-                                        <a href="/Cocoding/index_p/'.($cur_page - 1).'">
+                                        <a href="/Cocoding/index.php?cur_page='.($cur_page - 1).'&lang='.$_SESSION["lang"].'">
                                             <span class = "glyphicon glyphicon-arrow-left"></span>
                                         </a>
                                     </li>
                                 ';
                             }
-                                                    
-                            for($i = 0; $i < $num_of_page - 1; $i++){
+                                                   
+                            for($i = 0; $i < $total_page_num; $i++){
                                 echo '
-                                <li>
-                                    <a href="/Cocoding/index_p/'.$i.'">'.($i + 1).'</a>
-                                </li>
+                                    <li >
+                                        <a href="/Cocoding/index.php?cur_page='.$i.'&lang='.$_SESSION["lang"].'"';
+                                if($cur_page == $i){
+                                    echo 'class = "is_disabled"';
+                                }
+                                else{
+                                    echo ' ';
+                                }
+                                echo'
+                                    >
+                                        '.($i + 1).'
+                                        </a>
+                                    </li>
                                 ';
                             }
                             
-                            if($cur_page + 2 < $num_of_page){
+                            if($cur_page + 2 <= $total_page_num){
                                 echo '
                                     <li>
-                                        <a href="/Cocoding/index_p/'.($cur_page + 1).'">
+                                        <a href="/Cocoding/index.php?cur_page='.($cur_page + 1).'&lang='.$_SESSION["lang"].'">
                                             <span class = "glyphicon glyphicon-arrow-right"></span>
                                         </a>
                                     </li>

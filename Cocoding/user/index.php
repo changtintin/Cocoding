@@ -1,10 +1,10 @@
 <?php
-    include "user_header.php";
+    include "user_includes/user_header.php";
     // Protect from user access from url
     if(!isset($_SESSION) || empty($_SESSION['user_role'])){
         $msg = "ERROR, Please sign up for further access to user admin, ";
         $msg .= "<a href = '/Cocoding/registration'><strong>register now</strong></a>";
-        header("Location: ../index.php?confirm_msg={$msg}", true, 301);
+        header("Location: ../index.php?confirm_msg={$msg}&lang={$_SESSION['lang']}", true, 301);
     }
 ?>
 <body >
@@ -16,7 +16,7 @@
 
         <!-- Navigation -->
         <?php 
-            include "user_nav.php"; 
+            include "user_includes/user_nav.php"; 
         ?>
 
         <div id="page-wrapper">
@@ -72,10 +72,10 @@
                     
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Welcome to <?php echo $_SESSION['username']."'s";?> Admin  <small>
+                            <?php echo _USER_ADMIN; ?>
+                            <small>
                                 <?php 
-                                    echo $_SESSION['user_firstname']." ";
-                                    echo $_SESSION['user_lastname'];
+                                    echo $_SESSION['username'];                                    
                                 ?>
                             </small>
                         </h1>
@@ -98,13 +98,18 @@
                                         <div class='huge'>
                                             <?php echo $published_post_count + $draft_post_count; ?>
                                         </div>
-                                        <div>Posts</div>
+                                        <div>
+                                            <?php echo _USER_POST; ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <a href="user_posts.php">
                                 <div class="panel-footer">
-                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
+                                    <span class="pull-right">
+                                        <?php echo _USER_DETAIL;?>
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </span>
 
                                     <div class="clearfix"></div>
                                 </div>
@@ -121,25 +126,26 @@
                                         <i class="fa fa-comments fa-4x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                    <div class='huge'>
-                                        <?php echo $approved_comment_count + $unapproved_comment_count; ?>
-                                    </div>
-                                    <div>Comments</div>
+                                        <div class='huge'>
+                                            <?php echo $approved_comment_count + $unapproved_comment_count; ?>
+                                        </div>
+                                        <div>
+                                            <?php echo _USER_COMM;?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <a href="user_comments">
                                 <div class="panel-footer">
-                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
+                                    <span class="pull-right">
+                                        <?php echo _USER_DETAIL;?>
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
                         </div>
                     </div>
-
-                   
-
-                   
                 </div>
                 <!-- /.row -->
 
@@ -151,10 +157,10 @@
 
                         function drawChart() {
                             var data = google.visualization.arrayToDataTable([
-                                ['Title', 'Count'],
+                                ['<?php echo _USER_OVERVIEW; ?>', '<?php echo _CHART_COUNT; ?>'],
                                 
                                 <?php
-                                    $title = ['Active Posts','Draft Posts','Approved Comments','Unapproved Comments'];
+                                    $title = [_ACT_POST, _DFT_POST, _APPROV_COMM, _UNAPPROV_COMM];
                                     $count = [$published_post_count, $draft_post_count, $approved_comment_count, $unapproved_comment_count];
 
                                     for($i = 0; $i < count($title); $i++){
@@ -165,8 +171,8 @@
 
                             var options = {
                                 chart: {
-                                    title: 'Admin Info',
-                                    subtitle: 'Counts of posts, users, comments.',
+                                    title: '<?php echo _USER_OVERVIEW; ?>',
+                                    subtitle: '<?php echo _USER_CHART; ?>',
                                 }
                                 
                             };

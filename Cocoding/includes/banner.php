@@ -7,15 +7,17 @@
 
         <p style="font-size: small;">
             Cocoding — Coding  Together 
-            <br> Subscribe our newsletter &
-            Consider Another way to learn
+            <br> 
+            <?php echo _BANNER_DES;?>
         </p>
 
         <form class="form-inline">
             <div class="input-group">
-                <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+                <input type="email" class="form-control" size="50" placeholder="<?php echo _COMMENT_MAIL;?>" required>
                 <div class="input-group-btn ">
-                    <button type="button" class="btn btn-primary" style="font-size: small;">Subscribe</button>
+                    <button type="button" class="btn btn-primary" style="font-size: small;">
+                    <?php echo _SUBSCR;?>
+                    </button>
                 </div>
             </div>
         </form>

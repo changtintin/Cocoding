@@ -179,8 +179,8 @@ p{
 .response_title{
     padding-top: 5px; 
     padding-bottom: 10px; 
-    letter-spacing: 0.6px; 
-    font-family: 'Rockwell'; 
+    letter-spacing: 0.6px;   
+    font-family: 'Open Sans', sans-serif;  
     color: #ad9f95;
 }
 
@@ -263,5 +263,17 @@ p{
     position: relative; 
     display: block;
     color: #9d9d9d;
+}
+
+.instruc-li{
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+}
+
+.is_disabled {
+    color: red;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
 }
 

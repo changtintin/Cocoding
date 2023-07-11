@@ -49,16 +49,10 @@
                                 if(mysqli_num_rows($result) > 0){
                                     $num = mysqli_num_rows($result);
 
-                                    if($num > 1){
-                                        $be_v = "are";
-                                    }
-                                    else{
-                                        $be_v = "is";
-                                    }
                                     
                                     echo"
                                         <p class='lead author_post_h'>
-                                            Here {$be_v} {$num} articles written by {$author} —            
+                                            {$num} "._POST_NUM." {$author} —            
                                         </p>
                                     ";
 
@@ -69,6 +63,9 @@
                                         $post_author = $row['post_author'];
                                         $post_date = $row['post_date'];
                                         $post_image = $row['post_image'];
+                                        if($post_image == ""){
+                                            $post_image = "img_not_availible.png";
+                                        }
                                         $post_comment_count = comment_count($connect, $post_id);
                                         $post_view_count = $row['post_view_count'];
                                         $post_status = $row['post_status'];
@@ -79,26 +76,28 @@
 
                     ?>
                                         <h1 class="page-header">
-                                            <a href = "/Cocoding/post/<?php echo $post_id; ?>//"><?php echo $post_title; ?></a>                    
+                                            <a href = "/Cocoding/post.php?p_id=<?php echo $post_id; ?>">
+                                                <?php echo $post_title; ?>
+                                            </a>                    
                                         </h1>
 
-                                        <p class="lead">
-                                            by <?php echo $post_author;?>
+                                        <p class="h4">
+                                            <?php echo _AUTHOR_POST." ".$post_author;?>
                                         </p>
 
                                         <p>
                                             <span class = "glyphicon glyphicon-time"></span> 
-                                            Posted on 
-                                            <?php echo "{$post_date}"; ?>
+                                            
+                                            <?php echo _DATE_POST." {$post_date}"; ?>
                                         </p>
                                         
                                         <p>
-                                            <?php echo $post_view_count ?> views
+                                            <?php echo $post_view_count." "._VIEW_POST; ?> 
                                         </p>
                                         
                                          <p>
                                             <h5>
-                                                Catergory:  
+                                                <?php echo _CATER_WELL; ?> 
                                                 <span class='badge badge-secondary'>
                                                     <a href = '/Cocoding/category/<?php echo $cat_id; ?>' style = 'color:white;'>
                                                         <?php echo $cat_title; ?>
@@ -124,8 +123,8 @@
                                         </div>
                                                         
                                         <div class="mt-4">
-                                            <a class = "btn btn-primary" href = "/Cocoding/post/<?php echo $post_id; ?>//">
-                                                Read More <span class="glyphicon glyphicon-chevron-right"></span>
+                                            <a class = "btn btn-primary" href = "/Cocoding/post.php?p_id=<?php echo $post_id; ?>&lang=<?php echo $_SESSION['lang']; ?>">
+                                                <?php echo _READ_POST_BTN; ?> <span class="glyphicon glyphicon-chevron-right"></span>
                                             </a>
                                         </div> 
                                         <hr>

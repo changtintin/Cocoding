@@ -56,6 +56,9 @@
                                         $post_author = $post['post_author'];
                                         $post_date = $post['post_date'];
                                         $post_image = $post['post_image'];
+                                        if($post_image == ""){
+                                            $post_image = "img_not_availible.png";
+                                        }
                                         $post_comment_count = comment_count($connect, $post_id);                                
                                         $post_view_count = $post['post_view_count'];
                                         $post_status = $post['post_status'];
@@ -65,24 +68,25 @@
                                 
                 
                 <h1 class="page-header">
-                    <a href = "/Cocoding/post/<?php echo $post_id; ?>/"><?php echo $post_title; ?></a>                    
+                    <a href = "/Cocoding/post.php?p_id=<?php echo $post_id; ?>&lang=<?php echo $_SESSION['lang']; ?>">
+                        <?php echo $post_title; ?>
+                    </a>                    
                 </h1>
 
                 <p class="lead">
-                    by 
-                    <a href="/Cocoding/author_post/<?php echo $post_author; ?>">
+                    <?php echo _AUTHOR_POST; ?> 
+                    <a href="/Cocoding/author_post.php?author=<?php echo $post_author; ?>&lang=<?php echo $_SESSION['lang']; ?>">
                         <?php echo $post_author; ?>
                     </a>
                 </p>
 
                 <p>
                     <span class = "glyphicon glyphicon-time"></span> 
-                    Posted on 
-                    <?php echo "{$post_date}"; ?>
+                    <?php echo _DATE_POST.": {$post_date}"; ?>
                 </p>
 
                 <p style='font-family:Rockwell;'>
-                    <?php echo $post_view_count ?> views
+                    <?php echo $post_view_count." "._VIEW_POST; ?> 
                 </p>
 
                 <p style='font-family:Rockwell;'>
@@ -105,7 +109,8 @@
                                 </p>
                 
                                 <a class = "btn btn-primary" href = "/Cocoding/post/<?php echo $post_id; ?>/">
-                                    Read More <span class="glyphicon glyphicon-chevron-right"></span>
+                                    <?php echo _READ_POST_BTN; ?>
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
                                 </a>
                                 <hr>
                             <?php       }
