@@ -114,7 +114,7 @@
                 if(first && second && first == second){
                     document.getElementById("check_same_msg").innerHTML = "<h5><i class='glyphicon glyphicon-ok-circle'></i>The same</h5>";
                     if(first.length>5){    
-                        document.getElementById("check_len_msg").innerHTML = "<h5><i class='glyphicon glyphicon-remove-circle'></i>Password already have more than 5 characters!</h5>";                    
+                        document.getElementById("check_len_msg").innerHTML = "<h5><i class='glyphicon glyphicon-ok-circle'></i>Password already have more than 5 characters!</h5>";                    
                         reset_submit.disabled = false;
                     }
                     else{

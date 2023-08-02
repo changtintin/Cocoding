@@ -1,11 +1,13 @@
                 <script>
                     var post_id = <?php echo $p_id; ?>;
-
+                    var lang = "<?php echo $_SESSION['lang'];?>";                
+                
                     function like(){ 
                         const xhr = new XMLHttpRequest();
-                        xhr.open('GET', '/Cocoding/includes/function.php?fetch_likes=ok&p_id='+post_id);
+                        xhr.open('GET', '/Cocoding/includes/function.php?fetch_likes=ok&p_id='+post_id+'&lang='+lang);
                         xhr.onload = function(){
                             console.log(xhr.status); // 200
+                            console.log(xhr.responseText);
                             document.getElementById("user_like").innerHTML =  xhr.responseText;
                         }         
                         xhr.send();                                            
@@ -13,9 +15,10 @@
 
                     function dislike(){ 
                         const xhr = new XMLHttpRequest();
-                        xhr.open('GET', '/Cocoding/includes/function.php?fetch_dislikes=ok&p_id='+post_id);
+                        xhr.open('GET', '/Cocoding/includes/function.php?fetch_dislikes=ok&p_id='+post_id+'&lang='+lang);
                         xhr.onload = function(){
                             console.log(xhr.status); // 200
+                            console.log(xhr.responseText);
                             document.getElementById("user_dislike").innerHTML = xhr.responseText;
                         }         
                         xhr.send();                                            
@@ -34,8 +37,7 @@
                         }
                     }
        
-                </script>
-                
+                </script>                
                 <!-- Like Well -->      
                 <div class="well">                    
                     <form method="post">
@@ -152,6 +154,7 @@
                                 </button>
                             </div>
                         </div>
+                        
                     </form>
                 <hr>
                 <!-- Posted Comments -->
@@ -181,44 +184,12 @@
                                     }
                                 });
                             });
-                        });        
+                        });       
+                        
+                        
                     </script>
                     <?php
-                        $query = "SELECT * FROM ".COMMENTS." WHERE comment_post_id = {$p_id} AND comment_status = 'Approved' LIMIT 1;";
-                        $result = mysqli_query($connect, $query);
-                        if($result){                    
-                            if(mysqli_num_rows($result) > 0){
-                                while($row = mysqli_fetch_array($result)){
-                                    $comment_author = $row['comment_author'];
-                                    $comment_date = $row['comment_date'];
-                                    $comment_content = $row['comment_content'];
-                                    echo"
-                                        <div class='media'>
-                                            <a class='pull-left' href='#'>
-                                                <img class='media-object' src='http://placehold.it/64x64' alt='Photo'>
-                                            </a>
-                                            <div class='media-body'>
-                                                <h4 class='media-heading'>
-                                                {$comment_author}
-                                                    <small>{$comment_date}</small>
-                                                </h4>
-                                    ";                                        
-                                    show_content($comment_content);
-                                    echo"                                   
-                                            </div>
-                                        </div>
-                                    ";                
-                                }
-                                    echo '
-                                        <div style="padding-top: 15px">
-                                            <button class = "btn btn-primary" id = "more_comment" type = "submit">
-                                                '._COMMENT_MORE.'
-                                                <span class="glyphicon glyphicon-chevron-right"></span>
-                                            </button>
-                                        </div>
-                                    ';
-                            }
-                        }
+                        show_part_comment($connect, $p_id);
                     ?>
                 </div>
 

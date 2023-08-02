@@ -27,7 +27,7 @@
                     <tr>
                         <td><strong>Click to reset your password</strong></td>
                         <td>
-                            <a href = 'http://localhost:80/Cocoding/reset.php?email={$to_mail}&token={$token}'>Reset your password</a>
+                            <a href = 'http://tatianachang.com/Cocoding/reset.php?email={$to_mail}&token={$token}'>Reset your password</a>
                         </td>
                     </tr>                   
                 </table>

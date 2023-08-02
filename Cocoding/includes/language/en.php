@@ -151,6 +151,9 @@
         <p>Keep an eye on this space for upcoming campaigns and be ready to unleash your coding prowess!</p>
     ";
     
+    const _LIKE_COUNT="like";
+    const _DISLIKE_COUNT="dislike";
+    
     //Button
     const _CHECK_BTN = "Check";
     const _RESET_BTN = "Reset";
@@ -175,5 +178,6 @@
     const _CONGRAT_MSG = "Congrats! You are our subscriber from now on.";
     const _LOGIN_LIKE_MSG = "Log in to like this post";
     const _LOGIN_TIME_MSG = "Login time";    
+    const _FEEL_POST_MSG = "You already press";
 
 ?>

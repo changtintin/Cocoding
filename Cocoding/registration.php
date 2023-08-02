@@ -158,7 +158,7 @@
                 $("#username_check").click(function(){
                     // data: response data
                     // status: 200/404/...
-                    $.post( "./includes/function.php", $("#username"),function(data, status){
+                    $.post( "./includes/function.php?lang="+lang, $("#username"),function(data, status){
                         $("#check_alert").html(data);
                         console.log(status);                     
                         var okIcon = "<span class='glyphicon glyphicon-ok-circle'></span>";

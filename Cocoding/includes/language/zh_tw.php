@@ -154,6 +154,9 @@
         <p>加入我們一起探索程式的世界，<br>透過我們共同的努力產生積極的影響。</p>
         <p>密切留意此處即將舉行的活動，<br>準備展現自己的實力吧！</p>
     ";
+    
+    const _LIKE_COUNT="個讚";
+    const _DISLIKE_COUNT="個倒讚";
 
     //Button
     const _CHECK_BTN = "檢查";
@@ -177,4 +180,6 @@
     const _EMPTY_COL_MSG = "錯誤，該欄位不能為空";
     const _CONGRAT_MSG = "恭喜！您現在成為我們的訂閱用戶。";
     const _LOGIN_TIME_MSG = "登入時間";
+    const _FEEL_POST_MSG = "你已經對此文章按過";
+
 ?>

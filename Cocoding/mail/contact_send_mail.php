@@ -112,7 +112,7 @@
         $mail -> isSendmail();                                  
         $mail -> Subject = $subject;
         $mail -> Body    = $message;
-        $mail -> AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $mail -> AltBody = $message;
         $mail -> send(); 
         $msg = "We've receive your option, please wait for our reply.";
         header("Location: ./contact.php?confirm_msg={$msg}", TRUE, 301);       

@@ -1,6 +1,9 @@
 <?php
     include "function.php";
     
+    
+    
+    
     $id = " "; 
     if(isset($_GET['p_id'])){
         $id = $_GET['p_id'];
@@ -26,6 +29,15 @@
         $like_dis = 'dislike';
         user_feel($connect, $id, $like_dis);
     }         
+    
+    login($connect);
+    add_comment($id, $role, $connect);      
+    register();
+
+    if(isset($_GET['token'])){
+        $token =  $_GET['token'];
+        reset_password($connect, $token);
+    }
     
     /* Forgot Password */     
     if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recover_submit'])){        
@@ -63,18 +75,8 @@
                 
             }
         }
-
-        
     }
                 
-    login($connect);
-    add_comment($id, $role, $connect);      
-    register();
-
-    if(isset($_GET['token'])){
-        $token =  $_GET['token'];
-        reset_password($connect, $token);
-    }
     
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

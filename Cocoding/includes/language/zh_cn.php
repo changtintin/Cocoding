@@ -142,6 +142,9 @@
         <p>密切关注此处的即将到来的活动，<br>准备好展现您的编程才华吧！ </p>
     ";
     
+    const _LIKE_COUNT="个喜欢";
+    const _DISLIKE_COUNT="个不喜欢";
+    
     /* Button */
     const _CHECK_BTN = "检查";
     const _RESET_BTN = "重设";
@@ -168,4 +171,6 @@
     const _COMMENT_ID_MSG = "使用已登录的用户名称";
     const _POST_NUM = "篇文章 作者为";
     const _LOGIN_TIME_MSG = "登录时间";    
+    const _FEEL_POST_MSG = "你已经对此文章发表过";
+
 ?>

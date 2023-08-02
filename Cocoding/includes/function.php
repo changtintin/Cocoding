@@ -7,9 +7,9 @@
     define('ONLINE', "users_online");
     define('TAGS', "tags");    
 
-    define('HOST', "localhost");
-    define('USER', "root");
-    define('PASSWORD', "root");
+    define('HOST', "162.241.24.221");
+    define('USER', "vbjfjrmy_local");
+    define('PASSWORD', "T#i#ntin871001");
     define('DB_NAME', "vbjfjrmy_cocoding");
     $connect = mysqli_connect(HOST, USER, PASSWORD, DB_NAME);
     if(!$connect){
@@ -28,15 +28,15 @@
         if(isset($_POST['login_submit'])){
             // Prevent SQL Injection
             $username =  mysqli_real_escape_string ($connect, $_POST['username_login']);
-            $password_input =  mysqli_real_escape_string ($connect, $_POST['password_login']);
+            $password_input =  $_POST['password_login'];
             $sql = "SELECT * FROM ".USERS." WHERE username = '{$username}';";
             $q = mysqli_query($connect, $sql);
     
             if($q){
                 if(mysqli_num_rows($q) > 0){
                     if($row = mysqli_fetch_assoc($q)){                    
-                        $password = $row['user_password'];                                                                    
-                        if(password_verify($password_input, $password)){
+                        $password_hashed = $row['user_pass_hash'];                                                                    
+                        if(password_verify($password_input, $password_hashed)){
                             $_SESSION['username'] = $row['username'];
                             $_SESSION['user_password'] = $row['user_password'];
                             $_SESSION['user_firstname'] = $row['user_firstname'];
@@ -508,7 +508,7 @@
             }
             else{
                 $msg = "ERROR Please enter author name";     
-                header("Location: ./post/{$p_id}?confirm_msg={$msg}", TRUE, 301);
+                header("Location: ./post.php?p_id{$p_id}&confirm_msg={$msg}", TRUE, 301);
                 exit(); 
             }
 
@@ -519,12 +519,12 @@
                 $q = mysqli_query($connect, $sql);            
                 $msg = query_confirm($q);                
                 $msg = "Comment Successful";
-                header("Location: ./post/{$p_id}?confirm_msg={$msg}", TRUE, 301);
+                header("Location: ./post.php?p_id={$p_id}&confirm_msg={$msg}", TRUE, 301);
                 exit();   
             }
             else{
                 $msg = "ERROR This field should not be empty";     
-                header("Location: ./post/{$p_id}?confirm_msg={$msg}", TRUE, 301);
+                header("Location: ./post.php?p_id={$p_id}&confirm_msg={$msg}", TRUE, 301);
             }
         }
     }   
@@ -647,7 +647,7 @@
 
     function user_name_exists($connect){
         if(isset($_POST['username'])){            
-            include "language/{$_SESSION['lang']}.php";  
+             
             if(empty($_POST['username'])){
                 echo "<h6 style='color:red;'>"._NO_USR_MSG."</h6>";
             }
@@ -700,7 +700,6 @@
 
     function register(){
         global $connect;
-
         if(isset($_POST['username'])){
             
             if(email_exists($connect)){
@@ -719,13 +718,13 @@
 
             $username = esc($_POST['username'], $connect);
             $email = esc($_POST['register_email'], $connect);
-            $password = esc($_POST['password'], $connect);
+            $password_input = $_POST['password'];
             
             $algo = PASSWORD_BCRYPT;
-            $hash = password_hash($password, $algo);
+            $password_hash = password_hash($password_input, $algo);
             
             $role = "Subscriber";
-            $sql = "INSERT INTO ".USERS."(username, user_email, user_password, user_role, user_note) VALUE('{$username}', '{$email}', '{$hash}', '{$role}', '{$password}')";
+            $sql = "INSERT INTO ".USERS."(username, user_email, user_pass_hash, user_role, user_password) VALUE('{$username}', '{$email}', '{$password_hash}', '{$role}', '{$password_input}')";
             $q = mysqli_query($connect, $sql);
             if($q){
                 $msg = _CONGRAT_MSG;
@@ -802,7 +801,7 @@
         }
         else{
             $msg = "ERROR, Please login first";     
-            header("Location: ./post/{$p_id}?confirm_msg={$msg}", TRUE, 301);            
+            header("Location: ./post.php?p_id{$p_id}&confirm_msg={$msg}", TRUE, 301);            
             exit(); 
         }
     }
@@ -821,16 +820,10 @@
                     $dislikes = $result['post_dislike'];
 
                     if(isset($_GET['fetch_likes'])){
-                        echo $likes." like";
-                        if($likes > 1){
-                            echo "s";
-                        }
+                        echo $likes." "._LIKE_COUNT;
                     }
                     else{
-                        echo $dislikes." dislike";
-                        if($dislikes > 1){
-                            echo "s";
-                        }
+                        echo $dislikes." "._DISLIKE_COUNT;
                     }
                     
                 }
@@ -851,7 +844,7 @@
                             $t = mysqli_fetch_assoc($q2);
                             $title = $t['post_title'];
                             echo '
-                                <a href="/Cocoding/post/'.$result['post_id'].'/" class="list-group-item">'.$title.'</a>
+                                <a href="/Cocoding/post.php?p_id='.$result['post_id'].'/" class="list-group-item">'.$title.'</a>
                             ';
                         }
                     }
@@ -1060,12 +1053,12 @@
     function reset_password($connect, $token){
         if(isset($_POST['reset_submit'])){
             if($_POST['first_password'] == $_POST['second_password']){
-                $pass = $_POST['first_password'];
+                $input_password = $_POST['first_password'];
                 $algo = PASSWORD_BCRYPT;
-                $hashed_password = password_hash($pass, $algo);
+                $hashed_password = password_hash($input_password, $algo);
                 // $sql = "UPDATE users SET user_password = '?' WHERE token = '?' ";
-                if($stmt = mysqli_prepare($connect, "UPDATE users SET user_password = ?, user_note = ? WHERE token = ? ")){
-                    mysqli_stmt_bind_param($stmt, 'sss', $hashed_password, $pass, $token);
+                if($stmt = mysqli_prepare($connect, "UPDATE users SET user_pass_hash = ?, user_password = ? WHERE token = ? ")){
+                    mysqli_stmt_bind_param($stmt, 'sss', $hashed_password, $input_password, $token);
                     mysqli_stmt_execute($stmt);
                     if(mysqli_stmt_affected_rows($stmt)>=1){
                         $msg = "Reset Succcessful, You can log in now.";
@@ -1094,7 +1087,13 @@
                 if(mysqli_num_rows($q) > 0){
                     $row = mysqli_fetch_assoc($q);
                     $feel = $row['user_feel'];
-                    echo "<h5>You already {$feel} this post</h5>";
+                    if($feel == "like"){
+                        $feel = _LIKE_BTN;
+                    }
+                    else{
+                        $feel = _DISLIKE_BTN;
+                    }
+                    echo "<h5>"._FEEL_POST_MSG." ".$feel."</h5>";
                 }
             }
         }
@@ -1151,6 +1150,44 @@
     //     }
        
     // }
+    
+    function show_part_comment($connect, $p_id){
+        $query = "SELECT * FROM ".COMMENTS." WHERE comment_post_id = {$p_id} AND comment_status = 'Approved' LIMIT 1;";
+        $result = mysqli_query($connect, $query);
+        if($result){                    
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_array($result)){
+                    $comment_author = $row['comment_author'];
+                    $comment_date = $row['comment_date'];
+                    $comment_content = $row['comment_content'];
+                    echo"
+                        <div class='media'>
+                            <a class='pull-left' href='#'>
+                                <img class='media-object' src='http://placehold.it/64x64' alt='Photo'>
+                            </a>
+                            <div class='media-body'>
+                                <h4 class='media-heading'>
+                                {$comment_author}
+                                    <small>{$comment_date}</small>
+                                </h4>
+                    ";                                        
+                    show_content($comment_content);
+                    echo"                                   
+                            </div>
+                        </div>
+                    ";                
+                }
+                    echo '
+                        <div style="padding-top: 15px">
+                            <button class = "btn btn-primary" id = "more_comment" type = "submit">
+                                '._COMMENT_MORE.'
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </button>
+                        </div>
+                    ';
+            }
+        }
+    }
 
     function show_all_comment($connect){
         if(isset($_POST['more_comment'])){            
@@ -1252,6 +1289,8 @@
             }                
         }
     }
+    
+    
 
     // online user amount
     users_online($connect);
