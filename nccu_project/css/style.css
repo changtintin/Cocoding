@@ -1,0 +1,355 @@
+
+ /* ============ small devices ============ */
+ @media (max-width: 767.98px) {
+
+    .depart-logo{
+        width: max-content;
+        height:fit-content;
+    }    
+
+    
+    
+
+    
+}
+/* ============ ./ small devices ============ */
+
+/* ============ Tag ============ */
+
+/* *{
+    border: #d3967e 1px solid;
+} */
+
+body{    
+    font-size: 14px;
+}
+
+
+
+img{
+    overflow: auto;
+    width: min-content;
+}
+
+dd a{
+    color: white;
+}
+
+dd a:hover{
+    color:rgb(255, 224, 131);
+}
+
+dd a:active{
+    color:#d3967e
+}
+
+
+
+
+
+/* ============ Class ============ */
+
+.tab{
+    display: inline-block; 
+    margin-left: 40px;
+}
+
+.trans{
+    width: 30%;
+    height: 35%;
+    background-color: rgb(189, 230, 216);
+    transition: 1s;
+}
+
+.trans:hover {
+    width: 55%;
+    height: 60%;
+}
+
+.depart-logo{
+    width: 60%; 
+    padding: 5px;
+}
+
+.h1-title-container{
+    margin-top: 20px;
+}
+
+.h3-title-container{
+    right: 0;
+}
+
+.content-container{  
+    margin-inline: 30px;
+    overflow: auto;
+    object-fit: cover;
+}
+
+.dropdown-menu li .dropdown-item:hover{
+    background-color:  rgb(246, 246, 166);
+}
+
+.dropdown-menu li .dropdown-item{
+    color:rgb(76, 172, 189);
+    opacity: 70%;
+    
+}
+
+.navbar-nav .nav-item .nav-link{
+    color:rgb(255, 255, 255);
+    font-size: large;
+    opacity: 85%;
+}
+
+.navbar-nav .nav-item .nav-link:hover{
+    color:rgb(255, 224, 131);
+    opacity: 100%;
+    font-weight: bolder;
+    
+}
+.event-tb-header{
+    background-color: rgb(246, 246, 166);
+    color: #4c90a3;
+    font-family: 'cwTeXYen';
+    font-size: 20px;
+    opacity: 80%;
+}
+.event-tb-row{
+    background-color: #ffffff;
+    box-shadow: 0px 0px 3px 0px rgba(116, 117, 118, 0.3);
+    font-family: 'Noto Sans TC';
+    
+    opacity: 0.7;
+}
+
+.event-tb-row:hover {
+    box-shadow: 0px 0px 6px 0px rgba(85, 87, 91, 0.3);
+    opacity: 1;
+    font-weight: bold;
+    background-color: #4c90a378;
+    color: white;
+    
+}
+.event-tb-header-divid{
+    display: none;
+}
+
+/* 
+
+Theme Box
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity 
+
+*/
+.themeContainer {
+    position: relative;
+    width: 100%;  
+}
+
+.themeImg {
+    opacity: 1;
+    display: block;
+    height: 300px;
+    object-fit: cover;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    border-radius: 20px;
+}
+
+.themeMiddle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    
+}
+
+.themeContainer:hover .themeImg {
+    opacity: 0.4;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.themeContainer:hover .themeMiddle {
+    opacity: 0.8;
+}
+
+.themeText {
+    background-color: rgb(76, 172, 189);
+    border-radius: 5px;
+    padding: 20px 40px;
+}
+
+/* 
+./ Opacity with Box
+*/
+
+
+/*
+    Slide in title
+    https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_slideleft
+*/
+.slideContainer {
+    position: relative;
+    width: 100%;
+}
+
+.slideImg {
+    display: block;
+    width: auto;
+    height: 100px;
+    background-color: transparent;
+}
+
+.slideOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+   
+    background-color:transparent;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .4s ease;
+}
+
+.slideContainer:hover .slideOverlay {
+    width: 100%;
+}
+
+.slideText {
+    color: rgb(229, 155, 155);
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+/*
+    ./ Slide in title
+*/
+
+
+
+.footerField{
+    color: white;
+}
+
+.carousel-inner {
+    height: 0;
+    padding-bottom: 50%; /* this sets carousel aspect ratio (4:1 here) */
+}
+  
+.carousel-item {
+    position: absolute !important; /* Bootstrap is insistent */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+  
+.carousel-item img {
+    height: 100%; /* Bootstrap handles width already */
+    object-fit: cover; /* or 'contain' if you want stretch instead of crop */
+}
+
+.h1-title-container h1{
+    color: #4c90a3;
+    font-family: 'cwTeXYen';
+    font-weight: bold;
+}
+
+.h3-title-container h3{
+    color: rgb(248, 213, 109);
+    font-family: 'cwTeXYen';
+    font-weight: bold;
+}
+
+.map1:hover, .map2:hover, .map3:hover{
+    opacity: 100%;
+    box-shadow: 0px 0px 10px 0px rgba(116, 117, 118, 0.3);
+    border-radius: 10px;
+} 
+
+.map1 small{
+    padding: 10px;
+}
+
+.themeText a{
+    font-family: 'cwTeXYen';
+}
+
+.themeText a:hover{
+    color:rgb(248, 213, 109);
+}
+
+.member-img{
+    width: 50%;
+    height:auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.table-scrollable {
+    overflow-x: auto;
+    max-width: 500px;
+    box-shadow: inset 0 0 5px rgba(150, 150 ,150,0.35);
+    margin: auto;
+    border-radius: 10px;
+}
+
+.book-table-header{
+    color:#d3967e;
+}
+
+
+/* ============ Id ============ */
+#scrollspyTop{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+}
+
+
+/* #carousellImg3, #carousellImg2, #carousellImg1{
+    height: 500px;
+    object-fit: cover;
+} */
+
+#h1-title-decor{
+    width: fit-content;
+    height:auto;  
+    background-color: #69c7e1;
+    border-radius: 2px;
+}
+
+#h3-title-decor{
+    width: fit-content;
+    height:auto;  
+    background-color: rgb(255, 224, 131);
+    border-radius: 2px;
+}
+
+
+
+/* ============ Keyframe ============ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+

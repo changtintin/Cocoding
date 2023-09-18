@@ -1,0 +1,957 @@
+[01-May-2023 23:52:51 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[01-May-2023 23:52:51 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[01-May-2023 23:52:51 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[01-May-2023 23:52:51 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[01-May-2023 23:52:51 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[01-May-2023 23:52:51 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[01-May-2023 23:52:51 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[01-May-2023 23:52:51 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[01-May-2023 23:52:51 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[01-May-2023 23:52:51 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[01-May-2023 23:52:51 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[01-May-2023 23:52:51 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[01-May-2023 23:53:15 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[01-May-2023 23:53:15 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'comment_role' in 'where clause' in /home3/vbjfjrmy/public_html/Cocoding/user/user_comments.php:131
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_comments.php(131): mysqli_query(Object(mysqli), 'SELECT * FROM c...')
+#1 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_comments.php on line 131
+[01-May-2023 23:53:31 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[01-May-2023 23:53:31 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[01-May-2023 23:53:31 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[01-May-2023 23:53:31 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[01-May-2023 23:53:31 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[01-May-2023 23:53:31 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[01-May-2023 23:53:31 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[01-May-2023 23:53:31 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[01-May-2023 23:53:31 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[01-May-2023 23:53:31 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[01-May-2023 23:53:31 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[01-May-2023 23:53:31 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 00:02:32 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 00:02:32 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[02-May-2023 00:02:32 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 00:02:32 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 00:02:32 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 00:02:32 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 00:02:32 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 00:02:32 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 00:02:32 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 00:02:32 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 00:02:32 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 00:02:32 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:08:23 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 01:08:23 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[02-May-2023 01:08:23 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:08:23 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:08:23 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:08:23 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:08:23 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:08:23 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:08:23 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:08:23 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:08:23 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:08:23 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:09:40 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 01:09:40 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[02-May-2023 01:09:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:09:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:09:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:09:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:09:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:09:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:09:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:09:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:09:40 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:09:40 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:10:01 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 01:10:01 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[02-May-2023 01:10:01 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:10:01 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:10:01 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:10:01 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:10:01 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:10:01 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:10:01 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:10:01 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:10:01 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:10:01 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:39:25 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 01:39:25 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[02-May-2023 01:39:25 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:39:25 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:39:25 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:39:25 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:39:25 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:39:25 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:39:25 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:39:25 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:39:25 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:39:25 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:56:04 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 01:56:04 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[02-May-2023 01:56:04 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:56:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:56:04 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:56:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:56:04 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:56:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:56:04 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:56:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:56:04 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:56:04 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:56:21 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 01:56:21 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[02-May-2023 01:56:21 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:56:21 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:56:21 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:56:21 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:56:21 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:56:21 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:56:21 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:56:21 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:56:21 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:56:21 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:57:46 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 01:57:46 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[02-May-2023 01:57:46 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:57:46 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:57:46 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:57:46 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:57:46 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:57:46 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:57:46 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:57:46 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:57:46 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:57:46 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:57:53 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 01:57:53 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[02-May-2023 01:57:53 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:57:53 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 01:57:53 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:57:53 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 01:57:53 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:57:53 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 01:57:53 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:57:53 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 01:57:53 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 01:57:53 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 02:14:40 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 02:14:40 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[02-May-2023 02:14:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 02:14:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 02:14:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 02:14:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 02:14:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 02:14:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 02:14:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 02:14:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 02:14:40 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 02:14:40 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 03:24:58 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 03:24:58 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 12
+[02-May-2023 03:24:58 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 03:24:58 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 03:24:58 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 03:24:58 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 03:24:58 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 03:24:58 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 03:24:58 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 03:24:58 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 03:24:58 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 03:24:58 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 03:35:24 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 03:35:24 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 3
+[02-May-2023 03:35:24 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 13
+[02-May-2023 03:35:24 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 23
+[02-May-2023 03:35:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 23
+[02-May-2023 03:35:24 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 03:35:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 03:35:24 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 03:35:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 03:35:24 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 03:35:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 03:35:24 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 03:35:24 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 03:40:50 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 13
+[02-May-2023 03:40:50 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'comment_role' in 'where clause' in /home3/vbjfjrmy/public_html/Cocoding/user/user_comments.php:131
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_comments.php(131): mysqli_query(Object(mysqli), 'SELECT * FROM c...')
+#1 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_comments.php on line 131
+[02-May-2023 04:12:28 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 04:12:28 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 3
+[02-May-2023 04:12:28 America/Boise] PHP Warning:  Undefined variable $user_count in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 13
+[02-May-2023 04:12:28 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 23
+[02-May-2023 04:12:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 23
+[02-May-2023 04:12:28 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:12:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:12:28 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:12:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:12:28 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:12:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:12:28 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:12:28 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:14:10 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 04:14:10 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 2
+[02-May-2023 04:14:10 America/Boise] PHP Fatal error:  Uncaught Error: Undefined constant "_SESSION" in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php:3
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/index.php(15): include()
+#1 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 3
+[02-May-2023 04:14:26 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 04:14:26 America/Boise] PHP Fatal error:  Uncaught Error: Undefined constant "_SESSION" in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php:3
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/index.php(15): include()
+#1 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 3
+[02-May-2023 04:14:44 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 04:14:44 America/Boise] PHP Fatal error:  Uncaught Error: Undefined constant "_SESSION" in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php:3
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/index.php(15): include()
+#1 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 3
+[02-May-2023 04:14:46 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 04:14:46 America/Boise] PHP Fatal error:  Uncaught Error: Undefined constant "_SESSION" in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php:3
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/index.php(15): include()
+#1 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 3
+[02-May-2023 04:14:53 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 04:14:53 America/Boise] PHP Fatal error:  Uncaught Error: Undefined constant "_SESSION" in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php:3
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/index.php(15): include()
+#1 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 3
+[02-May-2023 04:15:12 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 04:15:12 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:15:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:15:12 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:15:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:15:12 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:15:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:15:12 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:15:12 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:17:00 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 04:17:00 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:17:00 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:17:00 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:17:00 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:17:00 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:17:00 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:17:00 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:17:00 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:17:11 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 04:17:11 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:17:11 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:17:11 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:17:11 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:17:11 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:17:11 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:17:11 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:17:11 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:17:11 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:17:11 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:21:12 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 5
+[02-May-2023 04:21:12 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:21:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:21:12 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:21:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:21:12 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:21:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:21:12 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:21:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:21:12 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:21:12 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:21:42 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 3
+[02-May-2023 04:21:42 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:21:42 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:21:42 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:21:42 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:21:42 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:21:42 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:21:42 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:21:42 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:21:42 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:21:42 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:21:45 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 3
+[02-May-2023 04:21:45 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:21:45 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:21:45 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:21:45 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:21:45 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:21:45 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:21:45 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:21:45 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:21:45 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:21:45 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:21:52 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 3
+[02-May-2023 04:21:52 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:21:52 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:21:52 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:21:52 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:21:52 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:21:52 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:21:52 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:21:52 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:21:52 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:21:52 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:23:37 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 3
+[02-May-2023 04:23:37 America/Boise] PHP Warning:  include(./function.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 4
+[02-May-2023 04:23:37 America/Boise] PHP Warning:  include(): Failed opening './function.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 4
+[02-May-2023 04:23:37 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:23:37 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:23:37 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function query_msg_alert() in /home3/vbjfjrmy/public_html/Cocoding/user/index.php:43
+Stack trace:
+#0 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 43
+[02-May-2023 04:25:08 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 3
+[02-May-2023 04:25:08 America/Boise] PHP Warning:  include(function.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 4
+[02-May-2023 04:25:08 America/Boise] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 4
+[02-May-2023 04:25:08 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:25:08 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:25:08 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function query_msg_alert() in /home3/vbjfjrmy/public_html/Cocoding/user/index.php:43
+Stack trace:
+#0 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 43
+[02-May-2023 04:25:17 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 3
+[02-May-2023 04:25:17 America/Boise] PHP Warning:  include(function.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 4
+[02-May-2023 04:25:17 America/Boise] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 4
+[02-May-2023 04:25:17 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:25:17 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:25:17 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function query_msg_alert() in /home3/vbjfjrmy/public_html/Cocoding/user/index.php:43
+Stack trace:
+#0 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 43
+[02-May-2023 04:25:31 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 3
+[02-May-2023 04:25:31 America/Boise] PHP Warning:  include(./user_includes/function.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 4
+[02-May-2023 04:25:31 America/Boise] PHP Warning:  include(): Failed opening './user_includes/function.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 4
+[02-May-2023 04:25:31 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:25:31 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:25:31 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function query_msg_alert() in /home3/vbjfjrmy/public_html/Cocoding/user/index.php:43
+Stack trace:
+#0 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 43
+[02-May-2023 04:25:50 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 3
+[02-May-2023 04:25:50 America/Boise] PHP Warning:  include(../user_includes/function.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 4
+[02-May-2023 04:25:50 America/Boise] PHP Warning:  include(): Failed opening '../user_includes/function.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 4
+[02-May-2023 04:25:50 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:25:50 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:25:50 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function query_msg_alert() in /home3/vbjfjrmy/public_html/Cocoding/user/index.php:43
+Stack trace:
+#0 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 43
+[02-May-2023 04:26:35 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 3
+[02-May-2023 04:26:35 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:26:35 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:26:35 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:26:35 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:26:35 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:26:35 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:26:35 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:26:35 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:26:35 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:26:35 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:36:09 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 3
+[02-May-2023 04:36:09 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:36:09 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 14
+[02-May-2023 04:36:09 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:36:09 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 04:36:09 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:36:09 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:36:09 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:36:09 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 04:36:09 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:36:09 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 04:44:43 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 13
+[02-May-2023 04:44:43 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 13
+[02-May-2023 04:44:43 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:44:43 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:44:43 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:44:43 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:44:43 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:44:43 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:44:43 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:44:43 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:46:44 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 04:46:44 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 04:46:44 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:46:44 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:46:44 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:46:44 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:46:44 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:46:44 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:46:44 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:46:44 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:46:59 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 04:46:59 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 04:46:59 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:46:59 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:46:59 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:46:59 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:46:59 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:46:59 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:46:59 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:46:59 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:47:04 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 04:47:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 04:47:04 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:47:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:47:04 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:47:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:47:04 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:47:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:47:04 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:47:04 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:47:42 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 04:47:42 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 04:47:42 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:47:42 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:47:42 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:47:42 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:47:42 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:47:42 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:47:42 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:47:42 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:48:30 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 04:48:30 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 04:48:30 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:48:30 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:48:30 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:48:30 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:48:30 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:48:30 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:48:30 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:48:30 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:49:02 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 04:49:02 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 04:49:02 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:49:02 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:49:02 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:49:02 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:49:02 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:49:02 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:49:02 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:49:02 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:50:06 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 04:50:06 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 04:50:06 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:50:06 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:50:06 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:50:06 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:50:06 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:50:06 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:50:06 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:50:06 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:52:08 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 04:52:08 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 04:52:08 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:52:08 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:52:08 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:52:08 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:52:08 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:52:08 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:52:08 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:52:08 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:52:18 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 04:52:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 22
+[02-May-2023 04:52:18 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:52:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:52:18 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:52:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:52:18 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:52:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:52:18 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:52:18 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:52:56 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:52:56 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:52:56 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:52:56 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:52:56 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:52:56 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:52:56 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:52:56 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:53:58 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:53:58 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:53:58 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:53:58 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:53:58 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:53:58 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:53:58 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:53:58 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:54:18 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:54:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:54:18 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:54:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:54:18 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:54:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:54:18 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:54:18 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:54:20 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:54:20 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:54:20 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:54:20 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:54:20 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:54:20 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:54:20 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:54:20 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:54:38 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:54:38 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:54:38 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:54:38 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:54:38 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:54:38 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:54:38 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:54:38 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:54:41 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:54:41 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:54:41 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:54:41 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:54:41 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:54:41 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:54:41 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:54:41 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:54:56 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:54:56 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:54:56 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:54:56 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:54:56 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:54:56 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:54:56 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:54:56 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:55:44 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:55:44 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:55:44 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:55:44 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:55:44 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:55:44 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:55:44 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:55:44 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:56:31 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:56:31 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:56:31 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:56:31 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:56:31 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:56:31 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:56:31 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:56:31 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:58:02 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 138
+[02-May-2023 04:58:02 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:58:02 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:58:02 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:58:02 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:58:02 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:58:02 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:58:02 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:58:02 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:58:04 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 138
+[02-May-2023 04:58:04 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:58:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:58:04 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:58:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:58:04 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:58:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:58:04 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:58:04 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:59:28 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 2
+[02-May-2023 04:59:28 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:59:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 04:59:28 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:59:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 04:59:28 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:59:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 04:59:28 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 04:59:28 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 05:01:28 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:01:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:01:28 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:01:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:01:28 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 05:01:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 05:01:28 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:01:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:01:28 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 05:01:28 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 05:02:05 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 3
+[02-May-2023 05:02:05 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:02:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:02:05 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:02:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:02:05 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 05:02:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 05:02:05 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:02:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:02:05 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 05:02:05 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 05:02:08 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 3
+[02-May-2023 05:02:08 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:02:08 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:02:08 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:02:08 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:02:08 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 05:02:08 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 05:02:08 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:02:08 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:02:08 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 05:02:08 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 05:02:14 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 3
+[02-May-2023 05:02:14 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:02:14 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:02:14 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:02:14 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:02:14 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 05:02:14 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[02-May-2023 05:02:14 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:02:14 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:02:14 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 05:02:14 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[02-May-2023 05:05:17 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 2
+[02-May-2023 05:05:17 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:05:17 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:05:17 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 05:05:17 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 05:05:17 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:05:17 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:05:17 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:05:17 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:05:17 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 05:05:17 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 05:05:40 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 2
+[02-May-2023 05:05:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:05:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:05:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 05:05:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 05:05:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:05:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:05:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:05:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:05:40 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 05:05:40 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 05:06:24 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 2
+[02-May-2023 05:06:24 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:06:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:06:24 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 05:06:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 05:06:24 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:06:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:06:24 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:06:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:06:24 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 05:06:24 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 05:13:14 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 2
+[02-May-2023 05:13:14 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:13:14 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:13:14 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 05:13:14 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 71
+[02-May-2023 05:13:14 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:13:14 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[02-May-2023 05:13:14 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:13:14 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:13:14 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 05:13:14 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[02-May-2023 05:32:34 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 4
+[02-May-2023 05:32:34 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 2
+[02-May-2023 05:32:34 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 3
+[02-May-2023 05:32:34 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:32:34 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:32:34 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:32:34 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:32:34 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:32:34 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:32:34 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 77
+[02-May-2023 05:32:34 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 77
+[02-May-2023 05:32:34 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 201
+[02-May-2023 05:32:34 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 201
+[02-May-2023 05:35:40 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 4
+[02-May-2023 05:35:40 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 3
+[02-May-2023 05:35:40 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 3
+[02-May-2023 05:35:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:35:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 18
+[02-May-2023 05:35:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:35:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:35:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:35:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:35:40 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 77
+[02-May-2023 05:35:40 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 77
+[02-May-2023 05:35:40 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 201
+[02-May-2023 05:35:40 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 201
+[02-May-2023 05:36:05 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 4
+[02-May-2023 05:36:05 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 3
+[02-May-2023 05:36:05 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 13
+[02-May-2023 05:36:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 13
+[02-May-2023 05:36:05 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:36:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 74
+[02-May-2023 05:36:05 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:36:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 76
+[02-May-2023 05:36:05 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 77
+[02-May-2023 05:36:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 77
+[02-May-2023 05:36:05 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 201
+[02-May-2023 05:36:05 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 201
+[02-May-2023 05:36:54 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 05:36:54 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 05:37:14 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'comment_role' in 'where clause' in /home3/vbjfjrmy/public_html/Cocoding/user/user_comments.php:131
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_comments.php(131): mysqli_query(Object(mysqli), 'SELECT * FROM c...')
+#1 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_comments.php on line 131
+[02-May-2023 05:38:29 America/Boise] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php on line 3
+[02-May-2023 05:38:29 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 13
+[02-May-2023 05:38:29 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 13
+[02-May-2023 05:38:29 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_comments.php on line 52
+[02-May-2023 05:38:29 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_comments.php on line 52
+[02-May-2023 05:38:29 America/Boise] PHP Warning:  Undefined global variable $_SESSION in /home3/vbjfjrmy/public_html/Cocoding/user/user_comments.php on line 127
+[02-May-2023 05:38:29 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home3/vbjfjrmy/public_html/Cocoding/user/user_comments.php on line 127
+[02-May-2023 05:39:00 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 05:39:00 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 05:45:52 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 05:45:52 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 05:46:37 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 05:46:37 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 05:58:46 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 05:58:46 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 06:14:13 America/Boise] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function fetch_tags(), 2 passed in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 108 and exactly 3 expected in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:787
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php(108): fetch_tags('3', Object(mysqli))
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_like.php(78): include('/home3/vbjfjrmy...')
+#2 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 787
+[02-May-2023 06:17:05 America/Boise] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function fetch_tags(), 2 passed in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 108 and exactly 3 expected in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:787
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php(108): fetch_tags('3', Object(mysqli))
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_like.php(78): include('/home3/vbjfjrmy...')
+#2 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 787
+[02-May-2023 06:23:19 America/Boise] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function fetch_tags(), 2 passed in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 108 and exactly 3 expected in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:787
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php(108): fetch_tags('3', Object(mysqli))
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_like.php(78): include('/home3/vbjfjrmy...')
+#2 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 787
+[02-May-2023 06:42:43 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 06:42:43 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 06:43:28 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 06:43:28 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 06:54:31 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 06:54:31 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 06:54:48 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 06:54:48 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 07:12:18 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 07:12:18 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 07:14:56 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 07:14:56 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 07:21:37 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 07:21:37 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 07:21:39 America/Boise] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function fetch_tags(), 2 passed in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 108 and exactly 3 expected in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:787
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php(108): fetch_tags('3', Object(mysqli))
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_like.php(78): include('/home3/vbjfjrmy...')
+#2 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 787
+[02-May-2023 07:21:42 America/Boise] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function fetch_tags(), 2 passed in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 108 and exactly 3 expected in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:787
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php(108): fetch_tags('3', Object(mysqli))
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_like.php(78): include('/home3/vbjfjrmy...')
+#2 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 787
+[02-May-2023 11:15:26 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[02-May-2023 11:15:26 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 03:42:17 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 03:42:17 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 03:44:52 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 03:44:52 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 03:44:56 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 03:44:56 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 03:45:20 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 03:45:20 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 03:46:04 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 03:46:04 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 03:46:09 America/Boise] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function fetch_tags(), 2 passed in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 108 and exactly 3 expected in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:787
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php(108): fetch_tags('3', Object(mysqli))
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_like.php(78): include('/home3/vbjfjrmy...')
+#2 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 787
+[03-May-2023 04:16:32 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 04:16:32 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 04:16:37 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 04:16:37 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 04:22:09 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 04:22:09 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 04:46:52 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 04:46:52 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 04:47:38 America/Boise] PHP Warning:  Undefined array key "select_ary" in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 843
+[03-May-2023 04:47:38 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 843
+[03-May-2023 04:49:31 America/Boise] PHP Warning:  Undefined array key "select_ary" in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 843
+[03-May-2023 04:49:31 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 843
+[03-May-2023 04:55:48 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 04:55:48 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 04:57:21 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 04:57:21 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 07:52:39 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 07:52:39 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 12:01:03 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 12:01:03 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 12:01:07 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 12:01:07 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 12:02:56 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 12:02:56 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 12:06:17 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 13
+[03-May-2023 12:06:17 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 70
+[03-May-2023 12:06:17 America/Boise] PHP Warning:  Undefined array key "user_firstname" in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 72
+[03-May-2023 12:06:17 America/Boise] PHP Warning:  Undefined array key "user_lastname" in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[03-May-2023 12:06:17 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 12:06:17 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 12:06:53 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[03-May-2023 12:06:53 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[04-May-2023 01:31:42 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[04-May-2023 01:31:42 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[04-May-2023 02:34:23 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[04-May-2023 02:34:23 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[04-May-2023 08:15:05 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[04-May-2023 08:15:05 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[04-May-2023 08:34:41 America/Boise] PHP Parse error:  syntax error, unexpected token "\" in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 348
+[04-May-2023 08:37:01 America/Boise] PHP Fatal error:  Cannot use [] for reading in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php on line 224
+[04-May-2023 08:37:14 America/Boise] PHP Fatal error:  Cannot use [] for reading in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php on line 224
+[04-May-2023 08:37:16 America/Boise] PHP Fatal error:  Cannot use [] for reading in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php on line 224
+[04-May-2023 08:37:20 America/Boise] PHP Fatal error:  Cannot use [] for reading in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php on line 224
+[04-May-2023 08:37:38 America/Boise] PHP Fatal error:  Uncaught Error: Undefined constant "select_ary" in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php:224
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_posts.php(41): include()
+#1 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php on line 224
+[04-May-2023 08:37:40 America/Boise] PHP Fatal error:  Uncaught Error: Undefined constant "select_ary" in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php:224
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_posts.php(41): include()
+#1 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php on line 224
+[04-May-2023 08:37:43 America/Boise] PHP Fatal error:  Uncaught Error: Undefined constant "select_ary" in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php:224
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_posts.php(41): include()
+#1 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php on line 224
+[04-May-2023 08:37:44 America/Boise] PHP Fatal error:  Uncaught Error: Undefined constant "select_ary" in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php:224
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_posts.php(41): include()
+#1 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php on line 224
+[04-May-2023 08:47:06 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function delete_post() in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:925
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_header.php(5): include()
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_posts.php(2): include('/home3/vbjfjrmy...')
+#2 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 925
+[04-May-2023 11:10:21 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 13
+[04-May-2023 11:10:21 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 70
+[04-May-2023 11:10:21 America/Boise] PHP Warning:  Undefined array key "user_firstname" in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 72
+[04-May-2023 11:10:21 America/Boise] PHP Warning:  Undefined array key "user_lastname" in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 73
+[04-May-2023 11:10:21 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[04-May-2023 11:10:21 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 197
+[04-May-2023 11:13:55 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 13
+[04-May-2023 11:13:55 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 77
+[04-May-2023 11:13:55 America/Boise] PHP Warning:  Undefined array key "user_firstname" in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 79
+[04-May-2023 11:13:55 America/Boise] PHP Warning:  Undefined array key "user_lastname" in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 80
+[04-May-2023 11:13:55 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 204
+[04-May-2023 11:13:55 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 204
+[04-May-2023 11:14:14 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 204
+[04-May-2023 11:14:14 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 204
+[04-May-2023 11:17:44 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[04-May-2023 11:17:44 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[04-May-2023 11:32:02 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[04-May-2023 11:32:02 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[05-May-2023 06:32:08 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[05-May-2023 06:32:08 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[05-May-2023 07:14:48 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[05-May-2023 07:14:48 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[05-May-2023 07:45:24 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[05-May-2023 07:45:24 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[05-May-2023 07:45:26 America/Boise] PHP Warning:  Undefined variable $cater in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php on line 151
+[05-May-2023 07:45:26 America/Boise] PHP Warning:  Undefined variable $cater in /home3/vbjfjrmy/public_html/Cocoding/user/user_includes/user_view_posts.php on line 151
+[05-May-2023 08:00:08 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[05-May-2023 08:00:08 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[05-May-2023 08:07:20 America/Boise] PHP Parse error:  syntax error, unexpected variable "$query" in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 72
+[05-May-2023 08:08:08 America/Boise] PHP Parse error:  syntax error, unexpected variable "$query" in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 70
+[05-May-2023 08:08:48 America/Boise] PHP Parse error:  syntax error, unexpected token "\" in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 78
+[05-May-2023 08:09:01 America/Boise] PHP Parse error:  Unmatched '}' in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 119
+[05-May-2023 08:09:12 America/Boise] PHP Parse error:  Unmatched '}' in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 120
+[05-May-2023 08:09:26 America/Boise] PHP Warning:  Undefined variable $post_id in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 97
+[05-May-2023 08:09:26 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php:792
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/includes/function.php(792): mysqli_query(Object(mysqli), 'SELECT * FROM t...')
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php(97): fetch_tags(NULL, Object(mysqli), 'user')
+#2 /home3/vbjfjrmy/public_html/Cocoding/user/user_like.php(78): include('/home3/vbjfjrmy...')
+#3 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/includes/function.php on line 792
+[05-May-2023 08:12:47 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php:70
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php(70): mysqli_query(Object(mysqli), 'SELECT PT.* FRO...')
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_like.php(78): include('/home3/vbjfjrmy...')
+#2 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 70
+[05-May-2023 08:13:05 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dislike' '' at line 1 in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php:70
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php(70): mysqli_query(Object(mysqli), 'SELECT PT.* FRO...')
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_like.php(92): include('/home3/vbjfjrmy...')
+#2 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 70
+[05-May-2023 08:13:38 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dislike' '' at line 1 in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php:70
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php(70): mysqli_query(Object(mysqli), 'SELECT PT.* FRO...')
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_like.php(92): include('/home3/vbjfjrmy...')
+#2 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 70
+[05-May-2023 08:16:24 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dislike' '' at line 1 in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php:70
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php(70): mysqli_query(Object(mysqli), 'SELECT PT.* FRO...')
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_like.php(92): include('/home3/vbjfjrmy...')
+#2 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 70
+[05-May-2023 08:16:28 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dislike' '' at line 1 in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php:70
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php(70): mysqli_query(Object(mysqli), 'SELECT PT.* FRO...')
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_like.php(92): include('/home3/vbjfjrmy...')
+#2 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 70
+[05-May-2023 08:19:26 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dislike''' at line 1 in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php:70
+Stack trace:
+#0 /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php(70): mysqli_query(Object(mysqli), 'SELECT PT.* FRO...')
+#1 /home3/vbjfjrmy/public_html/Cocoding/user/user_like.php(92): include('/home3/vbjfjrmy...')
+#2 {main}
+  thrown in /home3/vbjfjrmy/public_html/Cocoding/user/user_like_table.php on line 70
+[05-May-2023 13:10:29 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[05-May-2023 13:10:29 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 200
+[28-May-2023 01:18:40 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 01:18:40 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 01:52:33 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/user/user_nav.php on line 13
+[28-May-2023 01:52:33 America/Boise] PHP Warning:  Undefined array key "username" in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 75
+[28-May-2023 01:52:33 America/Boise] PHP Warning:  Undefined array key "user_firstname" in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 77
+[28-May-2023 01:52:33 America/Boise] PHP Warning:  Undefined array key "user_lastname" in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 78
+[28-May-2023 01:52:33 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 01:52:33 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:41:02 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:41:02 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:41:15 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:41:15 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:42:25 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:42:25 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:42:28 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:42:28 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:43:40 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:43:40 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:45:21 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:45:21 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:45:25 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:45:25 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:48:31 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:48:31 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:48:35 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:48:35 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:48:39 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:48:39 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:48:56 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:48:56 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:48:57 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:48:57 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:49:03 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 03:49:03 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 04:01:20 America/Boise] PHP Warning:  include(./user_includes/user_footer.php): Failed to open stream: No such file or directory in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198
+[28-May-2023 04:01:20 America/Boise] PHP Warning:  include(): Failed opening './user_includes/user_footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/vbjfjrmy/public_html/Cocoding/user/index.php on line 198

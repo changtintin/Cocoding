@@ -1,0 +1,27 @@
+Navbar:
+    1. Intro:
+        _ dropdown haven't solved
+
+        a. origin
+            content : O
+        b. develop
+            content : X
+        c. structure
+            content : O
+        d. member
+            content : X
+            class : X
+        e. location
+            content: -
+        f. law
+        
+    2. Campaign
+    3. Lecture
+    4. Implement
+    5. Result
+    6. Donate
+    7. Links
+
+Breadcrumb:
+    Breadcrumb.php: class
+    breadcrumb.php: Obj

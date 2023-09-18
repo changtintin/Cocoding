@@ -1,0 +1,458 @@
+{
+    "navbar": {
+        "intro": "中心簡介",
+        "campaign": "活動資訊",
+        "lecture": "創造力講座",
+        "implement": "教研實踐",
+        "result": "成果分享",
+        "donate": "捐政",
+        "links": "相關連結"
+    },
+    "intro_sec_theme": {
+        "origin": "緣起＆理念",
+        "develop": "發展階段",
+        "structure": "組織架構",
+        "member": "中心成員",
+        "location": "辦公室位置",
+        "law": "中心法規"
+    },
+    "campaign": {
+        "1": "鹿樂平台－106學年度教學換宿成果展"
+    },
+    "location": {
+        "lab": {
+            "addr": "116台北市文山區指南路二段64號",
+            "building": "創意實驗室 政大藝文中心 3F"
+        },
+        "creative_center": {
+            "addr": "台北市文山區116",
+            "building": "創新與創造力研究中心 政大逸仙樓 7F"
+        },
+        "main_center": {
+            "addr": "116台北市文山區環山三道",
+            "building": "玩物功坊 政大研究總中心"
+        }
+    },
+    "member_name" :{
+        "director": "曾守正",
+        "vice_director": "鄭宇君",        
+        "executive": "待聘",
+        "executive_secertary": "待聘",
+        "executive_commitee":[
+            "曾守正",
+            "鄭宇君",
+            "陳文玲",
+            "劉吉軒",
+            "鄭至甫",
+            "王素芸"
+        ],
+        "previous_director":[
+            "吳思華",
+            "周行一",
+            "詹志禹",
+            "溫肇東",
+            "陳文玲",
+            "劉吉軒",
+            "李蔡彥"
+        ]
+    },
+    "member_pg":{
+        "director": "中心主任",
+        "vice_director": "中心副主任",
+        "admins": "行政人員",
+        "executive_commitee": "執行委員",
+        "researcher": "研究員",
+        "previous_director": "歷屆主任"
+    },
+    "lecture":{
+        "origin": "緣起",
+        "host_intro": "主持人簡介"
+    },
+    "result":{
+        "book": "圖書",
+        "journal": "期刊",
+        "report": "研究報告",
+        "audio_video": "影音類"
+    },
+    "book_tb":{
+        "title": "標題",
+        "author": "作者",
+        "publish": "出版社",
+        "plan":"策畫",
+        "publish_year":"出版年"
+    },
+    "book_tb_title_content":[
+        "風乎舞雩-教育部顧問室「創造力教育中程計畫」推動實錄",
+        "Creative Education in Taiwan",
+        "提升組織創新活力",
+        "故事與故鄉：創意城鄉的十二個原型",
+        "韓國文化創意產業政策與動向",
+        "台灣創造力教育10個故事",
+        "非設計不生活， 非創意不設計",
+        "童心協力翻轉地球",
+        "Social Innovation and Business in Taiwan",
+        "National Intellectual Capital and the Financial Crisis in France, Germany, Ireland, and the United Kingdom",
+        "National Intellectual Capital and the Financial Crisis in Austria, Belgium, the Netherlands, and Switzerland",
+        "National Intellectual Capital and the Financial Crisis in Bulgaria, Czech Republic, Hungary, Romania, and Poland",
+        "National Intellectual Capital and the Financial Crisis in Israel, Jordan, South Africa, and Turkey",
+        "National Intellectual Capital and the Financial Crisis in Indonesia, Malaysia, The Philippines, and Thailand",
+        "National Intellectual Capital and the Financial Crisis in Argentina, Brazil, Chile, Colombia, Mexico, and Venezuela",
+        "National Intellectual Capital and the Financial Crisis in Denmark, Finland, Iceland, Norway, and Sweden",
+        "National Intellectual Capital and the Financial Crisis in Australia, Canada, Japan, New Zealand, and the United States",
+        "National Intellectual Capital and the Financial Crisis in China, Hong Kong, Singapore, and Taiwan",
+        "National Intellectual Capital and the Financial Crisis in Greece, Italy, Portugal, and Spain",
+        "National Intellectual Capital and the Financial Crisis in Brazil, Russia, India, China, Korea, and South Africa",
+        "National intellectual capital: A comparison of 40 countries",
+        "歐洲文化首都：這些年教我們的事",
+        "未來教育-2030年教師備忘錄",
+        "想像力教育-跟你想像的教育不一樣",
+        "來自土地的夢想事業",
+        "未來想像教育在臺灣",
+        "Navigating intellectual capital after the financial crisis.",
+        "魅力城市",
+        "創業家的英雄之旅：以人為本的創新創業管理",
+        "創新的機緣與流變：從組織、人物、管理、決策看創新思維如何改造產業、翻動世界",
+        "跳脫框架的教與學",
+        "用故事改變世界：文化脈絡與故事原型",
+        "創新標杆實務分析",
+        "韓國流行音樂全球化之旅：[SM娛樂]的創新實踐",
+        "法國宮廷文化的創意美學",
+        "十年百城、全卷萬里：城市觀察的創新筆記",
+        "創河-美學與創新的交匯",
+        "The Impact of Societal and Social Innovation",
+        "流轉的傳統：節慶創新之道",
+        "師徒關係與社會創新的在地實踐:賴青松，黃聲遠",
+        "點亮偏鄉希望",
+        "帶起每個孩子國民教育大進擊",
+        "創造力是性感的",
+        "解讀阿拉伯：咖啡的故鄉，文學的國度",
+        "因緣際會擺渡人：吳靜吉的生命故事",
+        "大學圖書館的創新思維",
+        "Innovation and entrepreneurship in an educational ecosystem: Cases from Taiwan",
+        "明日教育的曙光：八個教育創業家的熱血故事"
+    ],
+    "book_tb_author_content":[
+        "曾志朗、吳靜吉、顏鴻森",
+        "張寶芳、廖寶芳",
+        "徐聯恩、郭靜怡",
+        "邱于芸",
+        "郭秋雯",
+        "張寶芳、廖寶芳",
+        "思創生活團隊",
+        "Devika、李美華",
+        "I Han, Sheng-Tsung Hou",
+        "Carol Yeh-Yun Lin（林月雲）, Leif Edvinsson ,Jeffrey Chen ,Tord Beding",
+        "Carol Yeh-Yun Lin（林月雲）, Leif Edvinsson ,Jeffrey Chen ,Tord Beding",
+        "Carol Yeh-Yun Lin（林月雲）, Leif Edvinsson ,Jeffrey Chen ,Tord Beding",
+        "Carol Yeh-Yun Lin（林月雲）, Leif Edvinsson ,Jeffrey Chen ,Tord Beding",
+        "Carol Yeh-Yun Lin（林月雲）, Leif Edvinsson ,Jeffrey Chen ,Tord Beding",
+        "Carol Yeh-Yun Lin（林月雲）, Leif Edvinsson ,Jeffrey Chen ,Tord Beding",
+        "Carol Yeh-Yun Lin（林月雲）, Leif Edvinsson ,Jeffrey Chen ,Tord Beding",
+        "Carol Yeh-Yun Lin（林月雲）, Leif Edvinsson ,Jeffrey Chen ,Tord Beding",
+        "Carol Yeh-Yun Lin（林月雲）, Leif Edvinsson ,Jeffrey Chen ,Tord Beding",
+        "Carol Yeh-Yun Lin（林月雲）, Leif Edvinsson ,Jeffrey Chen ,Tord Beding",
+        "Carol Yeh-Yun Lin（林月雲）, Leif Edvinsson ,Jeffrey Chen ,Tord Beding",
+        "Lin, C.Y.Y.（林月雲）and Edvinsson, L.",
+        "郭姿麟、孔憲法、陳志宏",
+        "Barnett Berry、李弘善",
+        "Sean Blenkinsop、林心茹",
+        "王姿婷、莊睍英",
+        "詹志禹、李顯達、張寶芳",
+        "Lin, C.Y.Y.（林月雲）, Edvinsson, L., Chen, J. & Beding, T.",
+        "林月雲、張朝清、劉鳳娟、林智偉",
+        "邱于芸",
+        "溫肇東",
+        "Kieran、Maureen、Keiichi、張曉琪",
+        "邱于芸",
+        "徐聯恩、郭靜怡",
+        "朴允善、張寶芳、吳靜吉",
+        "阮若缺",
+        "溫肇東",
+        "溫肇東、蔡淑梨",
+        "Lin, Carol Yeh-Yun（林月雲）, Jeffrey Chen",
+        "陳惠芬",
+        "朱思年、陳惠芬、游銘仁、吳靜吉",
+        "劉吉軒、吳璧純、張寶芳",
+        "劉吉軒",
+        "吳靜吉",
+        "鄭慧慈",
+        "吳靜吉",
+        "劉吉軒",
+        "Sehwa Wu ,Carol Yeh-Yun Lin",
+        "吳思華"
+    ],
+    "book_tb_publish_content":[
+        "教育部顧問室未來想像與創意人才培育中程計畫推動辦公室",
+        "教育部顧問室未來想像與創意人才培育中程計畫推動辦公室",
+        "智勝",
+        "遠流",
+        "遠流",
+        "教育部顧問室未來想像與創意人才培育中程計畫推動辦公室",
+        "商周",
+        "遠流",
+        "Palgrave Macmillan",
+        "Springer",
+        "Springer",
+        "Springer",
+        "Springer",
+        "Springer",
+        "Springer",
+        "Springer",
+        "Springer",
+        "Springer",
+        "Springer",
+        "Springer",
+        "Springer",
+        "遠流",
+        "遠流",
+        "遠流",
+        "遠流",
+        "教育部未來想像與創意人才培育計畫團隊",
+        "New York: Springer Publishing Co",
+        "時報",
+        "遠流",
+        "遠流",
+        "遠流",
+        "遠流",
+        "智勝",
+        "遠流",
+        "遠流",
+        "遠流",
+        "遠流",
+        "Springer Singapore",
+        "遠流",
+        "遠流",
+        "國立政治大學",
+        "國立政治大學",
+        "遠流",
+        "遠流",
+        "遠流",
+        "遠流",
+        "Springer",
+        "遠流"
+    ],
+    "book_tb_publish_yr_content":[
+        "2008",
+        "2010",
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2013",
+        "2014",
+        "2014",
+        "2014",
+        "2014",
+        "2014",
+        "2014",
+        "2014",
+        "2014",
+        "2015",
+        "2015",
+        "2015",
+        "2016",
+        "2016",
+        "2016",
+        "2016",
+        "2016",
+        "2017",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2020"
+    ],
+    "donate_pg": {
+        "go_to_pg": "前往捐政頁面"
+    },
+    "donate": {
+        "creative_center_dev": [
+            "創新與創造力研究中心發展基金專案",
+            "https://donation.nccu.edu.tw/web/donate_item/donate_item.jsp?cp_no=CP1545381277705"
+        ],
+        "creative_lecture": [
+            "NCCU 創造力講座",
+            "https://donation.nccu.edu.tw/web/donate_item/donate_item.jsp?cp_no=CP1545382764796"
+        ]
+        
+    },
+    "implement_pg": {
+        "teach": "教學",
+        "research": "研究",
+        "practice": "實踐",
+        "web": "學程網站",
+        "fans_pg": "粉絲專頁",
+        "teach_content":{
+            "humanity_program": {
+                "title": "人文創新學分學程",
+                "btn": {
+                    "web": "https://hidschool.nccu.edu.tw/",
+                    "fans_pg": "https://www.facebook.com/xcollege.nccu/"
+                } 
+            },
+            "creative_program":{
+                "title": "創新與創造力學分學程",
+                "btn": {
+                    "web":"https://hidschool.nccu.edu.tw/cip/"            
+                }
+            }
+        },
+        "research_tb":{
+            "cols":{
+                "type": "類別",
+                "title": "標題",
+                "date": "張貼日期"
+            },
+            "row_type":[
+                "出版品",
+                "活動紀要",
+                "出版品",
+                "出版品",
+                "活動紀要",
+                "活動紀要",
+                "研究計畫",
+                "學術成果",
+                "出版品"
+            ],
+            "row_title": [
+                "鹿樂平台－106學年度教學換宿成果展",
+                "GHF教育創業家工作坊首次啟程獲得肯定",
+                "創新創業學院x創創入門招生說明會",
+                "愛上學 愛上學習的秘密─國民教育階段學生學習精進期末成果發表會",
+                "愛上學 愛上學習的秘密─國民教育階段學生學習精進亮點記者會",
+                "活動紀要",
+                "研究計畫",
+                "學術成果",
+                "出版品"
+            ],
+            "row_date": [
+                "2019-02-26",
+                "2019-02-26",
+                "2019-02-26",
+                "2019-02-26",
+                "2019-02-26",
+                "2016-10-18",
+                "2016-10-18",
+                "2016-10-17",
+                "2016-10-17"
+            ]
+        },
+        "practice_tb":{
+            "cols":{
+                "name": "名稱",
+                "period": "期程",
+                "host": "計畫主持人",
+                "depart": "委託單位"
+            },
+            "row_name":[
+                "推動大學程式設計教學計畫",
+                "前瞻基礎建設校園數位建設推動計畫",
+                "教育創新群力匯聚計畫=鹿樂平臺",
+                "108年青年服務學習x鹿樂",
+                "104-105 年度國民教育階段學生學習精進連結平臺計畫",
+                "GHFxEdu教育創新全球樞紐實驗計畫",
+                "造夢者DREAM MAKER",
+                "偏鄉探索體驗-鹿樂專案",
+                "教育創新統整互聯與擴散分享計畫"
+            ],
+            "row_period":[
+                "2018.05.01-2022.07.31",
+                "2017.09.01-2018.12.31 / 2019.05.01-2021.3.31",
+                "2015.03.01-2021.8.31",
+                "2019.01.01-2019.12.31",
+                "2015.09.01-2018.08.31",
+                "2017.01.01-2018.12.31",
+                "2016.04.01-2016.06.30",
+                "2016.03.01-2017.12.18",
+                "2015.04.01-2016.3.31"
+            ],
+            "row_depart":[
+                "教育部",
+                "教育部",
+                "教育部",
+                "教育部",
+                "教育部",
+                "溫世仁文教基金會",
+                "教育部",
+                "教育部",
+                "教育部"
+            ],
+            "row_host":[
+                "李蔡彥",
+                "李蔡彥",
+                "劉吉軒",
+                "劉吉軒",
+                "劉吉軒",
+                "吳思華",
+                "劉吉軒",
+                "劉吉軒",
+                "劉吉軒"
+            ]
+        },
+        "links_pg":{
+            "depart_web": "相關單位網站",
+            "program_web": "研究/實踐型計畫網站"
+        },
+        "links_content": {
+            "creative_center": {
+                "title":"創新與創造力研究中心",
+                "btn":{
+                    "fans_pg":"https://www.facebook.com/ccis.nccu"
+                }                
+            },
+            "creative_lecture": {
+                "humanity_program":"人文創新學分學程",
+                "btn":{
+                    "web":"https://hidschool.nccu.edu.tw/",
+                    "fans_pg": "https://www.facebook.com/xcollege.nccu/"
+                }                
+            },
+            "creative_program":{
+                "title": "創新與創造力學分學程",
+                "btn": {
+                    "web":"https://hidschool.nccu.edu.tw/cip/"            
+                }
+            },
+            "rural_edu_program": {
+                "title": "鹿樂－偏鄉教育群力平臺",
+                "btn": {
+                    "web":"https://ruro.tw/",
+                    "fans_pg":"https://www.facebook.com/rural.not.far"                    
+                }
+            }
+
+        }
+        
+
+    },
+    "btns":{
+        "web": "學程網站",
+        "fans_pg": "粉絲專頁"
+    }
+    
+
+    
+
+
+
+    
+}
