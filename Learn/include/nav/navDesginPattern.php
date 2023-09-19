@@ -1,1 +1,0 @@
-<li><a class="dropdown-item" href="index.php?designPattern=1">Observer Pattern</a></li>        
